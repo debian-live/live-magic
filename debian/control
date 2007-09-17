@@ -6,7 +6,7 @@ Uploaders: Chris Lamb <chris@chris-lamb.co.uk>, Daniel Baumann <daniel@debian.or
 Build-Depends: debhelper (>= 5), cdbs, python-dev, python-support, python-yaml, live-helper
 Standards-Version: 3.7.2
 XS-Vcs-Svn: svn://svn.debian.org/debian-live/dists/trunk/live-magic/
-XS-VCS-Browser: http://svn.debian.org/wsvn/debian-live/dists/trunk/live-magic/
+XS-Vcs-Browser: http://svn.debian.org/wsvn/debian-live/dists/trunk/live-magic/
 
 Package: live-magic
 Architecture: all

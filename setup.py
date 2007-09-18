@@ -20,6 +20,11 @@ setup(
         ('share/live-magic', [
             'glade/main.glade',
             'glade/debian_openlogo-nd-100.png',
+            'glade/debian_sm.png',
+            'glade/gnome-logo-icon-transparent.png',
+            'glade/kde.png',
+            'glade/world_map-960.png',
+            'glade/xfce.png',
             ])
         ]
 )

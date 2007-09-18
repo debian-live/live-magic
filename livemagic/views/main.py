@@ -109,8 +109,20 @@ class MainView(object):
         dialog.destroy()
 
     def do_show_about_dialog(self):
-        self['dialog_about'].set_name("Debian Live Magic")
-        self['dialog_about'].show()
+        about = gtk.AboutDialog()
+        about.set_name("Debian Live Magic")
+        about.set_comments("GUI configuration tool to build Debian Live systems.")
+        about.set_copyright("Copyright (C) 2007 Chris Lamb <chris@chris-lamb.co.uk>")
+
+        about.set_website("http://debian-live.alioth.debian.org/")
+        about.set_website_label("Debian Live homepage")
+        about.set_license(file('/usr/share/common-licenses/GPL-2').read())
+
+        logo = gtk.gdk.pixbuf_new_from_file('/usr/share/live-magic/debian_openlogo-nd-100.png')
+        about.set_logo(logo)
+
+        about.run()
+        about.destroy()
 
     def do_set_key_var(self, namespace, key, value):
         try:

@@ -3,7 +3,10 @@ live-magic (0.3-1) unstable; urgency=low
   * New upstream release:
     * Update setup.py with additional media. (Closes: #441702)
     * Remove a few unnecessary menu options. (Closes: #441742)
+    * Remove GNUstep from options.
   * Add live-magic(1) manpage.
+  * Merged a few packaging and typographical errors from Daniel
+    Baumann <daniel@debian.org>.
 
  -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 26 Aug 2007 13:32:00 +0100
 

@@ -10,34 +10,34 @@ from folder_of_files import FolderOfFiles
 spec_str = """
 key_value:
     common:
-        LH_APT                  : string
-        LH_APT_FTPPROXY         : string
-        LH_APT_HTTPPROXY        : string
-        LH_APT_PDIFFS           : boolean
-        LH_APT_PIPELINE         : int
-        LH_APT_RECOMMENDS       : boolean
-        LH_APT_SECURE           : boolean
-        LH_BOOTSTRAP            : string
-        LH_CACHE_INDICES        : boolean
-        LH_CACHE_PACKAGES       : boolean
-        LH_CACHE_STAGES         : list
-        LH_DEBCONF_FRONTEND     : string
-        LH_DEBCONF_NOWARNINGS   : boolean
-        LH_DEBCONF_PRIORITY     : string
-        LH_GENISOIMAGE          : string
-        LH_INITRAMFS            : string
-        LH_LOSETUP              : string
-        LH_MODE                 : string
-        LH_ROOT_COMMAND         : string
-        LH_TASKSEL              : string
+        LIVE_APT                  : string
+        LIVE_APT_FTPPROXY         : string
+        LIVE_APT_HTTPPROXY        : string
+        LIVE_APT_PDIFFS           : boolean
+        LIVE_APT_PIPELINE         : int
+        LIVE_APT_RECOMMENDS       : boolean
+        LIVE_APT_SECURE           : boolean
+        LIVE_BOOTSTRAP            : string
+        LIVE_CACHE_INDICES        : boolean
+        LIVE_CACHE_PACKAGES       : boolean
+        LIVE_CACHE_STAGES         : list
+        LIVE_DEBCONF_FRONTEND     : string
+        LIVE_DEBCONF_NOWARNINGS   : boolean
+        LIVE_DEBCONF_PRIORITY     : string
+        LIVE_GENISOIMAGE          : string
+        LIVE_INITRAMFS            : string
+        LIVE_LOSETUP              : string
+        LIVE_MODE                 : string
+        LIVE_ROOT_COMMAND         : string
+        LIVE_TASKSEL              : string
         LIVE_ROOT               : string
         LIVE_INCLUDES           : string
         LIVE_TEMPLATES          : string
-        LH_BREAKPOINTS          : boolean
-        LH_DEBUG                : boolean
-        LH_FORCE                : boolean
-        LH_QUIET                : boolean
-        LH_VERBOSE              : boolean
+        LIVE_BREAKPOINTS          : boolean
+        LIVE_DEBUG                : boolean
+        LIVE_FORCE                : boolean
+        LIVE_QUIET                : boolean
+        LIVE_VERBOSE              : boolean
 
     bootstrap:
         LIVE_ARCHITECTURE                       : list

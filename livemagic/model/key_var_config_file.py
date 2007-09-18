@@ -30,7 +30,7 @@ class KeyVarConfigFile(object):
         """
         Returns True if var is a configuration variable for Debian Live.
         """
-        return var.startswith('LH_') or var.startswith('LIVE_')
+        return var.startswith('LIVE_') or var.startswith('LIVE_')
 
     def __setattr__(self, k, v):
         if self.is_lh_variable(k):

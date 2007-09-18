@@ -26,33 +26,33 @@ class TestConfiguration(unittest.TestCase):
         """
         new() should load a new configuration.
         """
-        self.conf.common.LH_SPAM = "eggs"
+        self.conf.common.LIVE_SPAM = "eggs"
         self.conf.save()
         saved_dir = self.conf.dir
 
         self.conf.new()
-        assert not hasattr(self.conf.common, 'LH_SPAM')
+        assert not hasattr(self.conf.common, 'LIVE_SPAM')
 
         self.conf.open(saved_dir)
-        assert self.conf.common.LH_SPAM == "eggs"
+        assert self.conf.common.LIVE_SPAM == "eggs"
 
     def testGetOption(self):
-        assert "apt" in self.conf.common.LH_APT
+        assert "apt" in self.conf.common.LIVE_APT
 
     def testSetKnownOption(self):
-        self.conf.common.LH_APT = "apt-get"
-        assert self.conf.common.LH_APT == "apt-get"
+        self.conf.common.LIVE_APT = "apt-get"
+        assert self.conf.common.LIVE_APT == "apt-get"
 
     def testSetUnknownOption(self):
-        self.conf.common.LH_UNKNOWN_OPTION = "Testing value"
-        assert self.conf.common.LH_UNKNOWN_OPTION == "Testing value"
+        self.conf.common.LIVE_UNKNOWN_OPTION = "Testing value"
+        assert self.conf.common.LIVE_UNKNOWN_OPTION == "Testing value"
 
     def testChildAlteredState(self):
         """
         Object should change state when a child object changes state.
         """
         assert self.conf.altered() == False
-        self.conf.common.LH_SPAM = "eggs"
+        self.conf.common.LIVE_SPAM = "eggs"
         assert self.conf.altered() == True
 
     def testConfLoadResetState(self):
@@ -60,10 +60,10 @@ class TestConfiguration(unittest.TestCase):
         Reloading the configuration should reset state.
         """
         assert self.conf.altered() == False
-        self.conf.common.LH_SPAM = "eggs"
+        self.conf.common.LIVE_SPAM = "eggs"
         assert self.conf.altered() == True
         self.conf.reload()
-        assert not hasattr(self.conf.common, 'LH_SPAM')
+        assert not hasattr(self.conf.common, 'LIVE_SPAM')
         assert self.conf.altered() == False
 
 if __name__ == "__main__":

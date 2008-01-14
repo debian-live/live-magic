@@ -1,14 +1,35 @@
 live-magic TODO
 ===============
 
+General
+
+ * Fix about box close dialog problem.
+
+Build/build window
+
+ * Constant movement of status bar
+
+ * Better status readouts (needs live-helper patching)
+
+ * Interactive build - either support it (how?) or flag a warning if it is enabled.
+   -- Debconf 'NONINTERACTIVE'
+
 Wizard
 
  * Add simple package handling to wizard.
 
- * API stuff
-    * gtk.ComboBox / gtk.ComboBoxEntry requires gtk.ListStore as backing model?
-    * File selectors (preseed, splash screen)  (gtk.Entry with 'Select' button)
-    * Tasks - task list sufficiently static? Probably needs its own page?
+ * Remove maximise option.
+
+ * Find mirror "automatically". There are some debian-devel list posts about why
+   this is bad and/or infeasible, but it would be preferably to an empty box.
+
+ * Pressing 'ENTER' on fields moves to next page.
+   
+Expert mode
+
+ * File selectors (preseed, splash screen)  (gtk.Entry with 'Select' button)
+
+ * Tasks - task list sufficiently static? Probably needs its own page?
 
  * Dependencies between options. For example, it doesn't make sense
    to display the LH_ISO_AUTHOR etc if the ISO binary type is not
@@ -22,20 +43,11 @@ Wizard
    "Hidden" depends - eg. LH_BOOTSTRAP_KEYRING only makes sense when using
    debootstrap (cdebootstrap does not have this option afaict).
 
- * Reading of std(in|out|err) from gtk.VteTerminal.
-   * Better status readout
- * Constant movement of status bar
- * Interactive build - either support it (how?) or flag a warning if it is enabled.
-   -- Debconf 'NONINTERACTIVE'
- * Fix about box close dialog problem.
- 
- * Remove maximise option from wizard
-
- * Find mirror "automatically". There are some debian-devel list posts about why
-   this is bad and/or infeasible, but it would be preferably to an empty box.
 
 API
- * Add build() to LiveHelperConfiguration.
+
+ * Add build() to LiveHelperConfiguration?
+
      Would allow saner build scripts:
 
      #!/usr/bin/env python
@@ -50,4 +62,3 @@ API
 
      # Would need some way of saving logs.
      # Reliable method of getting locations of resulting ISOs.
-

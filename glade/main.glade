@@ -725,7 +725,7 @@ Aptitude</property>
                               </widget>
                             </child>
                             <child>
-                              <widget class="GtkComboBox" id="chroot/LIVE_CHROOT_FILESYSTEM">
+                              <widget class="GtkComboBox" id="chroot/LH_CHROOT_FILESYSTEM">
                                 <property name="visible">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="items" translatable="yes">SquashFS
@@ -1319,7 +1319,7 @@ vservers</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkEntry" id="binary/LIVE_HOSTNAME2">
+                              <widget class="GtkEntry" id="binary/LH_HOSTNAME2">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1344,7 +1344,7 @@ vservers</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkEntry" id="common/LIVE_ISO_AUTHOR">
+                              <widget class="GtkEntry" id="common/LH_ISO_AUTHOR">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1369,7 +1369,7 @@ vservers</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkEntry" id="common/LIVE_ISO_PREPARER3">
+                              <widget class="GtkEntry" id="common/LH_ISO_PREPARER3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1418,7 +1418,7 @@ vservers</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkEntry" id="binary/LIVE_ISO_PREPARER1">
+                              <widget class="GtkEntry" id="binary/LH_ISO_PREPARER1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1431,7 +1431,7 @@ vservers</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkEntry" id="binary/LIVE_ISO_VOLUME1">
+                              <widget class="GtkEntry" id="binary/LH_ISO_VOLUME1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1456,7 +1456,7 @@ vservers</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkEntry" id="binary/LIVE_NET_SERVER1">
+                              <widget class="GtkEntry" id="binary/LH_NET_SERVER1">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1497,7 +1497,7 @@ vservers</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkComboBox" id="common/LIVE_MEMTEST">
+                              <widget class="GtkComboBox" id="common/LH_MEMTEST">
                                 <property name="visible">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="items" translatable="yes">Memtest86+</property>
@@ -1510,7 +1510,7 @@ vservers</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkComboBox" id="binary/LIVE_BOOTLOADER">
+                              <widget class="GtkComboBox" id="binary/LH_BOOTLOADER">
                                 <property name="visible">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                                 <property name="items" translatable="yes">Syslinux
@@ -1537,7 +1537,7 @@ Yaboot</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkEntry" id="common/LIVE_GRUB_SPLASH">
+                              <widget class="GtkEntry" id="common/LH_GRUB_SPLASH">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -1562,7 +1562,7 @@ Yaboot</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="GtkEntry" id="common/LIVE_SYSLINUX_SPLASH">
+                              <widget class="GtkEntry" id="common/LH_SYSLINUX_SPLASH">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>

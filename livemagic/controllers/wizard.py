@@ -6,10 +6,10 @@ class WizardController(object):
 
         # Fill in data from model
         data = self.view.get_wizard_completed_details()
-        self.model.binary.LIVE_BINARY_IMAGES = [data['media']]
-        self.model.bootstrap.LIVE_MIRROR_BOOTSTRAP = data['mirror']
-        self.model.chroot.LIVE_PACKAGES_LISTS = data['desktop']
-        self.model.bootstrap.LIVE_ARCHITECTURE = data['arch']
+        self.model.binary.LH_BINARY_IMAGES = [data['media']]
+        self.model.bootstrap.LH_MIRROR_BOOTSTRAP = data['mirror']
+        self.model.chroot.LH_PACKAGES_LISTS = data['desktop']
+        self.model.bootstrap.LH_ARCHITECTURE = data['arch']
         self.model.save()
 
         self.view.do_dim_wizard()

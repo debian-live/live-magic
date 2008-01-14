@@ -13,10 +13,10 @@ class TestKeyVarConfigFile(unittest.TestCase):
         fd, self.filename = tempfile.mkstemp('live-magic')
         os.close(fd)
         spec = {
-            'LIVE_SPAM': 'string',
-            'LIVE_MORESPAM': 'string',
-            'LIVE_SPAMLIST' : 'list',
-            'LIVE_SPAMBOOL' : 'boolean',
+            'LH_SPAM': 'string',
+            'LH_MORESPAM': 'string',
+            'LH_SPAMLIST' : 'list',
+            'LH_SPAMBOOL' : 'boolean',
         }
         self.keyvar = model.KeyVarConfigFile(self.filename, spec)
 
@@ -31,34 +31,34 @@ class TestKeyVarConfigFile(unittest.TestCase):
         f.close()
 
     def testSetAndGetOption(self):
-        self.keyvar.LIVE_SPAM = "eggs"
-        assert self.keyvar.LIVE_SPAM == "eggs"
+        self.keyvar.LH_SPAM = "eggs"
+        assert self.keyvar.LH_SPAM == "eggs"
 
     def testSaveKnownOption(self):
-        self.keyvar.LIVE_SPAM = "eggs"
+        self.keyvar.LH_SPAM = "eggs"
         self.keyvar.save()
-        assert 'LIVE_SPAM="eggs"\n' in self.f_c()
+        assert 'LH_SPAM="eggs"\n' in self.f_c()
 
     def testSaveUnknownOption(self):
         """
         Unknown configuration keys should be added to the file.
         """
         assert len(self.f_c()) == 0
-        self.keyvar.LIVE_SPAM = "eggs"
+        self.keyvar.LH_SPAM = "eggs"
         self.keyvar.save()
-        assert 'LIVE_SPAM="eggs"\n' in self.f_c()
+        assert 'LH_SPAM="eggs"\n' in self.f_c()
 
     def testUpdatesOptions(self):
         """
         Updating an existing option should not increase the length of the file.
         """
-        self.keyvar.LIVE_SPAM = "eggs"
-        self.keyvar.LIVE_MORESPAM = "moreeggs"
+        self.keyvar.LH_SPAM = "eggs"
+        self.keyvar.LH_MORESPAM = "moreeggs"
         self.keyvar.save()
         self.keyvar.save()
         self.keyvar.load()
         save = len(self.f_c())
-        self.keyvar.LIVE_SPAM = "yetmoreeggs"
+        self.keyvar.LH_SPAM = "yetmoreeggs"
         self.keyvar.save()
         assert len(self.f_c()) == save
 
@@ -67,7 +67,7 @@ class TestKeyVarConfigFile(unittest.TestCase):
         Should change state when they have been altered.
         """
         assert self.keyvar.altered() == False
-        self.keyvar.LIVE_SPAM = "eggs"
+        self.keyvar.LH_SPAM = "eggs"
         assert self.keyvar.altered() == True
 
     def testConfLoadResetState(self):
@@ -75,11 +75,11 @@ class TestKeyVarConfigFile(unittest.TestCase):
         Reloading the configuration should reset state.
         """
         assert self.keyvar.altered() == False
-        self.keyvar.LIVE_SPAM = "eggs"
+        self.keyvar.LH_SPAM = "eggs"
         assert self.keyvar.altered() == True
         self.keyvar.load()
         assert self.keyvar.altered() == False
-        assert not hasattr(self.keyvar, 'LIVE_SPAM')
+        assert not hasattr(self.keyvar, 'LH_SPAM')
 
     def testSavingEscapingCharacters(self):
         """
@@ -92,9 +92,9 @@ class TestKeyVarConfigFile(unittest.TestCase):
             r'\ '[:-1] : r'\\ '[:-1],
         }
         for input, expected in tests.iteritems():
-            self.keyvar.LIVE_TEST = input
+            self.keyvar.LH_TEST = input
             self.keyvar.save()
-            self.assert_('LIVE_TEST="%s"\n' % expected in self.f_c(), \
+            self.assert_('LH_TEST="%s"\n' % expected in self.f_c(), \
                 "Input was '%s', expected '%s'" % (input, expected))
 
     def testLoadingEscapedCharacters(self):
@@ -111,26 +111,26 @@ class TestKeyVarConfigFile(unittest.TestCase):
 
         for input, expected in tests.iteritems():
             # Write escaped string
-            self.f_w('LIVE_SPAM="%s"' % input)
+            self.f_w('LH_SPAM="%s"' % input)
 
             # Reload configuration and check against expected value
             self.keyvar.load()
-            self.assert_(self.keyvar.LIVE_SPAM == expected, \
-                "Got back '%s', expected '%s'" % (self.keyvar.LIVE_SPAM, expected))
+            self.assert_(self.keyvar.LH_SPAM == expected, \
+                "Got back '%s', expected '%s'" % (self.keyvar.LH_SPAM, expected))
 
     def testNonStandardAlignmentAcceptance(self):
         """
         Tests acceptance of strange alignments/configurations/spacings of KEY="value" pairs.
         """
         accept = [
-            r'LIVE_SPAM="eggs"',
-            r'  LIVE_SPAM="eggs"  ',
-            r'LIVE_SPAM="eggs" # comment # comment ',
-            r'LIVE_SPAM="eggs" # comment with a " " sign',
-            r'LIVE_SPAM="eggs"  ',
-            r'LIVE_SPAM=eggs',
-            r'LIVE_SPAM=eggs ',
-            r"LIVE_SPAM='eggs' ",
+            r'LH_SPAM="eggs"',
+            r'  LH_SPAM="eggs"  ',
+            r'LH_SPAM="eggs" # comment # comment ',
+            r'LH_SPAM="eggs" # comment with a " " sign',
+            r'LH_SPAM="eggs"  ',
+            r'LH_SPAM=eggs',
+            r'LH_SPAM=eggs ',
+            r"LH_SPAM='eggs' ",
         ]
         for a in accept:
             self.f_w(a)
@@ -139,7 +139,7 @@ class TestKeyVarConfigFile(unittest.TestCase):
             self.keyvar.load()
             msg = "Should have accepted '%s'" % a
             try:
-                self.assert_(self.keyvar.LIVE_SPAM == 'eggs', msg + ", saw '%s'" % self.keyvar.LIVE_SPAM)
+                self.assert_(self.keyvar.LH_SPAM == 'eggs', msg + ", saw '%s'" % self.keyvar.LH_SPAM)
             except AttributeError:
                 self.fail(msg=msg)
 
@@ -148,19 +148,19 @@ class TestKeyVarConfigFile(unittest.TestCase):
         Tests rejection strange alignments/configurations/spacings of KEY="value" pairs.
         """
         reject = [
-            r'#LIVE_SPAM="eggs"', # commented out
-            r'LIVE_SPAM ="eggs"',
-            r'LIVE_SPAM= "eggs"',
-            r'LIVE_SPAM="eggs',
-            r'LIVE_SPAM=eggs"',
-            r'LIVE_SPAM=spam eggs',
+            r'#LH_SPAM="eggs"', # commented out
+            r'LH_SPAM ="eggs"',
+            r'LH_SPAM= "eggs"',
+            r'LH_SPAM="eggs',
+            r'LH_SPAM=eggs"',
+            r'LH_SPAM=spam eggs',
         ]
         for r in reject:
             self.f_w(r)
 
             # Reload configuration and check against expected value
             self.keyvar.load()
-            self.assert_(not hasattr(self.keyvar, 'LIVE_SPAM'), "Should have rejected '%s'" % r)
+            self.assert_(not hasattr(self.keyvar, 'LH_SPAM'), "Should have rejected '%s'" % r)
 
     def testSaveList(self):
         expected = [
@@ -172,9 +172,9 @@ class TestKeyVarConfigFile(unittest.TestCase):
         ]
 
         for k, v in expected:
-            self.keyvar.LIVE_SPAMLIST = k
+            self.keyvar.LH_SPAMLIST = k
             self.keyvar.save()
-            assert 'LIVE_SPAMLIST="%s"\n' % v in self.f_c()
+            assert 'LH_SPAMLIST="%s"\n' % v in self.f_c()
 
     def testLoadList(self):
         expected = {
@@ -184,9 +184,9 @@ class TestKeyVarConfigFile(unittest.TestCase):
         }
 
         for k, v in expected.iteritems():
-            self.f_w('LIVE_SPAMLIST="%s"' % k)
+            self.f_w('LH_SPAMLIST="%s"' % k)
             self.keyvar.load()
-            assert self.keyvar.LIVE_SPAMLIST == v
+            assert self.keyvar.LH_SPAMLIST == v
 
     def testSaveBool(self):
         expected = {
@@ -196,9 +196,9 @@ class TestKeyVarConfigFile(unittest.TestCase):
         }
 
         for k, v in expected.iteritems():
-            self.keyvar.LIVE_SPAMBOOL = k
+            self.keyvar.LH_SPAMBOOL = k
             self.keyvar.save()
-            assert 'LIVE_SPAMBOOL="%s"\n' % v in self.f_c()
+            assert 'LH_SPAMBOOL="%s"\n' % v in self.f_c()
 
     def testBooleanTypeLoad(self):
         expected = {
@@ -210,9 +210,9 @@ class TestKeyVarConfigFile(unittest.TestCase):
         }
 
         for k, v in expected.iteritems():
-            self.f_w('LIVE_SPAMBOOL="%s"' % k)
+            self.f_w('LH_SPAMBOOL="%s"' % k)
             self.keyvar.load()
-            assert self.keyvar.LIVE_SPAMBOOL == v
+            assert self.keyvar.LH_SPAMBOOL == v
 
 if __name__ == "__main__":
     unittest.main()

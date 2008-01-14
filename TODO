@@ -3,6 +3,8 @@ live-magic TODO
 
 Wizard
 
+ * Add simple package handling to wizard.
+
  * API stuff
     * gtk.ComboBox / gtk.ComboBoxEntry requires gtk.ListStore as backing model?
     * File selectors (preseed, splash screen)  (gtk.Entry with 'Select' button)

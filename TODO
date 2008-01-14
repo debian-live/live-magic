@@ -3,29 +3,21 @@ live-magic TODO
 
 Wizard
 
- * 6 stages:
-   1. Welcome
-   2. Image type
-   3. Target media
-   4. Architecture
-   5. Mirror (map)
-   6. Ready to build
-
  * API stuff
     * gtk.ComboBox / gtk.ComboBoxEntry requires gtk.ListStore as backing model?
     * File selectors (preseed, splash screen)  (gtk.Entry with 'Select' button)
     * Tasks - task list sufficiently static? Probably needs its own page?
 
  * Dependencies between options. For example, it doesn't make sense
-   to display the LIVE_ISO_AUTHOR etc if the ISO binary type is not
+   to display the LH_ISO_AUTHOR etc if the ISO binary type is not
    selected.
 
    depends = [
-       'common/LIVE_ISO_APPLICATION': lambda: 'iso' in self.model.binary.LIVE_BINARY_IMAGES,
-       'common/LIVE_GRUB_SPLASH': lambda: self.model.binary.LIVE_BOOTLOADER == 'grub',
+       'common/LH_ISO_APPLICATION': lambda: 'iso' in self.model.binary.LH_BINARY_IMAGES,
+       'common/LH_GRUB_SPLASH': lambda: self.model.binary.LH_BOOTLOADER == 'grub',
    ]
 
-   "Hidden" depends - eg. LIVE_BOOTSTRAP_KEYRING only makes sense when using
+   "Hidden" depends - eg. LH_BOOTSTRAP_KEYRING only makes sense when using
    debootstrap (cdebootstrap does not have this option afaict).
 
  * Reading of std(in|out|err) from gtk.VteTerminal.
@@ -34,6 +26,11 @@ Wizard
  * Interactive build - either support it (how?) or flag a warning if it is enabled.
    -- Debconf 'NONINTERACTIVE'
  * Fix about box close dialog problem.
+ 
+ * Remove maximise option from wizard
+
+ * Find mirror "automatically". There are some debian-devel list posts about why
+   this is bad and/or infeasible, but it would be preferably to an empty box.
 
 API
  * Add build() to LiveHelperConfiguration.
@@ -43,9 +40,9 @@ API
      import os
      import livehelper
      lh = livehelper.Configuration()
-     lh.binary.LIVE_BINARY_IMAGES = ['iso', 'usb-hdd', 'net']
+     lh.binary.LH_BINARY_IMAGES = ['iso', 'usb-hdd', 'net']
      for pkg_list in ['gnome', 'kde', 'standard', 'rescue']:
-         lh.common.LIVE_PACKAGES_LISTS = pkg_list
+         lh.common.LH_PACKAGES_LISTS = pkg_list
          result = lh.build(save=True)
          print type(result), result
 

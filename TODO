@@ -24,6 +24,8 @@ Wizard
    this is bad and/or infeasible, but it would be preferably to an empty box.
 
  * Pressing 'ENTER' on fields moves to next page.
+
+ * Only ask architecture question on amd64.
    
 Expert mode
 

@@ -13,7 +13,7 @@ setup(
     packages= [
         'LiveMagic',
         'LiveMagic.controllers',
-        'LiveMagic.model',
+        'LiveMagic.models',
         'LiveMagic.views',
     ],
     data_files = [

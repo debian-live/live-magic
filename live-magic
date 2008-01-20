@@ -7,7 +7,7 @@ import gtk.glade
 import os.path
 import sys
 
-from LiveMagic.model import *
+from LiveMagic.models import *
 from LiveMagic.views import *
 from LiveMagic.controllers import *
 

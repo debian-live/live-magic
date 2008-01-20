@@ -5,6 +5,8 @@ General
 
  * Fix about box close dialog problem.
 
+ * Remove python-yaml dependency.
+
 Build/build window
 
  * Don't build in /tmp !
@@ -14,7 +16,7 @@ Build/build window
  * Interactive build - either support it (how?) or flag a warning if it is enabled.
    -- Debconf 'NONINTERACTIVE'
 
- * Use lh_build error code.
+ * Use lh_build error code, both for status of build and status of password entry.
 
 Wizard
 

@@ -16,9 +16,15 @@ Build/build window
 
  * Use lh_build error code, both for status of build and status of password entry.
 
+ * Make ProgressBar full-width when finished.
+
+ * Save build log to file.
+
 Wizard
 
  * Don't create config dir until end of wizard.
+
+ * After successful build, purge cache etc. and open
 
  * Add simple package handling to wizard.
 

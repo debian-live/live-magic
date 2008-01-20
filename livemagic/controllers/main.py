@@ -91,5 +91,5 @@ class MainController(object):
     def on_about_activate(self, *_):
         self.view.do_show_about_dialog()
 
-    def set_window_main_sensitive():
+    def set_window_main_sensitive(self):
         self.view.do_show_main_window(True)

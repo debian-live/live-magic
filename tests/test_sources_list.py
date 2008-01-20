@@ -6,7 +6,7 @@ import os
 
 import sys
 sys.path.append('..')
-from LiveMagic import model
+from LiveMagic import models
 
 class TestSourcesList(unittest.TestCase):
     def setUp(self):
@@ -15,7 +15,7 @@ class TestSourcesList(unittest.TestCase):
     def reset(self):
         fd, self.filename = tempfile.mkstemp('live-magic')
         os.close(fd)
-        self.s = model.SourcesList(self.filename)
+        self.s = models.SourcesList(self.filename)
 
     def f_w(self, contents):
         f = open(self.filename, 'w+')

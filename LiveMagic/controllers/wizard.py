@@ -1,5 +1,7 @@
 import gtk
 
+from LiveMagic import models
+
 class WizardController(object):
 
     def on_wizard_apply(self, _):
@@ -21,3 +23,8 @@ class WizardController(object):
 
     def on_wizard_build_completed(self):
         gtk.main_quit()
+
+    def get_suggested_mirror(self):
+        s = models.SourcesList()
+        return s.get_mirror()
+

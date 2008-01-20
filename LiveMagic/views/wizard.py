@@ -56,6 +56,10 @@ class WizardView(object):
 
             asst.set_page_title(page, notebook.get_tab_label_text(page))
 
+        c = self['combobox_mirror']
+        c.prepend_text(self.controller.get_suggested_mirror())
+        c.set_active(0)
+
         return asst
 
     def get_wizard_completed_details(self):

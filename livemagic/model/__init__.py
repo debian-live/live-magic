@@ -1,3 +1,4 @@
 from livemagic.model.live_helper_configuration import LiveHelperConfiguration
 from livemagic.model.key_var_config_file import KeyVarConfigFile
 from livemagic.model.folder_of_files import FolderOfFiles
+from livemagic.model.sources_list import SourcesList

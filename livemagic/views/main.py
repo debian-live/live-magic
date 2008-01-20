@@ -116,7 +116,7 @@ class MainView(object):
 
         about.set_website("http://debian-live.alioth.debian.org/")
         about.set_website_label("Debian Live homepage")
-        about.set_license(file('/usr/share/common-licenses/GPL-2').read())
+        about.set_license(file('/usr/share/common-licenses/GPL-3').read())
 
         logo = gtk.gdk.pixbuf_new_from_file('/usr/share/live-magic/debian_openlogo-nd-100.png')
         about.set_logo(logo)

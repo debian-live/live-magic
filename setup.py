@@ -8,7 +8,7 @@ setup(
     maintainer = "Chris Lamb",
     maintainer_email = "chris@chris-lamb.co.uk",
     description = "GTK+ frontend for configuring Debian Live systems",
-    license = "GNU GPL v2",
+    license = "GNU GPL v3",
     scripts = ['live-magic'],
     packages= [
         'livemagic',

@@ -19,7 +19,6 @@ class BuildView(object):
 
             # Connect signals from VteTerminal
             t.connect('child-exited', self.controller.on_vte_child_exited)
-            t.connect('contents-changed', self.controller.on_vte_contents_changed)
 
             self.vte_terminal = t
 

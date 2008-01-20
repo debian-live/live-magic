@@ -1,5 +1,6 @@
 import os
 import signal
+import gobject
 
 class BuildController(object):
 
@@ -24,6 +25,9 @@ class BuildController(object):
 
         # Show window
         self.view.do_show_window_build(build_close_callback)
+
+        # Start pulsing
+        gobject.timeout_add(100, self.do_pulse_cb)
 
         # Fork command
         cmd = ['gksu', 'lh_build']
@@ -62,8 +66,9 @@ class BuildController(object):
                     "Your Debian Live system has been created successfully.")
                 self.view.set_build_status("Build process complete.")
 
-    def on_vte_contents_changed(self, *_):
+    def do_pulse_cb(self, *_):
         self.view.do_build_pulse()
+        return self.pid > 0
 
     def on_button_build_close_clicked(self, *_):
         # The build button is only sensitive when it is safe to close, so

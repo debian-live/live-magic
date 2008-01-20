@@ -6,8 +6,6 @@ class BuildController(object):
     # GTK callbacks
 
     def on_build_activate(self, *_):
-        self.cancelled = False
-
         # Save model if necessary
         if self.model.altered():
             self.model.save()
@@ -15,6 +13,8 @@ class BuildController(object):
         self.do_show_build_window(self.set_window_main_sensitive)
 
     def do_show_build_window(self, build_close_callback):
+        self.cancelled = False
+
         # Set initial titles and state
         self.view.set_build_titles("Generating Debian Live system...", \
             "Generating Debian Live system.", \

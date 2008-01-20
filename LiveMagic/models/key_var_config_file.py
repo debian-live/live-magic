@@ -105,46 +105,48 @@ class KeyVarConfigFile(object):
         """
         Update all updated entries in the file.
         """
-        if len(self._stale) > 0:
-            f = open(self.filename, 'r+')
-            lines = f.readlines()
+        if len(self._stale) == 0:
+            return
 
-            for k in self._stale:
-                val = getattr(self, k)
+        f = open(self.filename, 'r+')
+        lines = f.readlines()
 
-                # Escape value
-                if type(val) in (list, list_observer):
-                    for from_, to in self.escapes:
-                        val = map(lambda x: x.replace(from_, to), val)
-                    val = map(str.strip, val)
-                elif type(val) is str:
-                    for from_, to in self.escapes:
-                        val = val.replace(from_, to)
+        for k in self._stale:
+            val = getattr(self, k)
 
-                # Format value depending on its type
-                line_value = {
-                    list : lambda v: " ".join(val),
-                    bool : lambda v: {True: 'enabled', False: 'disabled'}.get(val, None),
-                    str : lambda v: v,
-                    type(None) : lambda v: "",
-                }[type(val)](val)
+            # Escape value
+            if type(val) in (list, list_observer):
+                for from_, to in self.escapes:
+                    val = map(lambda x: x.replace(from_, to), val)
+                val = map(str.strip, val)
+            elif type(val) is str:
+                for from_, to in self.escapes:
+                    val = val.replace(from_, to)
 
-                line = '%s="%s"\n' % (k, line_value)
+            # Format value depending on its type
+            line_value = {
+                list : lambda v: " ".join(val),
+                bool : lambda v: {True: 'enabled', False: 'disabled'}.get(val, None),
+                str : lambda v: v,
+                type(None) : lambda v: "",
+            }[type(val)](val)
 
-                try:
-                    # Overwrite original line in file
-                    lines[self._line_numbers[k] - 1] = line
-                except KeyError:
-                    # Append line to end of file
-                    lines.append("\n# The following option was added by live-magic\n")
-                    lines.append(line)
-            f.close()
+            line = '%s="%s"\n' % (k, line_value)
 
-            f = open(self.filename, 'w')
-            f.writelines(lines)
-            f.close()
+            try:
+                # Overwrite original line in file
+                lines[self._line_numbers[k] - 1] = line
+            except KeyError:
+                # Append line to end of file
+                lines.append("\n# The following option was added by live-magic\n")
+                lines.append(line)
+        f.close()
 
-            self._stale.clear()
+        f = open(self.filename, 'w')
+        f.writelines(lines)
+        f.close()
+
+        self._stale.clear()
 
 
 class list_observer(list):

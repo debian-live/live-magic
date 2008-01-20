@@ -18,6 +18,8 @@ Build/build window
 
 Wizard
 
+ * Don't create config dir until end of wizard.
+
  * Add simple package handling to wizard.
 
  * Remove maximise option.

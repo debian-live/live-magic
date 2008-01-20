@@ -30,7 +30,7 @@ class BuildController(object):
         gobject.timeout_add(100, self.do_pulse_cb)
 
         # Fork command
-        cmd = ['gksu', 'lh_build']
+        cmd = ['/usr/bin/gksu', '-k', "/bin/sh -c 'sleep 0.5; lh_build 2>&1'"]
         self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, self.model.dir)
 
         if self.pid >= 0:

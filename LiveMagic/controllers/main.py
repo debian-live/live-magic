@@ -1,5 +1,5 @@
 import gtk
-from livemagic.model import KeyVarConfigFile
+from LiveMagic.model import KeyVarConfigFile
 
 class MainController(object):
     def __init__(self, args):

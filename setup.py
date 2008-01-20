@@ -11,10 +11,10 @@ setup(
     license = "GNU GPL v3",
     scripts = ['live-magic'],
     packages= [
-        'livemagic',
-        'livemagic.controllers',
-        'livemagic.model',
-        'livemagic.views',
+        'LiveMagic',
+        'LiveMagic.controllers',
+        'LiveMagic.model',
+        'LiveMagic.views',
     ],
     data_files = [
         ('share/live-magic', [

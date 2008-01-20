@@ -6,7 +6,7 @@ import os
 
 import sys
 sys.path.append('..')
-from livemagic import model
+from LiveMagic import model
 
 class TestFolderOfFiles(unittest.TestCase):
     def setUp(self):

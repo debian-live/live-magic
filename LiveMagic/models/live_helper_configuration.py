@@ -1,8 +1,10 @@
 import commands
 import tempfile
 import yaml
+import time
 
-from os.path import join, dirname
+from os.path import join, dirname, expanduser
+import os
 
 from key_var_config_file import KeyVarConfigFile
 from folder_of_files import FolderOfFiles
@@ -115,7 +117,10 @@ class LiveHelperConfiguration(object):
         """
         Creates and initialises a new configuration in a temporary folder.
         """
-        self.dir = tempfile.mkdtemp('live-magic')
+
+        self.dir = expanduser("~/DebianLive/%s" % time.strftime('%Y-%m-%d-%H%M%S'))
+        os.makedirs(self.dir)
+
         res, out = commands.getstatusoutput('cd %s; lh_config' % self.dir)
         if res != 0: raise IOError, out
         self._load()

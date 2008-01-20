@@ -9,8 +9,6 @@ General
 
 Build/build window
 
- * Don't build in /tmp !
-
  * Better status readouts (needs live-helper patching)
 
  * Interactive build - either support it (how?) or flag a warning if it is enabled.

@@ -7,38 +7,41 @@ import gtk.glade
 import os.path
 import sys
 
-from LiveMagic.models import *
-from LiveMagic.views import *
-from LiveMagic.controllers import *
+from LiveMagic import models, views, controllers
 
 class Model(object):
     def __init__(self, dir=None):
-        self.config = LiveHelperConfiguration(dir)
+        self.config = models.LiveHelperConfiguration(dir)
     def __getattr__(self, k):
         return getattr(self.config, k)
     def __setattr__(self, k, v):
         self.__dict__[k] = v
 
-class View(MainView, BuildView, HooksView, WizardView):
+class View(views.MainView, views.BuildView, views.HooksView, views.WizardView):
     def __init__(self, controller):
-        self.xml = gtk.glade.XML(glade_filename())
         self.controller = controller
-        MainView.__init__(self)
-        BuildView.__init__(self)
-        HooksView.__init__(self)
-        WizardView.__init__(self)
+        self.xml = gtk.glade.XML(glade_filename())
+
+        views.MainView.__init__(self)
+        views.BuildView.__init__(self)
+        views.HooksView.__init__(self)
+        views.WizardView.__init__(self)
+
         self.xml.signal_autoconnect(self.controller)
 
-class Controller(MainController, BuildController, HooksController, WizardController):
+class Controller(controllers.MainController,
+                    controllers.BuildController,
+                    controllers.HooksController,
+                    controllers.WizardController):
     def __init__(self, model, args):
         self.model = model
-        MainController.__init__(self, args)
-        BuildController.__init__(self)
-        HooksController.__init__(self)
-        WizardController.__init__(self)
+        controllers.MainController.__init__(self, args)
+        controllers.BuildController.__init__(self)
+        controllers.HooksController.__init__(self)
+        controllers.WizardController.__init__(self)
 
 def glade_filename():
-    suffix = "main.glade"
+    suffix = 'main.glade'
 
     local = os.path.join('glade', suffix)
     if os.path.isfile(local):

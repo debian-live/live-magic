@@ -138,8 +138,12 @@ class KeyVarConfigFile(object):
                     # Append line to end of file
                     lines.append("\n# The following option was added by live-magic\n")
                     lines.append(line)
-            f.seek(0)
+            f.close()
+
+            f = open(self.filename, 'w')
             f.writelines(lines)
+            f.close()
+
             self._stale.clear()
 
 

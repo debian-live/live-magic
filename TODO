@@ -20,6 +20,8 @@ Build/build window
 
  * Save build log to file.
 
+ * Choose distribution to build. Add notice re. broken testing/unstable builds.
+
 Wizard
 
  * Don't create config dir until end of wizard.
@@ -35,8 +37,8 @@ Wizard
 
  * Pressing 'ENTER' on fields moves to next page.
 
- * Only ask architecture question on amd64.
-   
+ * Only ask architecture question on amd64?
+
 Expert mode
 
  * File selectors (preseed, splash screen)  (gtk.Entry with 'Select' button)

@@ -30,7 +30,7 @@ class BuildController(object):
         gobject.timeout_add(100, self.do_pulse_cb)
 
         # Fork command
-        cmd = ['/usr/bin/gksu', '-k', "/bin/sh -c 'sleep 0.5; echo I: lh_build starting in `pwd`; lh_build 2>&1; echo I: lh_build returned with error code $?'"]
+        cmd = ['/usr/bin/gksu', '-k', "/bin/sh -c 'sleep 0.5; exit 1; echo I: lh_build starting in `pwd`; lh_build 2>&1; echo I: lh_build returned with error code $?'"]
         self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, self.model.dir)
 
         if self.pid >= 0:
@@ -40,6 +40,8 @@ class BuildController(object):
                 "Could not fork the build process!")
             # Allow user to close window
             self.view.set_build_status_change(initial=False)
+
+        self.view.do_build_completed()
 
     def on_window_build_delete_event(self, *_):
         # If no command is running, close the window

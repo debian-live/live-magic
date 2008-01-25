@@ -8,6 +8,8 @@ class WizardController(object):
 
         # Fill in data from model
         data = self.view.get_wizard_completed_details()
+
+        self.model.new()
         self.model.binary.LH_BINARY_IMAGES = [data['media']]
         self.model.bootstrap.LH_MIRROR_BOOTSTRAP = data['mirror']
         self.model.chroot.LH_PACKAGES_LISTS = data['desktop']

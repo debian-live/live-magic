@@ -22,12 +22,11 @@ class MainController(object):
         self.view.setup_sections(sections)
 
         # Notify all the observers that depend on the model
-        self.model.notify_load_observers()
-
         if len(self.args) == 0:
             self.view.do_show_wizard()
         else:
             self.view.do_show_main_window()
+            self.model.notify_load_observers()
 
     # GTK callbacks
     def on_live_helper_value_changed(self, widget):

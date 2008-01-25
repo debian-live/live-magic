@@ -1,4 +1,5 @@
 import vte
+import gtk
 
 class BuildView(object):
     def __init__(self):
@@ -55,3 +56,6 @@ class BuildView(object):
         build, and False otherwise.
         """
         return self['checkbutton_build_auto_close'].get_active()
+
+    def do_build_completed(self):
+        self['progress_build'].set_fraction(0.5)

@@ -102,16 +102,13 @@ class LiveHelperConfiguration(object):
     Represents a configuration for a Debian Live system.
     """
 
-    def __init__(self, confdir=None):
+    def __init__(self, dir=None):
+        self.dir = dir
+        self.children = []
+
         self._load_observers = []
         self.first_load = True
-
         self.spec = yaml.load(spec_str)
-
-        if confdir is None:
-            self.new()
-        else:
-            self.open(dir)
 
     def new(self):
         """
@@ -125,12 +122,11 @@ class LiveHelperConfiguration(object):
         if res != 0: raise IOError, out
         self._load()
 
-    def open(self, dir):
+    def open(self):
         """
         Discards the current configuration, and then loads and initialises
         the configuration from the specified directory.
         """
-        self.dir = dir
         self._load()
 
     def reload(self):

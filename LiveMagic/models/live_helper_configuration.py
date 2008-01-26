@@ -1,5 +1,4 @@
 import commands
-import tempfile
 import yaml
 import time
 

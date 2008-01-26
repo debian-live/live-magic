@@ -7,11 +7,11 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from LiveMagic import model
+from LiveMagic import models
 
 class TestConfiguration(unittest.TestCase):
     def setUp(self):
-        self.conf = model.LiveHelperConfiguration(None)
+        self.conf = models.LiveHelperConfiguration(None)
 
     def testSimpleSetup(self):
         """

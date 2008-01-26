@@ -7,12 +7,12 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from LiveMagic import model
+from LiveMagic import models
 
 class TestFolderOfFiles(unittest.TestCase):
     def setUp(self):
         self.dir = tempfile.mkdtemp('live-magic')
-        self.fof = model.FolderOfFiles(self.dir)
+        self.fof = models.FolderOfFiles(self.dir)
 
     def f_c(self, filename):
         return open("%s/%s" % (self.dir, filename), 'r').read()

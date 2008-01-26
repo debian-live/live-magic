@@ -7,7 +7,7 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from LiveMagic import model
+from LiveMagic import models
 
 class TestKeyVarConfigFile(unittest.TestCase):
     def setUp(self):
@@ -19,7 +19,7 @@ class TestKeyVarConfigFile(unittest.TestCase):
             'LH_SPAMLIST' : 'list',
             'LH_SPAMBOOL' : 'boolean',
         }
-        self.keyvar = model.KeyVarConfigFile(self.filename, spec)
+        self.keyvar = models.KeyVarConfigFile(self.filename, spec)
 
     def f_c(self, filename=None):
         if filename is None: filename = self.filename

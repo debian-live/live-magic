@@ -5,7 +5,8 @@ import tempfile
 import os
 
 import sys
-sys.path.append('..')
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from LiveMagic import models
 
 class TestSourcesList(unittest.TestCase):

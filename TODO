@@ -5,8 +5,6 @@ General
 
  * Fix about box close dialog problem.
 
- * Remove python-yaml dependency.
-
 Build/build window
 
  * Better status readouts (needs live-helper patching)

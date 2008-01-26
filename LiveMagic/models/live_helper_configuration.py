@@ -1,9 +1,6 @@
+import os
 import commands
 import time
-import tempfile
-
-from os.path import join, dirname, expanduser
-import os
 
 from key_var_config_file import KeyVarConfigFile
 from folder_of_files import FolderOfFiles
@@ -104,7 +101,7 @@ class LiveHelperConfiguration(object):
 
     def __init__(self, dir=None):
         if dir is None:
-            dir = expanduser("~/DebianLive/%s" % time.strftime('%Y-%m-%d-%H%M%S'))
+            dir = os.path.expanduser("~/DebianLive/%s" % time.strftime('%Y-%m-%d-%H%M%S'))
         self.dir = dir
 
         self.children = []
@@ -156,12 +153,12 @@ class LiveHelperConfiguration(object):
         self.children = []
 
         for filename, file_spec in CONFIG_SPEC['key_value'].iteritems():
-            kv = KeyVarConfigFile(join(self.dir, 'config', filename), file_spec)
+            kv = KeyVarConfigFile(os.path.join(self.dir, 'config', filename), file_spec)
             self.children.append(kv)
             setattr(self, filename, kv)
 
         for name, dir in CONFIG_SPEC['folder_of_files'].iteritems():
-            fof = FolderOfFiles(join(self.dir, 'config', dir))
+            fof = FolderOfFiles(os.path.join(self.dir, 'config', dir))
             setattr(self, name, fof)
             self.children.append(fof)
 

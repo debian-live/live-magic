@@ -1,5 +1,6 @@
 import glob
 import os
+
 from os.path import join
 
 class FolderOfFiles(object):

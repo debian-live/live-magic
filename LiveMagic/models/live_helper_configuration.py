@@ -1,6 +1,7 @@
 import commands
 import yaml
 import time
+import tempfile
 
 from os.path import join, dirname, expanduser
 import os
@@ -102,30 +103,32 @@ class LiveHelperConfiguration(object):
     """
 
     def __init__(self, dir=None):
+        if dir is None:
+            dir = expanduser("~/DebianLive/%s" % time.strftime('%Y-%m-%d-%H%M%S'))
         self.dir = dir
-        self.children = []
 
+        self.children = []
         self._load_observers = []
         self.first_load = True
         self.spec = yaml.load(spec_str)
 
-    def new(self):
+    def new(self, tempdir=None):
         """
         Creates and initialises a new configuration in a temporary folder.
         """
-
-        self.dir = expanduser("~/DebianLive/%s" % time.strftime('%Y-%m-%d-%H%M%S'))
-        os.makedirs(self.dir)
+        if not os.path.exists(self.dir):
+            os.makedirs(self.dir)
 
         res, out = commands.getstatusoutput('cd %s; lh_config' % self.dir)
         if res != 0: raise IOError, out
         self._load()
 
-    def open(self):
+    def open(self, dir):
         """
         Discards the current configuration, and then loads and initialises
         the configuration from the specified directory.
         """
+        self.dir = dir
         self._load()
 
     def reload(self):

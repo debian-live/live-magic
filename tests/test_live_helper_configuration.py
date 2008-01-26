@@ -11,7 +11,9 @@ from LiveMagic import models
 
 class TestConfiguration(unittest.TestCase):
     def setUp(self):
-        self.conf = models.LiveHelperConfiguration(None)
+        self.dir = tempfile.mkdtemp()
+        self.conf = models.LiveHelperConfiguration(self.dir)
+        self.conf.new()
 
     def testSimpleSetup(self):
         """
@@ -29,9 +31,10 @@ class TestConfiguration(unittest.TestCase):
         """
         self.conf.common.LH_SPAM = "eggs"
         self.conf.save()
+
         saved_dir = self.conf.dir
 
-        self.conf.new()
+        self.setUp()
         assert not hasattr(self.conf.common, 'LH_SPAM')
 
         self.conf.open(saved_dir)

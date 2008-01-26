@@ -16,8 +16,6 @@ Build/build window
 
  * Make ProgressBar full-width when finished.
 
- * Save build log to file.
-
  * Choose distribution to build. Add notice re. broken testing/unstable builds.
 
 Wizard

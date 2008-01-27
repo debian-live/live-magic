@@ -1,6 +1,9 @@
 import os
+import sys
 import signal
 import gobject
+import tempfile
+import threading
 
 class BuildController(object):
 
@@ -15,6 +18,7 @@ class BuildController(object):
 
     def do_show_build_window(self, build_close_callback):
         self.cancelled = False
+        self.fifo = None
 
         # Set initial titles and state
         self.view.set_build_titles("Generating Debian Live system...", \
@@ -29,8 +33,34 @@ class BuildController(object):
         # Start pulsing
         gobject.timeout_add(100, self.do_pulse_cb)
 
+        # Create log FIFO
+        fd, self.fifo = tempfile.mkstemp()
+        os.close(fd)
+        os.unlink(self.fifo)
+        os.mkfifo(self.fifo)
+
+        class BuildLogWatcher(threading.Thread):
+            def run(self):
+                f = None
+                try:
+                    f = open(self.controller.fifo, 'r')
+                    while not self.controller.cancelled:
+                        data = f.readline()
+
+                        for prefix in ("I: ", "P: "):
+                            if data.startswith(prefix) and not self.controller.cancelled:
+                                msg = data[len(prefix):]
+                                gobject.timeout_add(0, lambda: self.controller.view.set_build_status(msg))
+                finally:
+                    if f:
+                        f.close()
+
+        b = BuildLogWatcher()
+        b.controller = self
+        b.start()
+
         # Fork command
-        cmd = ['/usr/bin/gksu', '-k', "/bin/sh -c 'echo I: lh_build starting in `pwd`; lh_build 2>&1 | tee --append build-log.txt; echo I: lh_build returned with error code $?'"]
+        cmd = ['/usr/bin/gksu', '-k', "/bin/sh -c '{ echo I: lh_build starting in `pwd`; lh_build 2>&1; echo I: lh_build returned with error code $?; } | tee build-log.txt %s; '" % self.fifo]
         self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, self.model.dir)
 
         if self.pid >= 0:
@@ -51,6 +81,10 @@ class BuildController(object):
 
     def on_vte_child_exited(self, *_):
         self.pid = -1
+
+        # Remove fifo
+        if self.fifo:
+            os.unlink(self.fifo)
 
         if self.view.get_build_auto_close():
             self.view.do_hide_window_build()

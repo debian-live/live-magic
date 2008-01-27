@@ -58,4 +58,5 @@ if __name__ == "__main__":
     v = View(c)
     c.ready()
 
+    gtk.gdk.threads_init()
     gtk.main()

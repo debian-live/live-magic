@@ -113,4 +113,4 @@ class BuildController(object):
 
     def on_button_build_cancel_clicked(self, *_):
         self.cancelled = True
-        os.kill(self.pid, signal.SIGKILL)
+        os.kill(self.pid, signal.SIGTERM)

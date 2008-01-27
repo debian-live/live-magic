@@ -4,6 +4,7 @@ import signal
 import gobject
 import tempfile
 import threading
+import commands
 
 class BuildController(object):
 
@@ -113,4 +114,4 @@ class BuildController(object):
 
     def on_button_build_cancel_clicked(self, *_):
         self.cancelled = True
-        os.kill(self.pid, signal.SIGTERM)
+        commands.getstatusoutput("gksu /bin/kill -s KILL -%d" % self.pid)

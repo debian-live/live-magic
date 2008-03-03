@@ -25,6 +25,9 @@ setup(
             'glade/kde.png',
             'glade/world_map-960.png',
             'glade/xfce.png',
-            ])
-        ]
+            ]),
+        ('share/applications', [
+            'misc/live-magic.desktop'
+        ]),
+    ]
 )

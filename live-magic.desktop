@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Version=1.0
-Name=Live Magic
-Comment=Debian Live configuration utility
-Icon=debian-logo.png
-Exec=/usr/bin/live-magic
-Categories=Application;Tools;

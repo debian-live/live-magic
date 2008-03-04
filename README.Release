@@ -1,0 +1,14 @@
+=================
+Release checklist
+=================
+
+ * debian/changelog
+   - Update entries
+   - Validate suit
+   - Bump timestamp
+
+ * setup.py
+   - Bump version>
+
+ * debian/manpages/live-helper.1
+   - Bump date.

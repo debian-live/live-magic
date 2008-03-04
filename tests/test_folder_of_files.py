@@ -1,18 +1,22 @@
 #!/usr/bin/env python
 
 import unittest
-import tempfile
 import os
 
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from LiveMagic import models
+from DebianLive.elements import FolderOfFiles
 
 class TestFolderOfFiles(unittest.TestCase):
     def setUp(self):
-        self.dir = tempfile.mkdtemp('live-magic')
-        self.fof = models.FolderOfFiles(self.dir)
+        import tempfile
+        self.dir = tempfile.mkdtemp()
+        self.fof = FolderOfFiles(self.dir, 'dummy name', 'fof-test')
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self.dir)
 
     def f_c(self, filename):
         return open("%s/%s" % (self.dir, filename), 'r').read()

@@ -1,75 +1,83 @@
 #!/usr/bin/env python
 
 import unittest
-import tempfile
 import os
 
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from LiveMagic import models
+from DebianLive.utils import SourcesList
 
 class TestSourcesList(unittest.TestCase):
     def setUp(self):
-        self.reset()
-
-    def reset(self):
+        import tempfile
         fd, self.filename = tempfile.mkstemp('live-magic')
         os.close(fd)
-        self.s = models.SourcesList(self.filename)
+        self.s = SourcesList(self.filename)
+
+    def tearDown(self):
+        os.unlink(self.filename)
 
     def f_w(self, contents):
         f = open(self.filename, 'w+')
         f.write(contents)
         f.close()
 
-    def testIsNotNone(self):
-        self.f_w('deb http://ftp.us.debian.org/debian stable main')
-        assert self.s.get_mirror() is not None
+class TestMatch(TestSourcesList):
+    def assertMatchLine(self, line):
+        self.f_w(line)
+        self.assert_(self.s.get_mirror(None))
 
-    # Match types
-    def _match_type(self, url):
-        self.f_w('deb %s stable main' % url)
-        return self.s.get_mirror() == url
+    def testCountryDebianMirror(self):
+        self.assertMatchLine('deb http://ftp.uk.debian.org/debian stable main')
 
     def testDebianMirror(self):
-        assert self._match_type('http://ftp.uk.debian.org/debian')
+        self.assertMatchLine('deb http://ftp.debian.org/debian stable main')
 
     def testLocalhost(self):
-        assert self._match_type('http://localhost/debian')
+        self.assertMatchLine('deb http://localhost/debian stable main')
 
     def testOtherURL(self):
-        assert self._match_type('http://the.earth.li/debian')
+        self.assertMatchLine('deb http://the.earth.li/debian stable main')
 
-    def testNoSecurity(self):
-        assert not self._match_type('http://security.debian.org/debian')
+class TestNoMatch(TestSourcesList):
+    def assertNoMatchLine(self, line):
+        self.f_w(line)
+        self.failIf(self.s.get_mirror(None))
 
-    def testNoBackports(self):
-        assert not self._match_type('http://www.backports.debian.org/debian')
+    def testSecurity(self):
+        self.assertNoMatchLine('deb http://security.debian.org/debian stable main')
 
-    # Preferences
-    def _prefer(self, ordering):
+    def testBackports(self):
+        self.assertNoMatchLine('deb http://backports.debian.org/debian stable main')
+
+"""
+# Not implemented yet
+
+class Prefer(TestSourcesList):
+    def assertPrefer(self, *ordering):
         def test():
-            self.f_w("""
+            self.f_w(""""""
                 deb %s stable main
                 deb %s stable main
-            """ % (ordering[0], ordering[1]))
+            """""" % (ordering[0], ordering[1]))
 
-            assert self.s.get_mirror() == ordering[0]
+            self.assertEqual(self.s.get_mirror(), ordering[0])
 
         test()
         ordering.reverse()
-        self.reset()
+        self.setUp()
         test()
 
     def testPreferLocalhost(self):
-        self._prefer(['http://localhost/debian', 'http://ftp.uk.debian.org/debian'])
+        self.assertPrefer('http://localhost/debian', 'http://ftp.uk.debian.org/debian')
 
     def testPreferCountry(self):
-        self._prefer(['http://ftp.uk.debian.org/debian', 'http://ftp.debian.org/debian'])
+        self.assertPrefer('http://ftp.uk.debian.org/debian', 'http://ftp.debian.org/debian')
 
     def testPreferNonOfficial(self):
-        self._prefer(['http://ftp.uk.debian.org/debian', 'http://backports.debian.org/debian'])
+        self.assertPrefer('http://ftp.uk.debian.org/debian', 'http://backports.debian.org/debian')
+"""
 
 if __name__ == "__main__":
     unittest.main()

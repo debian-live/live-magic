@@ -31,6 +31,9 @@ class Config(object):
         from pprint import pformat
         return '<DebianLive.Config dir="%s" %s>' % (self.dir, pformat(self.children))
 
+    def __repr__(self):
+        return self.__str__()
+
     def save(self):
         for elem in self.children.values():
             elem.save()

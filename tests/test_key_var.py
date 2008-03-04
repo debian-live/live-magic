@@ -57,8 +57,15 @@ class TestSimple(TestKeyVar):
         self.assertEqual(self.key_var['LH_SPAM'], 'eggs')
 
     def testSaveKnownOption(self):
-        self.key_var['LH_SPAM'] = "eggs"
-        assert 'LH_SPAM="eggs"' in self.f_c()
+        self.key_var['LH_SPAM'] = 'new value'
+        self.key_var.save()
+        self.assert_('LH_SPAM="new value"' in self.f_c())
+
+    def testSaveKnownOptionNoChange(self):
+        before = self.f_c()
+        self.key_var['LH_SPAM'] = 'eggs'
+        self.key_var.save()
+        self.assertEqual(before, self.f_c())
 
     def testSaveUnknownOption(self):
         """
@@ -66,7 +73,16 @@ class TestSimple(TestKeyVar):
         """
         self.key_var['LH_UNKNOWN_OPTION'] = 'spam'
         self.key_var.save()
-        assert 'LH_UNKNOWN_OPTION="spam"' in self.f_c()
+        self.assert_('LH_UNKNOWN_OPTION="spam"' in self.f_c())
+
+    def testSaveUnknownOptionNewSize(self):
+        len_before = len(self.f_c())
+        self.key_var['LH_UKNOWN_OPTION'] = 'new value'
+        self.key_var.save()
+        self.assert_(len(self.f_c()) > len_before)
+
+    def testSaveNoChanges(self):
+        self.key_var.save()
 
 class TestSaveEscaped(TestKeyVar):
     def testSavingEscapingCharacters(self):
@@ -174,6 +190,57 @@ class TestSaveLists(TestKeyVar):
             self.key_var.save()
             assert 'LH_SPAM_LIST="%s"' % v in self.f_c()
 
+
+class TestLists(TestKeyVar):
+    def testAppend(self):
+        self.key_var['LH_SPAM_LIST'].append('ketchup')
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testSetItem(self):
+        self.key_var['LH_SPAM_LIST'][0] = 'ketchup'
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testDelItem(self):
+        del self.key_var['LH_SPAM_LIST'][0]
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testSetSlice(self):
+        self.key_var['LH_SPAM_LIST'][:] = []
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testDelSlice(self):
+        del self.key_var['LH_SPAM_LIST'][:]
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testPop(self):
+        self.key_var['LH_SPAM_LIST'].pop()
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testExtend(self):
+        self.key_var['LH_SPAM_LIST'].extend(range(3))
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testInsert(self):
+        self.key_var['LH_SPAM_LIST'].insert(0, 'spam')
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testRemove(self):
+        self.key_var['LH_SPAM_LIST'].remove('spam')
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testReverse(self):
+        self.key_var['LH_SPAM_LIST'].reverse()
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testSort(self):
+        self.key_var['LH_SPAM_LIST'].sort()
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+
+    def testSetList(self):
+        self.key_var['LH_SPAM_LIST'] = ['spam']
+        self.key_var.save()
+        self.key_var['LH_SPAM_LIST'].append('ketchup')
+        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
 
 class TestLoadLists(TestKeyVar):
     def assertLoadsAs(self, input, expected):

@@ -13,25 +13,6 @@ SHELL_ESCAPES = (
 
 REGEX = re.compile(r"""^\s*(\w+)=(?:(["\'])(([^\\\2]|\\.)*|)\2|((\w|\\["'])*))\s*(?:#.*)?$""")
 
-"""
-TODO
- - Test case where:
-    >>> my_key_var = KeyVar('.', None, {'spam': list})
-    >>> print my_key_var['spam']
-    []
-    >>> print my_key_var['stale']
-    set([])
-    >>> print my_key_var['spam'] = ['spam']
-    >>> print my_key_var.stale
-    set(['spam'])
-    >>> my_key_var.save()
-    >>> print my_key_var.stale
-    set([])
-    >>> my_key_var['spam'].append('eggs')
-    >>> print my_key_var.stale
-    set([])  <-- Should be 'spam'
-"""
-
 class KeyVar(dict):
     '''
     Represents a POSIX shell KEY="VAR" configuration file.
@@ -90,6 +71,8 @@ class KeyVar(dict):
 
     def __setitem__(self, key, value):
         self.stale.add(key)
+        if type(value) is list:
+            value = ListObserver(value, lambda: self.stale.add(key))
         dict.__setitem__(self, key, value)
 
     def save(self):
@@ -136,3 +119,5 @@ class KeyVar(dict):
         f = open(self.filename, 'w')
         f.writelines(lines)
         f.close()
+
+        self.stale = set()

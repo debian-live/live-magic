@@ -56,7 +56,6 @@ class TestSave(TestFolderOfFiles):
         self.fof.save()
         self.assertEqual(self.f_c('spam'), 'eggs')
 
-
     def testEditFile(self):
         self.write('spam', 'eggs')
         self.reload()
@@ -65,7 +64,6 @@ class TestSave(TestFolderOfFiles):
         self.fof['spam'] = 'bacon'
         self.fof.save()
         self.assertEqual(self.f_c('spam'), 'bacon')
-
 
 class TestRename(TestFolderOfFiles):
     def testNoSave(self):
@@ -170,6 +168,26 @@ class TestImport(TestFolderOfFiles):
 
         self.assertEqual(self.f_c("%s-1" % self.conf_name), 'spam')
         self.assertEqual(self.fof["%s-1" % self.conf_name], 'spam')
+
+    def testAlreadyExistsTwo(self):
+        self.fof[self.conf_name] = 'existing_file'
+        self.fof.save()
+
+        self.fof.import_file(self.filename)
+        self.fof.save()
+
+        self.write(self.filename, 'eggs')
+        self.fof.import_file(self.filename)
+        self.fof.save()
+
+        self.assertEqual(self.f_c(self.conf_name), 'existing_file')
+        self.assertEqual(self.fof[self.conf_name], 'existing_file')
+
+        self.assertEqual(self.f_c("%s-1" % self.conf_name), 'spam')
+        self.assertEqual(self.fof["%s-1" % self.conf_name], 'spam')
+
+        self.assertEqual(self.f_c("%s-2" % self.conf_name), 'eggs')
+        self.assertEqual(self.fof["%s-2" % self.conf_name], 'eggs')
 
 if __name__ == "__main__":
     unittest.main()

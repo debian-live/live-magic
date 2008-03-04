@@ -18,15 +18,36 @@ class TestConfig(unittest.TestCase):
         import shutil
         shutil.rmtree(self.dir)
 
-class TestCreation(TestConfig):
+class TestSimple(TestConfig):
     def testLhConfigRun(self):
         assert os.path.exists(os.path.join(self.dir, 'config'))
 
     def testFailingNewConfiguration(self):
-        """
-        Should throw IOError for an invalid directory.
-        """
         self.assertRaises(IOError, Config, '/proc')
+
+    def testNoDirectory(self):
+        self.tearDown()
+        Config(self.dir)
+
+    def testStr(self):
+        self.assertEqual(type(str(self.lh)), str)
+
+    def testRepr(self):
+        self.assertEqual(type(repr(self.lh)), str)
+
+    def testStrReprEquality(self):
+        self.assertEqual(repr(self.lh), str(self.lh))
+
+    def testSave(self):
+        def contents():
+            return open(os.path.join(self.dir, 'config', 'common')).readlines()
+
+        before = contents()
+        self.lh.common['LH_APT'] = 'spam'
+        self.lh.save()
+
+        self.assert_('LH_APT="spam"\n' in contents())
+        self.assertEqual(len(before), len(contents()))
 
 class TestElements(TestConfig):
     def testBinary(self):

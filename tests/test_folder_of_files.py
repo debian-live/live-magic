@@ -9,164 +9,167 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from DebianLive.elements import FolderOfFiles
 
 class TestFolderOfFiles(unittest.TestCase):
+    name = 'fof-test'
+
     def setUp(self):
         import tempfile
         self.dir = tempfile.mkdtemp()
-        self.fof = FolderOfFiles(self.dir, 'dummy name', 'fof-test')
+        os.makedirs(os.path.join(self.dir, 'config', self.name))
+        self.reload()
+
+    def reload(self):
+        self.fof = FolderOfFiles(self.dir, 'dummy name', self.name)
 
     def tearDown(self):
         import shutil
         shutil.rmtree(self.dir)
 
     def f_c(self, filename):
-        return open("%s/%s" % (self.dir, filename), 'r').read()
+        return open(os.path.join(self.dir, 'config', self.name, filename), 'r').read()
 
     def write(self, filename, contents):
-        f = open("%s/%s" % (self.dir, filename), 'w+')
+        f = open(os.path.join(self.dir, 'config', self.name, filename), 'w+')
         f.write(contents)
         f.close()
 
+class TestSimple(TestFolderOfFiles):
     def testEmptyFolder(self):
-        assert len(self.fof.files) == 0
+        self.assertEqual(len(self.fof), 0)
 
     def testSmallFiles(self):
-        self.write('one', 'Contents of file one')
-        self.write('two', 'Contents of file two')
-        self.fof.load()
-        assert self.fof['one'] == 'Contents of file one'
-        assert self.fof['two'] == 'Contents of file two'
-
-    def testnewfile(self):
-        self.fof['spam'] = 'eggs'
-        self.assertRaises(IOError, self.f_c, 'spam')
-
-    def testSave(self):
-        self.fof['spam'] = 'eggs'
-        self.fof.save()
-        assert self.f_c('spam') == 'eggs'
-
-    def testEditFile(self):
         self.write('spam', 'eggs')
-        self.fof.load()
-        assert self.f_c('spam') == 'eggs'
-        self.fof['spam'] = 'moreeggs'
-        self.fof.save()
-        assert self.f_c('spam') == 'moreeggs'
+        self.reload()
+        self.assertEqual(self.fof['spam'], 'eggs')
 
-    def testAlteredState(self):
-        assert self.fof.altered() == False
+    def testNewFile(self):
         self.fof['spam'] = 'eggs'
-        assert self.fof.altered() == True
-        self.fof.save()
-        assert self.fof.altered() == False
-
-    def testNewRename(self):
-        self.fof['spam'] = 'eggs'
-        self.fof.rename('spam', 'morespam')
-        assert 'morespam' in self.fof
-        assert 'spam' not in self.fof
-        self.assertRaises(IOError, self.f_c, 'morespam')
-        self.assertRaises(IOError, self.f_c, 'spam')
-
-    def testAlteredStateNewRename(self):
-        self.fof['spam'] = 'eggs'
-        assert self.fof.altered() == True
-        self.fof.rename('spam', 'morespam')
-        assert self.fof.altered() == True
-
-    def testExistingRename(self):
-        self.fof['spam'] = 'eggs'
-        self.fof.save()
-        self.fof.rename('spam', 'morespam')
-        assert 'morespam' in self.fof
-        assert 'spam' not in self.fof
-        assert self.f_c('morespam') == 'eggs'
-        self.assertRaises(IOError, self.f_c, 'spam')
-
-    def testRenameFileExists(self):
-        self.fof['spam'] = 'eggs'
-        self.fof['morespam'] = 'moreeggs'
-        self.fof.save()
-        try:
-            self.fof.rename('spam', 'morespam')
-            self.fail(msg="Should have thrown ValueError on a renaming overwrite")
-        except ValueError:
-            pass
-
-    def testAlteredStateRename(self):
-        self.fof['spam'] = 'eggs'
-        assert self.fof.altered() == True
-        self.fof.save()
-        assert self.fof.altered() == False
-        self.fof.rename('spam', 'morespam')
-        assert self.fof.altered() == True
-
-    def testDeleteNotSaved(self):
-        self.fof['spam'] = 'eggs'
-        self.assertRaises(IOError, self.f_c, 'spam')
-        assert 'spam' in self.fof
-        self.fof.delete('spam')
-        assert 'spam' not in self.fof
-
-    def testDeleteNotSavedAlteredState(self):
-        assert self.fof.altered() == False
-        self.fof['spam'] = 'eggs'
-        assert self.fof.altered() == True
-        self.fof.delete('spam')
-        assert self.fof.altered() == True
-
-    def testDeleteSaved(self):
-        self.fof['spam'] = 'eggs'
-        self.fof.save()
-        assert self.f_c('spam') == 'eggs'
-        self.fof.delete('spam')
-        self.assertRaises(IOError, self.f_c, 'spam')
-
-    def testDeleteSavedAlteredState(self):
-        self.fof['spam'] = 'eggs'
-        self.fof.save()
-        assert self.fof.altered() == False
-        self.fof.delete('spam')
-        assert self.fof.altered() == True
         self.assertRaises(IOError, self.f_c, 'spam')
 
     def testIgnoreFoldersInDir(self):
-        os.mkdir("%s/spam" % self.dir,)
-        self.fof.load()
-        assert len(self.fof.files) == 0
+        os.mkdir(os.path.join(self.dir, 'config', self.name, 'dir-name'))
+        self.reload()
+        self.assertEqual(len(self.fof), 0)
 
-    def testImportFile(self):
-        fd, filename = tempfile.mkstemp('live-magic')
-        conf_name = filename.split(os.sep)[-1]
+class TestSave(TestFolderOfFiles):
+    def testSave(self):
+        self.fof['spam'] = 'eggs'
+        self.fof.save()
+        self.assertEqual(self.f_c('spam'), 'eggs')
+
+
+    def testEditFile(self):
+        self.write('spam', 'eggs')
+        self.reload()
+        self.assertEqual(self.f_c('spam'), 'eggs')
+
+        self.fof['spam'] = 'bacon'
+        self.fof.save()
+        self.assertEqual(self.f_c('spam'), 'bacon')
+
+
+class TestRename(TestFolderOfFiles):
+    def testNoSave(self):
+        self.fof['spam'] = 'eggs'
+
+        self.fof['new_name'] = self.fof['spam']
+        del self.fof['spam']
+
+        self.assert_('new_name' in self.fof)
+        self.assert_('spam' not in self.fof)
+        self.assertRaises(IOError, self.f_c, 'spam')
+        self.assertRaises(IOError, self.f_c, 'new_name')
+
+    def testOneSave(self):
+        self.fof['spam'] = 'eggs'
+        self.fof.save()
+
+        self.fof['new_name'] = self.fof['spam']
+        del self.fof['spam']
+
+        self.assert_('new_name' in self.fof)
+        self.assert_('spam' not in self.fof)
+        self.assertEqual(self.f_c('spam'), 'eggs')
+        self.assertRaises(IOError, self.f_c, 'new_name')
+
+    def testTwoSaves(self):
+        self.fof['spam'] = 'eggs'
+        self.fof.save()
+
+        self.fof['new_name'] = self.fof['spam']
+        del self.fof['spam']
+        self.fof.save()
+
+        self.assert_('new_name' in self.fof)
+        self.assert_('spam' not in self.fof)
+        self.assertRaises(IOError, self.f_c, 'spam')
+        self.assertEqual(self.f_c('new_name'), 'eggs')
+
+class TestDelete(TestFolderOfFiles):
+    def testNoSave(self):
+        self.fof['spam'] = 'eggs'
+        del self.fof['spam']
+        self.assert_('spam' not in self.fof)
+        self.assertRaises(IOError, self.f_c, 'spam')
+
+    def testDeleteUnsavedItem(self):
+        self.fof['spam'] = 'eggs'
+        del self.fof['spam']
+        self.fof.save()
+        self.assert_('spam' not in self.fof)
+        self.assertRaises(IOError, self.f_c, 'spam')
+
+    def testSaved(self):
+        self.fof['spam'] = 'eggs'
+        self.fof.save()
+        del self.fof['spam']
+        self.fof.save()
+        self.assert_('spam' not in self.fof)
+        self.assertRaises(IOError, self.f_c, 'spam')
+
+    def testUpdated(self):
+        self.fof['spam'] = 'eggs'
+        self.fof.save()
+
+        del self.fof['spam']
+        self.fof['spam'] = 'bacon'
+        self.fof.save()
+        self.assertEqual(self.f_c('spam'), 'bacon')
+
+class TestImport(TestFolderOfFiles):
+    def setUp(self):
+        TestFolderOfFiles.setUp(self)
+
+        import tempfile
+        fd, self.filename = tempfile.mkstemp()
+        self.conf_name = self.filename.split(os.sep)[-1]
         os.write(fd, 'spam')
         os.close(fd)
-        self.fof.import_file(filename)
+
+    def tearDown(self):
+        os.unlink(self.filename)
+        TestFolderOfFiles.tearDown(self)
+
+    def testSimple(self):
+        self.fof.import_file(self.filename)
         self.fof.save()
-        assert self.f_c(conf_name) == 'spam'
+        self.assertEqual(self.f_c(self.conf_name), 'spam')
 
-    def testImportFileNotSaved(self):
-        fd, filename = tempfile.mkstemp('live-magic')
-        conf_name = filename.split(os.sep)[-1]
-        os.write(fd, 'spam')
-        os.close(fd)
-        self.fof.import_file(filename)
-        self.assertRaises(IOError, self.f_c, conf_name)
+    def testNotSaved(self):
+        self.fof.import_file(self.filename)
+        self.assertRaises(IOError, self.f_c, self.conf_name)
 
-    def testImportAlreadyExists(self):
-        fd, filename = tempfile.mkstemp('live-magic')
-        conf_name = filename.split('/')[-1]
-        os.write(fd, 'file_to_import')
-        os.close(fd)
-
-        self.fof[conf_name] = 'existing_file'
+    def testAlreadyExists(self):
+        self.fof[self.conf_name] = 'existing_file'
         self.fof.save()
 
-        self.fof.import_file(filename)
+        self.fof.import_file(self.filename)
         self.fof.save()
-        assert self.f_c(conf_name) == 'existing_file'
-        self.fof[conf_name] == 'existing_file'
-        assert self.f_c("%s-1" % conf_name) == 'file_to_import'
-        self.fof["%s-1" % conf_name] == 'file_to_import'
+
+        self.assertEqual(self.f_c(self.conf_name), 'existing_file')
+        self.assertEqual(self.fof[self.conf_name], 'existing_file')
+
+        self.assertEqual(self.f_c("%s-1" % self.conf_name), 'spam')
+        self.assertEqual(self.fof["%s-1" % self.conf_name], 'spam')
 
 if __name__ == "__main__":
     unittest.main()

@@ -20,7 +20,8 @@ Wizard
 
  * Don't create config dir until end of wizard.
 
- * After successful build, purge cache etc. and open
+ * After successful build, purge cache configuration and then open containing folder
+  - Requires xdg-open (and xdg-utils build-dependency)
 
  * Add simple package handling to wizard.
 
@@ -28,6 +29,7 @@ Wizard
 
  * Find mirror "automatically". There are some debian-devel list posts about why
    this is bad and/or infeasible, but it would be preferably to an empty box.
+   - Use ARCH-geomirror.debian.net
 
  * Pressing 'ENTER' on fields moves to next page.
 
@@ -51,7 +53,6 @@ Expert mode
    "Hidden" depends - eg. LH_BOOTSTRAP_KEYRING only makes sense when using
    debootstrap (cdebootstrap does not have this option afaict).
 
-
 API
 
  * Add build() to LiveHelperConfiguration?
@@ -59,9 +60,10 @@ API
      Would allow saner build scripts:
 
      #!/usr/bin/env python
-     import os
-     import livehelper
-     lh = livehelper.Configuration()
+
+     from DebianLive import Config
+     lh = Config('.')
+
      lh.binary.LH_BINARY_IMAGES = ['iso', 'usb-hdd', 'net']
      for pkg_list in ['gnome', 'kde', 'standard', 'rescue']:
          lh.common.LH_PACKAGES_LISTS = pkg_list

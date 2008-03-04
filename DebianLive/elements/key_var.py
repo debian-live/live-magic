@@ -78,7 +78,8 @@ class KeyVar(dict):
                     int: lambda k, v: {'': None}.get(v, None),
                     list: lambda k, v: ListObserver(v.split(), lambda: self.stale.add(k)),
                     str: lambda k, v: v,
-                    bool: lambda k, v: {'enabled' : True, 'disabled' : False, 'yes' : True, 'no' : False}.get(v, None),
+                    bool: lambda k, v: {'enabled' : True, 'disabled' : False, \
+                        'yes' : True, 'no' : False}.get(v, None),
                 }[val_type](key, val)
 
                 # Save value

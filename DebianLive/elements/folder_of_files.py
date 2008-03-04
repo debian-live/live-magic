@@ -28,7 +28,6 @@ class FolderOfFiles(dict):
                 # "Is a directory"
                 if e.errno == 21:
                     continue
-                raise e
 
     def __delitem__(self, k):
         self.stale.add(k)
@@ -66,8 +65,10 @@ class FolderOfFiles(dict):
         unique name. The file is not saved.
         """
         f = open(source, 'r')
-        source_contents = f.read()
-        f.close()
+        try:
+            source_contents = f.read()
+        finally:
+            f.close()
 
         def gen_import_name(filename):
             # Use existing filename as the root

@@ -16,9 +16,9 @@ class TestKeyVar(unittest.TestCase):
     }
 
     initial = """
- LH_SPAM="eggs"
- LH_MORE_SPAM="more eggs"
-   LH_SPAM_LIST="spam eggs ham bacon"
+        LH_SPAM="eggs"
+        LH_MORE_SPAM="more eggs"
+        LH_SPAM_LIST="spam eggs ham bacon"
         LH_SPAM_BOOL="disabled"
     """
 

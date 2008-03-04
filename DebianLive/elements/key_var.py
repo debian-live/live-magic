@@ -48,8 +48,9 @@ class KeyVar(dict):
 
         f = open(self.filename, 'r')
         try:
-            line_no = 1
+            line_no = 0
             for line in f:
+                line_no += 1
 
                 # Check and parse key=value lines
                 match = REGEX.match(line)
@@ -83,7 +84,6 @@ class KeyVar(dict):
                 # Save value
                 dict.__setitem__(self, key, typed_val)
 
-                line_no += 1
         finally:
             f.close()
 

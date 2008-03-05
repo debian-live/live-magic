@@ -1,6 +1,6 @@
 import gtk
 
-from LiveMagic import models
+from DebianLive import Config, utils
 
 class WizardController(object):
 
@@ -9,11 +9,13 @@ class WizardController(object):
         # Fill in data from model
         data = self.view.get_wizard_completed_details()
 
-        self.model.new()
-        self.model.binary.LH_BINARY_IMAGES = [data['media']]
-        self.model.bootstrap.LH_MIRROR_BOOTSTRAP = data['mirror']
-        self.model.chroot.LH_PACKAGES_LISTS = data['desktop']
-        self.model.bootstrap.LH_ARCHITECTURE = data['arch']
+        build_dir = utils.get_build_dir()
+
+        self.model = Config(build_dir)
+        self.model.binary['LH_BINARY_IMAGES'] = [data['media']]
+        self.model.bootstrap['LH_MIRROR_BOOTSTRAP'] = data['mirror']
+        self.model.chroot['LH_PACKAGES_LISTS'] = data['desktop']
+        self.model.bootstrap['LH_ARCHITECTURE'] = data['arch']
         self.model.save()
 
         self.view.do_dim_wizard()
@@ -27,6 +29,10 @@ class WizardController(object):
         gtk.main_quit()
 
     def get_suggested_mirror(self):
-        s = models.SourcesList()
+        s = utils.SourcesList()
         return s.get_mirror()
 
+    def on_wizard_cancel(self, *args):
+        ret = self.view.do_show_wizard_cancel_confirm_window()
+        if ret:
+            gtk.main_quit()

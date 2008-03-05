@@ -27,10 +27,6 @@ class WizardController(object):
         gtk.main_quit()
 
     def get_suggested_mirror(self):
-        s = utils.SourcesList()
+        s = models.SourcesList()
         return s.get_mirror()
 
-    def on_wizard_cancel(self, *args):
-        ret = self.view.do_show_wizard_cancel_confirm_window()
-        if ret:
-            gtk.main_quit()

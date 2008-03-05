@@ -5,6 +5,8 @@ General
 
  * Fix about box close dialog problem.
 
+ * Translations
+
 Build/build window
 
  * Interactive build - either support it (how?) or flag a warning if it is enabled.

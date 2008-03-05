@@ -71,3 +71,15 @@ class WizardView(object):
             'arch' : get_active('radio_architecture_i386'),
             'mirror' : self['combobox_mirror'].get_active_text()
         }
+
+    def do_show_wizard_cancel_confirm_window(self):
+        dialog = gtk.MessageDialog(
+            parent=self.asst,
+            flags=gtk.DIALOG_MODAL,
+            type=gtk.MESSAGE_QUESTION,
+            buttons=gtk.BUTTONS_YES_NO,
+            message_format="Are you sure you wish to cancel?");
+
+        res = dialog.run()
+        dialog.destroy()
+        return res == gtk.RESPONSE_YES

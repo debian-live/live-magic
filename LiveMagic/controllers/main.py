@@ -1,24 +1,12 @@
 import gtk
-from LiveMagic.models import KeyVarConfigFile
 
 class MainController(object):
     def __init__(self, args):
-        self.model.attach_load_observer(self.notify_load)
+        #self.model.attach_load_observer(self.notify_load)
         self.args = args
 
-    def notify_load(self):
-        for child in self.model.children:
-            # Check we are dealing with normal configuration values
-            if type(child) is KeyVarConfigFile:
-                for key in child:
-                    # Set the value in the view
-                    self.view.do_set_key_var(child.shortname, key, getattr(child, key))
-
     def ready(self):
-        """
-        Called when the view is ready for setup.
-        """
-        sections = ['common', 'chroot', 'binary', 'bootstrap', 'source', 'hooks']
+        sections = ('common', 'chroot', 'binary', 'bootstrap', 'source', 'hooks')
         self.view.setup_sections(sections)
 
         # Notify all the observers that depend on the model

@@ -1,7 +1,7 @@
 
 class HooksController(object):
     def __init__(self):
-        self.model.attach_load_observer(self.notify_load_hooks)
+        #self.model.attach_load_observer(self.notify_load_hooks)
         self.hook_select_triggers_change = True
 
     def on_hook_select(self, *_):
@@ -24,7 +24,7 @@ class HooksController(object):
                 "pl" : "#!/usr/bin/perl",
                 "py" : "#!/usr/bin/env python",
             }[hook_name.rsplit(".")[1]]
-        except (KeyError, IndexError):
+        except:
             # Can't guess: assume it's a shell script.
             interpreter = "#!/bin/sh"
 
@@ -54,7 +54,8 @@ class HooksController(object):
         hook_name = self.view.get_selected_hook()
         new_hook_name = self.view.do_show_rename_hook_window(hook_name)
 
-        if new_hook_name is None: return
+        if new_hook_name is None:
+            return
 
         try:
             self.model.hooks.rename(hook_name, new_hook_name)
@@ -65,14 +66,16 @@ class HooksController(object):
             self.view.do_show_error("The name already exists")
 
     def on_button_hook_delete_clicked(self, *_):
-        res = self.view.do_show_hook_delete_confirm_window()
-        if res:
-            hook_name = self.view.get_selected_hook()
-            self.model.hooks.delete(hook_name)
-            self.notify_load_hooks()
-            self.view.do_clear_hook_contents()
-            self.view.do_enable_edit_hook(False)
-            self.view.set_save_enabled(True)
+        ret = self.view.do_show_hook_delete_confirm_window()
+        if not ret:
+            return
+
+        hook_name = self.view.get_selected_hook()
+        self.model.hooks.delete(hook_name)
+        self.notify_load_hooks()
+        self.view.do_clear_hook_contents()
+        self.view.do_enable_edit_hook(False)
+        self.view.set_save_enabled(True)
 
     def on_hook_editor_changed(self, *_):
         if self.hook_select_triggers_change:

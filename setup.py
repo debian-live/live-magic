@@ -12,19 +12,20 @@ setup(
     scripts = ['live-magic'],
     packages= [
         'LiveMagic',
-        'LiveMagic.controllers',
-        'LiveMagic.models',
         'LiveMagic.views',
+        'LiveMagic.controllers',
+        'DebianLive',
+        'DebianLive.elements',
+        'DebianLive.utils',
     ],
     data_files = [
         ('share/live-magic', [
-            'glade/main.glade',
-            'glade/debian_openlogo-nd-100.png',
-            'glade/debian_sm.png',
-            'glade/gnome-logo-icon-transparent.png',
-            'glade/kde.png',
-            'glade/world_map-960.png',
-            'glade/xfce.png',
+            'misc/main.glade',
+            'misc/debian_openlogo-nd-100.png',
+            'misc/debian_sm.png',
+            'misc/gnome-logo-icon-transparent.png',
+            'misc/kde.png',
+            'misc/xfce.png',
             ]),
         ('share/applications', [
             'misc/live-magic.desktop'

@@ -5,4 +5,7 @@ import sys
 from LiveMagic import LiveMagic
 
 if __name__ == '__main__':
-    LiveMagic(sys.argv[1:])
+    try:
+        LiveMagic(sys.argv[1:])
+    except KeyboardInterrupt:
+        sys.exit(1)

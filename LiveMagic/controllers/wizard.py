@@ -1,4 +1,5 @@
 import gtk
+import os.path
 
 from DebianLive import Config, utils
 
@@ -16,6 +17,11 @@ class WizardController(object):
         self.model.bootstrap['LH_MIRROR_BOOTSTRAP'] = data['mirror']
         self.model.chroot['LH_PACKAGES_LISTS'] = data['desktop']
         self.model.bootstrap['LH_ARCHITECTURE'] = data['arch']
+
+        # Use cdebootstrap if available
+        if os.path.exists('/usr/bin/cdebootstrap'):
+            self.model.common['LH_BOOTSTRAP'] = 'cdebootstrap'
+
         self.model.save()
 
         self.view.do_dim_wizard()

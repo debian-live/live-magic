@@ -66,9 +66,9 @@ class WizardView(object):
                     return button.get_name().split('_')[2]
 
         return {
-            'desktop' : get_active('radio_desktop_gnome'),
-            'media' : get_active('radio_media_usb'),
-            'arch' : get_active('radio_architecture_i386'),
+            'packages_lists' : get_active('radio_desktop_gnome'),
+            'binary_images' : get_active('radio_media_usb'),
+            'architecture' : get_active('radio_architecture_i386'),
             'mirror' : self['combobox_mirror'].get_active_text()
         }
 

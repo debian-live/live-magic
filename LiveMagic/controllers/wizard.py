@@ -7,21 +7,15 @@ class WizardController(object):
 
     def on_wizard_apply(self, _):
 
-        # Fill in data from model
-        data = self.view.get_wizard_completed_details()
-
         build_dir = utils.get_build_dir()
 
-        self.model = Config(build_dir)
-        self.model.binary['LH_BINARY_IMAGES'] = [data['media']]
-        self.model.bootstrap['LH_MIRROR_BOOTSTRAP'] = data['mirror']
-        self.model.chroot['LH_PACKAGES_LISTS'] = data['desktop']
-        self.model.bootstrap['LH_ARCHITECTURE'] = data['arch']
+        data = self.view.get_wizard_completed_details()
 
         # Use cdebootstrap if available
         if os.path.exists('/usr/bin/cdebootstrap'):
-            self.model.common['LH_BOOTSTRAP'] = 'cdebootstrap'
+            data['bootstrap'] = 'cdebootstrap'
 
+        self.model = Config(build_dir, **data)
         self.model.save()
 
         self.view.do_dim_wizard()

@@ -71,7 +71,7 @@ spec = {
         'LH_LINUX_FLAVOURS': list,
         'LH_LINUX_PACKAGES': list,
         'LH_PACKAGES': list,
-        'LH_PACKAGES_LISTS': str,
+        'LH_PACKAGES_LISTS': list,
         'LH_TASKS': str,
         'LH_SECURITY': bool,
         'LH_SYMLINKS': bool,

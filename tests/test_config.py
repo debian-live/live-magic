@@ -56,7 +56,7 @@ class TestElements(TestConfig):
 
 class TestSetGetOptions(TestConfig):
     def testGet(self):
-        self.assertEqual(self.lh.common['LH_APT'], 'aptitude')
+        self.assertEqual(self.lh.common['LH_DEBCONF_PRIORITY'], 'critical')
 
     def testSet(self):
         self.lh.common['LH_APT'] = 'spam'

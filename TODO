@@ -33,8 +33,6 @@ Wizard
 
  * Pressing 'ENTER' on fields moves to next page.
 
- * Only ask architecture question on amd64?
-
  * Add boolean for whether to use mirror as LH_MIRROR_BINARY mirror.
 
 Expert mode

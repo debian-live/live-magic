@@ -1,5 +1,7 @@
 import gtk
 
+import commands
+
 class MainController(object):
     def __init__(self, args):
         #self.model.attach_load_observer(self.notify_load)
@@ -80,3 +82,8 @@ class MainController(object):
 
     def set_window_main_sensitive(self):
         self.view.do_show_main_window(True)
+
+    def get_host_architecture(self):
+        status, output = commands.getstatusoutput('dpkg --print-architecture')
+        assert status == 0
+        return output

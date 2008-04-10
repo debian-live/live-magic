@@ -36,6 +36,11 @@ class WizardView(object):
             [gtk.ASSISTANT_PAGE_CONFIRM]
 
         for i in range(notebook.get_n_pages()):
+            # Only show architecture page if using amd64
+            if notebook.get_n_pages() - 2 == i and \
+                self.controller.get_host_architecture() != 'amd64':
+                continue
+
             page = notebook.get_nth_page(i)
             page.unparent()
             self.asst.append_page(page)
@@ -58,19 +63,22 @@ class WizardView(object):
         self.asst.hide()
 
     def get_wizard_completed_details(self):
-        data = {}
-
         def get_active(name):
             for button in self[name].get_group():
                 if button.get_active() == True:
                     return button.get_name().split('_')[2]
 
-        return {
+        data = {
             'packages_lists' : get_active('radio_desktop_gnome'),
-            'binary_images' : get_active('radio_media_usb'),
-            'architecture' : get_active('radio_architecture_i386'),
+            'binary_images' : get_active('radio_media_iso'),
+            'distribution' : get_active('radio_distribution_stable'),
             'mirror' : self['combobox_mirror'].get_active_text()
         }
+
+        if self.controller.get_host_architecture() == 'amd64':
+            data['architecture'] = get_active('radio_architecture_i386')
+
+        return data
 
     def do_show_wizard_cancel_confirm_window(self):
         dialog = gtk.MessageDialog(

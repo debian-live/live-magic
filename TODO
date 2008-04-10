@@ -37,8 +37,6 @@ Wizard
 
  * Add boolean for whether to use mirror as LH_MIRROR_BINARY mirror.
 
- * Add suite option.
-
 Expert mode
 
  * File selectors (preseed, splash screen)  (gtk.Entry with 'Select' button)

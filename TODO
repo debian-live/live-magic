@@ -16,8 +16,6 @@ Build/build window
 
  * Make ProgressBar full-width when finished.
 
- * Choose distribution to build. Add notice re. broken testing/unstable builds.
-
 Wizard
 
  * After successful build, purge cache configuration and then open containing folder

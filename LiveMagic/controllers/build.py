@@ -34,6 +34,7 @@ class BuildController(object):
         # Start pulsing
         gobject.timeout_add(100, self.do_pulse_cb)
 
+        """
         # Create log FIFO
         fd, self.fifo = tempfile.mkstemp()
         os.close(fd)
@@ -42,26 +43,30 @@ class BuildController(object):
 
         class BuildLogWatcher(threading.Thread):
             def run(self):
-                f = None
+                self.fifo = None
                 try:
-                    f = open(self.controller.fifo, 'r')
-                    while not self.controller.cancelled:
-                        data = f.readline()
+                    try:
+                        self.fifo = open(self.controller.fifo, 'r')
+                        for line in self.fifo:
+                            if self.controller.cancelled:
+                                break
+                            for prefix in ("I: ", "P: "):
+                                if line.startswith(prefix) and not self.controller.cancelled:
+                                    msg = line[len(prefix):]
+                                    gobject.timeout_add(0, lambda: self.controller.view.set_build_status(msg))
 
-                        for prefix in ("I: ", "P: "):
-                            if data.startswith(prefix) and not self.controller.cancelled:
-                                msg = data[len(prefix):]
-                                gobject.timeout_add(0, lambda: self.controller.view.set_build_status(msg))
+                    except IOError:
+                        pass
                 finally:
-                    if f:
-                        f.close()
+                    self.fifo.close()
 
-        b = BuildLogWatcher()
-        b.controller = self
-        b.start()
+        self.logwatcher = BuildLogWatcher()
+        self.logwatcher.controller = self
+        self.logwatcher.start()
+        """
 
         # Fork command
-        cmd = ['/usr/bin/gksu', '-k', "/bin/sh -c '{ echo I: lh_build starting in `pwd`; lh_build 2>&1; echo I: lh_build returned with error code $?; } | tee build-log.txt %s; '" % self.fifo]
+        cmd = ['/usr/bin/gksu', '-k', "/bin/sh -c '{ echo I: lh_build starting in `pwd`; sleep 100 2>&1; echo I: lh_build returned with error code $?; } | tee build-log.txt %s; '" % self.fifo]
         self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, self.model.dir)
 
         if self.pid >= 0:
@@ -72,8 +77,6 @@ class BuildController(object):
             # Allow user to close window
             self.view.set_build_status_change(initial=False)
 
-        self.view.do_build_completed()
-
     def on_window_build_delete_event(self, *_):
         # If no command is running, close the window
         if self.pid < 0:
@@ -82,10 +85,6 @@ class BuildController(object):
 
     def on_vte_child_exited(self, *_):
         self.pid = -1
-
-        # Remove fifo
-        if self.fifo:
-            os.unlink(self.fifo)
 
         if self.view.get_build_auto_close():
             self.view.do_hide_window_build()

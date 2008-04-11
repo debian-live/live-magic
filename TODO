@@ -23,8 +23,6 @@ Wizard
 
  * Add simple package handling to wizard.
 
- * Remove maximise option.
-
  * Find mirror "automatically". There are some debian-devel list posts about why
    this is bad and/or infeasible, but it would be preferably to an empty box.
    - Use ARCH-geomirror.debian.net

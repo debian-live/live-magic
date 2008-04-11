@@ -42,7 +42,6 @@ class TestOther(TestConfigConstructor):
 
     def testHyphenatedOption(self):
         lh = Config(self.dir, packages_lists='my-package-list')
-        lh.save()
         self.assertEqual(lh.chroot['LH_PACKAGES_LISTS'], ['my-package-list'])
 
     def testSpaceInValue(self):

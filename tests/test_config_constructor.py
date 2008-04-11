@@ -48,5 +48,10 @@ class TestOther(TestConfigConstructor):
         lh = Config(self.dir, packages_lists="hello there")
         self.assertEqual(lh.chroot['LH_PACKAGES_LISTS'], ['hello', 'there'])
 
+    def testAllowPassingOptionsSecondTime(self):
+        lh = Config(self.dir, packages_lists="one two")
+        lh = Config(self.dir, packages_lists="three four")
+        self.assertEqual(lh.chroot['LH_PACKAGES_LISTS'], ['three', 'four'])
+
 if __name__ == "__main__":
     unittest.main()

@@ -13,20 +13,15 @@ class SourcesList(object):
         re.compile(r'security\.'),
     )
 
-    def __init__(self, filename=None):
-        if filename is None:
-            filename = r'/etc/apt/sources.list'
-
+    def __init__(self, filename='/etc/apt/sources.list'):
         self.filename = filename
 
-    def get_mirror(self, fallback=None):
-        if fallback is not None:
-            fallback = 'http://www.us.debian.org/'
-
+    def get_mirror(self, fallback='http://www.us.debian.org/'):
         result = fallback
 
-        f = open(self.filename, 'r')
         try:
+            f = open(self.filename, 'r')
+
             try:
                 for line in f.readlines():
                     if self.comments.match(line):

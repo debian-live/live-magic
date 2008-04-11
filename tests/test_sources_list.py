@@ -16,7 +16,10 @@ class TestSourcesList(unittest.TestCase):
         self.s = SourcesList(self.filename)
 
     def tearDown(self):
-        os.unlink(self.filename)
+        try:
+            os.unlink(self.filename)
+        except OSError:
+            pass
 
     def f_w(self, contents):
         f = open(self.filename, 'w+')
@@ -45,11 +48,20 @@ class TestNoMatch(TestSourcesList):
         self.f_w(line)
         self.failIf(self.s.get_mirror(None))
 
+    def testComments(self):
+        self.assertNoMatchLine('# comment')
+
     def testSecurity(self):
         self.assertNoMatchLine('deb http://security.debian.org/debian stable main')
 
     def testBackports(self):
         self.assertNoMatchLine('deb http://backports.debian.org/debian stable main')
+
+class TestErrors(TestSourcesList):
+    def testFileNotFound(self):
+        self.filename = '/proc/invisible-file'
+        self.s = SourcesList(self.filename)
+        self.failIf(self.s.get_mirror(None))
 
 """
 # Not implemented yet

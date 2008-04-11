@@ -17,23 +17,17 @@ class Config(object):
             if option not in constructor_args:
                 raise TypeError, 'Unexpected keyword argument "%s"' % option
 
-        # Create skeleton lh_config dir, if it does not already exist
-        if os.path.exists(os.path.join(self.dir, 'config')):
-            if len(kwargs) > 0:
-                raise TypeError, \
-                    'Passing keyword arguments when config/ dir already exists'
-        else:
-            if not os.path.exists(self.dir):
-                os.makedirs(self.dir)
+        if not os.path.exists(self.dir):
+            os.makedirs(self.dir)
 
-            options = ["--%s='%s'" % (k.replace('_', '-'), v)
-                for k, v in kwargs.iteritems()]
-            cmd = 'cd "%s"; lh_config %s' % (os.path.abspath(self.dir),
-                ' '.join(options))
+        options = ["--%s='%s'" % (k.replace('_', '-'), v)
+            for k, v in kwargs.iteritems()]
+        cmd = 'cd "%s"; lh_config %s' % (os.path.abspath(self.dir),
+            ' '.join(options))
 
-            result, out = commands.getstatusoutput(cmd)
-            if result != 0:
-                raise IOError, out
+        result, out = commands.getstatusoutput(cmd)
+        if result != 0:
+            raise IOError, out
 
         self.children = {}
         for name, details in spec.iteritems():

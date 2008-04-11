@@ -114,4 +114,4 @@ class BuildController(object):
 
     def on_button_build_cancel_clicked(self, *_):
         self.cancelled = True
-        commands.getstatusoutput("gksu /bin/kill -s KILL -%d" % self.pid)
+        commands.getstatusoutput("gksu -- /bin/kill -s KILL -%d" % self.pid)

@@ -10,6 +10,11 @@ from LiveMagic import views, controllers
 class LiveMagic(object):
 
     def __init__(self, args):
+        try:
+            gtk.init_check()
+        except RuntimeError, e:
+            sys.exit('E: %s. Exiting.' % e)
+
         c = controllers.Controller(sys.argv[1:])
         v = views.View(c)
 

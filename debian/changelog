@@ -8,6 +8,8 @@ live-magic (0.4) UNRELEASED; urgency=low
   * Add Depends: on gksu (Closes: #476071)
   * Don't segfault when DISPLAY is not set. Thanks to W. Martin Borgert
     (debacle@debian.org>) for the patch. (Closes: #489904)
+  * Show version when called with '--version'. Thanks to W. Martin Borgert
+    (debacle@debian.org>) for the patch. (Closes: #450782)
 
  -- Chris Lamb <chris@chris-lamb.co.uk>  Mon, 14 Jan 2008 18:36:43 +0000
 

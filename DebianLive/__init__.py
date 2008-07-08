@@ -22,7 +22,7 @@ class Config(object):
 
         options = ["--%s='%s'" % (k.replace('_', '-'), v)
             for k, v in kwargs.iteritems()]
-        cmd = 'cd "%s"; lh_config %s' % (os.path.abspath(self.dir),
+        cmd = 'cd "%s"; lh_config --ignore-system-defaults %s' % (os.path.abspath(self.dir),
             ' '.join(options))
 
         result, out = commands.getstatusoutput(cmd)

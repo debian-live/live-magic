@@ -3,7 +3,8 @@ Section: misc
 Priority: optional
 Maintainer: Debian Live <debian-live-maint@lists.alioth.debian.org>
 Uploaders: Chris Lamb <chris@chris-lamb.co.uk>, Daniel Baumann <daniel@debian.org>
-Build-Depends: debhelper (>= 5), python-dev, python-support, live-helper (>> 1.0~a47-1)
+Build-Depends: debhelper (>= 5)
+Build-Depends-Indep: python-support
 Standards-Version: 3.8.0
 Homepage: http://debian-live.alioth.debian.org/
 Vcs-Git: git://git.debian.org/git/users/lamby-guest/live-magic.git
@@ -11,7 +12,7 @@ Vcs-Browser: http://git.debian.org/?p=users/lamby-guest/live-magic.git
 
 Package: live-magic
 Architecture: all
-Depends: live-helper (>> 1.0~a47-1), python-glade2 (>= 2.10), python-gtk2, python-vte, gksu, ${python:Depends}
+Depends: live-helper (>> 1.0~a47-1), python-glade2 (>= 2.10), python-gtk2, python-vte, gksu, xdg-utils, ${python:Depends}
 Recommends: python-gnome2-desktop, cdebootstrap
 Description: Debian Live helper programs (GUI frontend)
  Live-helper is a collection of programs that can be used to build Debian Live

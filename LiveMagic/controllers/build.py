@@ -1,27 +1,26 @@
 import os
+import pwd
 import sys
 import shutil
 import gobject
 import subprocess
 
-BUILDING, CANCELLED, CANCELLED_CLEAN, GKSU_ERROR, FAILED, \
-    FAILED_CLEAN, OK, OK_CLEAN, DONE = range(9)
+BUILDING, CANCELLED, CANCELLED_CLEAN, FAILED, \
+    FAILED_CLEAN, OK, OK_CLEAN, DONE = range(8)
 
 from LiveMagic.utils import find_resource
 
 class BuildController(object):
 
-    # GTK callbacks
-
-    def on_build_activate(self, *_):
-        # Save model if necessary
-        if self.model.altered():
-            self.model.save()
-        self.do_show_build_window(self.set_window_main_sensitive)
-
     def do_show_build_window(self, build_close_callback):
         self.state = BUILDING
         self.build_successful = False
+
+        self.uid, self.gid = [int(x) for x in self.options.build_for.split(':', 2)]
+
+        f = open(os.path.join(os.getcwd(), 'build-log.txt'), 'w')
+        f.write('I: live-magic respawned as root')
+        f.close()
 
         # Set initial titles and state
         self.view.set_build_status_change(initial=True)
@@ -30,11 +29,11 @@ class BuildController(object):
         self.view.do_show_window_build(build_close_callback)
 
         # Start pulsing
-        gobject.timeout_add(100, self.do_pulse_cb)
+        gobject.timeout_add(80, self.do_pulse_cb)
 
         # Fork command
-        cmd = ['/usr/bin/gksu', '--', find_resource('live-magic-builder')]
-        self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, self.model.dir)
+        cmd = [find_resource('live-magic-builder')]
+        self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, os.getcwd())
 
         if self.pid < 0:
             self.view.set_build_titles("Error creating Debian Live system!", \
@@ -48,12 +47,11 @@ class BuildController(object):
         return True
 
     def on_vte_child_exited(self, *_):
-        self.pid = -1
-        status_filename = os.path.join(self.model.dir, '.status')
+        status_filename = os.path.join(os.getcwd(), '.status')
 
         def _exec(*cmds):
             args = ['/bin/sh', '-c', '; '.join(cmds)]
-            self.view.vte_terminal.fork_command(args[0], args, None, self.model.dir)
+            self.view.vte_terminal.fork_command(args[0], args, None, os.getcwd())
 
         def set_cleaning_status():
             os.remove(status_filename)
@@ -64,13 +62,21 @@ class BuildController(object):
         def ok():
             self.view.set_build_titles("Build process finished",
                 "Your Debian Live system has been created successfully.")
-            subprocess.call(['xdg-open', '%s' % self.model.dir])
+
+            if self.options.kde_full_session != '-':
+                os.environ['KDE_FULL_SESSION'] = self.options.kde_full_session
+            if self.options.gnome_desktop_session_id != '-':
+                os.environ['GNOME_DESKTOP_SESSION_ID'] = self.options.gnome_desktop_session_id
+
+            cmd = ['su', pwd.getpwuid(self.uid)[0], '-c', 'xdg-open .']
+            subprocess.call(cmd)
             return DONE
 
         def ok_clean():
             set_cleaning_status()
-            _exec('lh_clean --chroot --stage --source --cache', 'rm -rf config/ binary/', \
-                'gzip build-log.txt')
+            _exec('lh_clean --chroot --stage --source --cache',
+                'rm -rf config/ binary/',
+                'chown -R %d:%d .' % (self.uid, self.gid))
             return OK
 
         def failed():
@@ -80,7 +86,8 @@ class BuildController(object):
 
         def failed_clean():
             set_cleaning_status()
-            _exec('lh_clean --purge', 'rm -rf config/', 'gzip-build.log.txt')
+            _exec('lh_clean --purge', 'rm -rf config/',
+                'chown -R . %d:%d' % (self.uid, self.gid))
             return FAILED
 
         def cancelled():
@@ -93,12 +100,6 @@ class BuildController(object):
             _exec('lh_clean --purge', 'rm -rf $(pwd)')
             return CANCELLED
 
-        def gksu_error():
-            self.view.set_build_titles("Error gaining superuser priviledges",
-                "There was an error when trying to gain superuser priviledges.")
-            shutil.rmtree(self.model.dir)
-            return DONE
-
         if self.state == BUILDING:
             self.state = FAILED_CLEAN
             try:
@@ -110,20 +111,20 @@ class BuildController(object):
                 finally:
                     f.close()
             except:
-                self.state = GKSU_ERROR
+                pass
 
         self.state = {
             CANCELLED: cancelled,
             CANCELLED_CLEAN: cancelled_clean,
             FAILED: failed,
             FAILED_CLEAN: failed_clean,
-            GKSU_ERROR: gksu_error,
             OK: ok,
             OK_CLEAN: ok_clean,
         }[self.state]()
 
         if self.state == DONE:
             self.view.set_build_status_change(initial=False)
+            self.pid = -1
 
         # Auto-close if requested
         if self.view.get_build_auto_close() and self.build_successful:
@@ -139,4 +140,4 @@ class BuildController(object):
 
     def on_button_build_cancel_clicked(self, *_):
         self.state = CANCELLED_CLEAN
-        subprocess.call(['gksu', '--', '/bin/kill', '-s', 'KILL', '-%d' % self.pid])
+        subprocess.call(['/bin/kill', '-s', 'KILL', '-%d' % self.pid])

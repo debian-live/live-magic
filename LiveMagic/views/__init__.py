@@ -11,7 +11,7 @@ class View(Main, Build, Hooks, Wizard):
     def __init__(self, controller):
         self.controller = controller
 
-        self.xml = gtk.glade.XML(find_resource('main.glade'))
+        self.xml = gtk.glade.XML(find_resource('live-magic.glade'))
         self.xml.signal_autoconnect(self.controller)
 
         Main.__init__(self)

@@ -60,6 +60,9 @@ class WizardView(object):
     def do_dim_wizard(self):
         self.asst.set_sensitive(False)
 
+    def do_undim_wizard(self):
+        self.asst.set_sensitive(True)
+
     def do_hide_wizard(self):
         self.asst.hide()
 

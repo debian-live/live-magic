@@ -6,10 +6,6 @@ Release blockers
 
  * Build process needs to be cancellable
 
- * Password entry problems
-   - Run the entire "build" process as root, passing original uid/gid
-     as arguments so that results can be used by the original user.
-
  * Ability to select location of build in the wizard
 
 Other

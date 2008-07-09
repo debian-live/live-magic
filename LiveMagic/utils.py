@@ -3,6 +3,7 @@ import os
 def find_resource(resource):
     dirs = (
         os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'misc'),
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
         '/usr/share/live-magic',
         '/usr/local/share/live-magic',
     )

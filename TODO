@@ -4,8 +4,6 @@ live-magic TODO
 Release blockers
 ----------------
 
- * Build process needs to be cancellable
-
  * Ability to select location of build in the wizard
 
 Other

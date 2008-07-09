@@ -1,7 +1,6 @@
 import os
 import pwd
 import sys
-import shutil
 import gobject
 import subprocess
 
@@ -9,6 +8,9 @@ BUILDING, CANCELLED, CANCELLED_CLEAN, FAILED, \
     FAILED_CLEAN, OK, OK_CLEAN, DONE = range(8)
 
 from LiveMagic.utils import find_resource
+
+LOG_FILE = 'build-log.txt'
+STATUS_FILE = './status'
 
 class BuildController(object):
 
@@ -18,7 +20,7 @@ class BuildController(object):
 
         self.uid, self.gid = [int(x) for x in self.options.build_for.split(':', 2)]
 
-        f = open(os.path.join(os.getcwd(), 'build-log.txt'), 'w')
+        f = open(os.path.join(LOG_FILE), 'w')
         f.write('I: live-magic respawned as root')
         f.close()
 
@@ -47,14 +49,16 @@ class BuildController(object):
         return True
 
     def on_vte_child_exited(self, *_):
-        status_filename = os.path.join(os.getcwd(), '.status')
-
         def _exec(*cmds):
             args = ['/bin/sh', '-c', '; '.join(cmds)]
             self.view.vte_terminal.fork_command(args[0], args, None, os.getcwd())
 
         def set_cleaning_status():
-            os.remove(status_filename)
+            try:
+                os.remove(STATUS_FILE)
+            except:
+                # This may fail as we removed the build directory
+                pass
             self.view.set_build_uncancellable()
             self.view.set_build_titles("Cleaning build process",
                 "Purging unnecessary parts of the build system...")
@@ -75,8 +79,8 @@ class BuildController(object):
         def ok_clean():
             set_cleaning_status()
             _exec('lh_clean --chroot --stage --source --cache',
-                'rm -rf config/ binary/',
-                'chown -R %d:%d .' % (self.uid, self.gid))
+                'rm -rvf config/ binary/',
+                'chown -Rv %d:%d .' % (self.uid, self.gid))
             return OK
 
         def failed():
@@ -86,8 +90,8 @@ class BuildController(object):
 
         def failed_clean():
             set_cleaning_status()
-            _exec('lh_clean --purge', 'rm -rf config/',
-                'chown -R . %d:%d' % (self.uid, self.gid))
+            _exec('lh_clean --purge', 'rm -rvf config/',
+                'chown -Rv . %d:%d' % (self.uid, self.gid))
             return FAILED
 
         def cancelled():
@@ -97,13 +101,13 @@ class BuildController(object):
 
         def cancelled_clean():
             set_cleaning_status()
-            _exec('lh_clean --purge', 'rm -rf $(pwd)')
+            _exec('lh_clean --purge', 'rm -rvf $(pwd)')
             return CANCELLED
 
         if self.state == BUILDING:
             self.state = FAILED_CLEAN
             try:
-                f = open(status_filename)
+                f = open(STATUS_FILE)
                 try:
                     if f.read().strip() == 'ok':
                         self.state = OK_CLEAN

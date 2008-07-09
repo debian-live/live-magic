@@ -44,16 +44,28 @@ class WizardController(object):
                 p = subprocess.Popen(cmd)
 
                 os.waitpid(p.pid, 0)
+
                 try:
+                    # If build-log.txt exists, we had a successful build
                     os.stat(os.path.join(self.model.dir, 'build-log.txt'))
                     gtk.main_quit()
                     return
                 except:
                     pass
 
+                try:
+                    os.stat(self.model.dir)
+                except:
+                    # If the build directory does not exist, we cancelled the build
+                    break
+
             self.view.do_undim_wizard()
             os.chdir('..')
-            shutil.rmtree(self.model.dir)
+            try:
+                shutil.rmtree(self.model.dir)
+            except:
+                # Tree may not exist if we cancelled build
+                pass
 
         threading.Thread(target=gain_superuser).start()
 

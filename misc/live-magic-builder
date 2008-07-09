@@ -36,7 +36,7 @@ Save_config () {
 	do
 		while read LINE
 		do
-			echo "${FILE}: ${LINE}" | tee -a ${LOG}
+			echo "${FILE}: ${LINE}" >> ${LOG}
 		done < ${FILE}
 	done
 }

@@ -17,10 +17,7 @@ class BuildView(object):
             self['vte_scrollbar'].set_adjustment(t.get_adjustment())
             self['hbox_vte'].pack_end(t)
             self['hbox_vte'].show_all()
-
-            # Connect signals from VteTerminal
             t.connect('child-exited', self.controller.on_vte_child_exited)
-
             self.vte_terminal = t
 
         self.vte_terminal.reset(True, True)
@@ -30,12 +27,9 @@ class BuildView(object):
         self['window_build'].hide()
         self.build_close_callback()
 
-    def set_build_titles(self, title, heading, subheading):
-        self['window_build'].set_title(title)
+    def set_build_titles(self, heading, subheading):
+        self['window_build'].set_title(heading)
         self['label_build_titles'].set_label('<big><b>%s</b></big>\n\n%s' % (heading, subheading))
-
-    def set_build_status(self, msg):
-        self['label_build_status'].set_label('<i>%s</i>' % msg)
 
     def do_build_pulse(self):
         self['progress_build'].pulse()
@@ -48,7 +42,10 @@ class BuildView(object):
         self['button_build_cancel'].set_sensitive(initial)
         self['button_build_close'].set_sensitive(not initial)
         self['checkbutton_build_auto_close'].set_sensitive(initial)
-        self['progress_build'].set_fraction({True: 0, False: 1}[initial])
+        self['progress_build'].set_fraction({True: 0.0, False: 1.0}[initial])
+
+    def set_build_uncancellable(self):
+        self['button_build_cancel'].set_sensitive(False)
 
     def get_build_auto_close(self):
         """
@@ -56,6 +53,3 @@ class BuildView(object):
         build, and False otherwise.
         """
         return self['checkbutton_build_auto_close'].get_active()
-
-    def do_build_completed(self):
-        self['progress_build'].set_fraction(0.5)

@@ -1,37 +1,40 @@
 live-magic TODO
 ===============
 
-General
+Release blockers
+----------------
+
+ * Build process needs to be cancellable
+
+ * Password entry problems
+   - Run the entire "build" process as root, passing original uid/gid
+     as arguments so that results can be used by the original user.
+
+ * Ability to select location of build in the wizard
+
+Other
+-----
+
+(Wizard)
+
+ * Pressing 'ENTER' on fields moves to next page.
+
+ * Add simple package handling to wizard?
+
+ * Add boolean for whether to use mirror as LH_MIRROR_BINARY mirror?
+
+(General)
 
  * Fix about box close dialog problem.
 
  * Translations
 
-Build/build window
-
- * Interactive build - either support it (how?) or flag a warning if it is enabled.
-   -- Debconf 'NONINTERACTIVE'
-
- * Use lh_build error code, both for status of build and status of password entry.
-
  * Make ProgressBar full-width when finished.
-
-Wizard
 
  * After successful build, purge cache configuration and then open containing folder
   - Requires xdg-open (and xdg-utils build-dependency)
 
- * Add simple package handling to wizard.
-
- * Find mirror "automatically". There are some debian-devel list posts about why
-   this is bad and/or infeasible, but it would be preferably to an empty box.
-   - Use ARCH-geomirror.debian.net
-
- * Pressing 'ENTER' on fields moves to next page.
-
- * Add boolean for whether to use mirror as LH_MIRROR_BINARY mirror.
-
-Expert mode
+(Expert mode)
 
  * File selectors (preseed, splash screen)  (gtk.Entry with 'Select' button)
 
@@ -49,7 +52,7 @@ Expert mode
    "Hidden" depends - eg. LH_BOOTSTRAP_KEYRING only makes sense when using
    debootstrap (cdebootstrap does not have this option afaict).
 
-API
+(API)
 
  * Add build() to LiveHelperConfiguration?
 

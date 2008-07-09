@@ -1,0 +1,54 @@
+#!/bin/sh
+
+set -e
+
+LOG="build-log.txt"
+
+touch ${LOG}
+
+Echo_verbose ()
+{
+	echo "I: ${1}" | tee -a ${LOG}
+}
+
+Set_status () {
+	echo "${1}" > .status
+}
+
+Check () {
+	if [ "$(id -u)" -ne "0" ]
+	then
+		exit 1
+	fi
+
+	if [ ! -d "config/" ]
+	then
+		exit 1
+	fi
+}
+
+Clean () {
+	lh_clean --purge | tee -a ${LOG}
+}
+
+Save_config () {
+	for FILE in $(find config/ -type f)
+	do
+		while read LINE
+		do
+			echo "${FILE}: ${LINE}" | tee -a ${LOG}
+		done < ${FILE}
+	done
+}
+
+Check
+Clean
+Save_config
+
+Set_status building...
+Echo_verbose "lh_build starting in $(pwd)"
+lh_build 2>&1 | tee -a ${LOG}
+Echo_verbose "lh_build returned successfully"
+Set_status ok
+
+exit 0

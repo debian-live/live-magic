@@ -6,7 +6,6 @@ upstream:
 
 build: build-stamp
 build-stamp:
-	python tests/test_all.py
 	python setup.py build
 	touch $@
 
@@ -30,7 +29,7 @@ binary-indep: build install
 	dh_pysupport
 	dh_installchangelogs
 	dh_installdocs
-	dh_installman
+	dh_installman live-magic.1
 	dh_compress
 	dh_fixperms
 	dh_installdeb
@@ -38,7 +37,7 @@ binary-indep: build install
 	dh_md5sums
 	dh_builddeb
 
-binary-arch: build install
+binary-arch:
 
 binary: binary-arch binary-indep
 .PHONY: build clean binary-indep binary-arch binary install upstream

@@ -3,6 +3,7 @@ import gtk
 import time
 import popen2
 import shutil
+import gobject
 import threading
 import subprocess
 
@@ -52,7 +53,7 @@ class WizardController(object):
                 try:
                     # If build-log.txt exists, we had a successful build
                     os.stat(os.path.join(self.model.dir, 'build-log.txt'))
-                    gtk.main_quit()
+                    gobject.timeout_add(0, lambda: gtk.main_quit())
                     return
                 except:
                     pass

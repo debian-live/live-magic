@@ -1,5 +1,6 @@
 import vte
 import gtk
+import gobject
 
 class BuildView(object):
     def __init__(self):
@@ -24,7 +25,7 @@ class BuildView(object):
 
     def do_hide_window_build(self):
         self['window_build'].hide()
-        self.build_close_callback()
+        gobject.timeout_add(0, self.build_close_callback)
 
     def set_build_titles(self, heading, subheading):
         self['window_build'].set_title(heading)

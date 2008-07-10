@@ -28,7 +28,7 @@ class TestSourcesList(unittest.TestCase):
 class TestMatch(TestSourcesList):
     def assertMatchLine(self, line):
         self.f_w(line)
-        self.assert_(get_mirror(None, sources_list=self.filename))
+        self.assert_(get_mirror(None, sources_list=self.filename, defaults=None))
 
     def testCountryDebianMirror(self):
         self.assertMatchLine('deb http://ftp.uk.debian.org/debian stable main')
@@ -45,7 +45,7 @@ class TestMatch(TestSourcesList):
 class TestNoMatch(TestSourcesList):
     def assertNoMatchLine(self, line):
         self.f_w(line)
-        self.failIf(get_mirror(None, sources_list=self.filename))
+        self.failIf(get_mirror(None, sources_list=self.filename, defaults=None))
 
     def testComments(self):
         self.assertNoMatchLine('# comment')
@@ -58,7 +58,7 @@ class TestNoMatch(TestSourcesList):
 
 class TestErrors(TestSourcesList):
     def testFileNotFound(self):
-        self.failIf(get_mirror(None, sources_list='/proc/invisible-file'))
+        self.failIf(get_mirror(None, sources_list='/proc/invisible-file', defaults=None))
 
 """
 # Not implemented yet

@@ -21,11 +21,15 @@ class KeyVar(dict):
     def __new__(cls, *args, **kwargs):
         return dict.__new__(cls, *args, **kwargs)
 
-    def __init__(self, dir, name, spec):
-        self.filename = os.path.join(dir, 'config', name)
-
+    def __init__(self, dir, name, spec, filename=None):
         self.line_numbers = {}
         self.stale = set()
+
+        if filename is None:
+            self.filename = os.path.join(dir, 'config', name)
+        else:
+            self.filename = filename
+
 
         f = open(self.filename, 'r')
         try:

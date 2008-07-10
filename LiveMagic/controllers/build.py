@@ -80,7 +80,7 @@ class BuildController(object):
         def ok_clean():
             set_cleaning_status()
             _exec('lh_clean --chroot --stage --source --cache',
-                'rm -rf config/ binary/',
+                'rm -rf config/ binary/ tftpboot/',
                 'chown -R %d:%d .' % (self.uid, self.gid))
             return OK
 

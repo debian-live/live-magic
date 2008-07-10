@@ -1,6 +1,7 @@
 import gtk
 
 from DebianLive.utils import get_mirror
+from DebianLive.elements import KeyVar
 
 class WizardView(object):
     def __init__(self):
@@ -58,6 +59,22 @@ class WizardView(object):
         c.prepend_text(get_mirror())
         c.set_active(0)
 
+        c = self['combo_net_root_filesystem']
+        c.prepend_text('CIFS')
+        c.prepend_text('NFS')
+        c.set_active(0)
+
+        server = '192.168.1.1'
+        path = '/srv/debian-live'
+        try:
+            kv = KeyVar('/etc/default', 'live-helper', {}, filename='/etc/default/live-helper')
+            server = kv.get('LH_NET_ROOT_SERVER', server)
+            path = kv.get('LH_NET_ROOT_PATH', path)
+        except IOError:
+            pass
+        self['entry_net_root_server'].set_text(server)
+        self['entry_net_root_path'].set_text(path)
+
         f = self['filechooser_build_directory']
         f.set_uri(self.controller.get_homedir())
 
@@ -89,6 +106,11 @@ class WizardView(object):
         if self.controller.get_host_architecture() == 'amd64':
             data['architecture'] = get_active('radio_architecture_i386')
 
+        if data['binary_images'] == 'net':
+            data['net_root_path'] = self['entry_net_root_path'].get_text()
+            data['net_root_server'] = self['entry_net_root_server'].get_text()
+            data['net_root_filesystem'] = self['combo_net_root_filesystem'].get_active_text().lower()
+
         dirs = self['filechooser_build_directory'].get_filenames()
         assert len(dirs) == 1
         return data, dirs[0]
@@ -104,3 +126,9 @@ class WizardView(object):
         res = dialog.run()
         dialog.destroy()
         return res == gtk.RESPONSE_YES
+
+    def toggle_netboot_settings(self, button):
+        if button.get_active():
+            self['table_netboot_settings'].show()
+        else:
+            self['table_netboot_settings'].hide()

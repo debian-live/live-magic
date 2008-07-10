@@ -71,3 +71,6 @@ class WizardController(object):
     def on_wizard_cancel(self, *args):
         if self.view.do_show_wizard_cancel_confirm_window():
             gtk.main_quit()
+
+    def on_radio_media_net_group_changed(self, button):
+        self.view.toggle_netboot_settings(button)

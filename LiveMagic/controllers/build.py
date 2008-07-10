@@ -34,7 +34,7 @@ class BuildController(object):
         gobject.timeout_add(80, self.do_pulse_cb)
 
         # Fork command
-        cmd = ['/bin/bash', find_resource('live-magic-builder')]
+        cmd = [find_resource('live-magic-builder')]
         self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, os.getcwd())
 
         if self.pid < 0:

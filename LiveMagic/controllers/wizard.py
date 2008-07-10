@@ -49,18 +49,13 @@ class WizardController(object):
 
                 os.waitpid(p.pid, 0)
 
-                try:
-                    # If build-log.txt exists, we had a successful build
-                    os.stat(os.path.join(self.model.dir, 'build-log.txt'))
+                # If build-log.txt exists, we had a successful build
+                if os.path.exists(os.path.join(self.model.dir, 'build-log.txt')):
                     gobject.timeout_add(0, lambda: gtk.main_quit())
                     return
-                except:
-                    pass
 
-                try:
-                    os.stat(self.model.dir)
-                except:
-                    # If the build directory does not exist, we cancelled the build
+                # If the build directory does not exist, we cancelled the build
+                if not os.path.exists(self.model.dir):
                     break
 
             self.view.do_undim_wizard()

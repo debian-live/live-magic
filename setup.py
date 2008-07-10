@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
     name='live-magic',
-    version='0.3',
+    version='0.4',
     maintainer = "Chris Lamb",
     maintainer_email = "chris@chris-lamb.co.uk",
     description = "GTK+ frontend for configuring Debian Live systems",
@@ -20,7 +20,8 @@ setup(
     ],
     data_files = [
         ('share/live-magic', [
-            'misc/main.glade',
+            'misc/live-magic-builder',
+            'misc/live-magic.glade',
             'misc/debian_openlogo-nd-100.png',
             'misc/debian_sm.png',
             'misc/gnome-logo-icon-transparent.png',

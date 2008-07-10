@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
+set -o pipefail
 
 LOG="build-log.txt"
 
@@ -9,6 +10,11 @@ touch ${LOG}
 Echo_verbose ()
 {
 	echo "I: ${1}" | tee -a ${LOG}
+}
+
+Echo_line () {
+	Echo_verbose \
+	"============================================================================="
 }
 
 Set_status () {
@@ -44,11 +50,11 @@ Save_config () {
 Check
 Clean
 Save_config
-
-Set_status building...
+Set_status building
 Echo_verbose "lh_build starting in $(pwd)"
+Echo_line
 lh_build 2>&1 | tee -a ${LOG}
+Echo_line
 Echo_verbose "lh_build returned successfully"
 Set_status ok
-
 exit 0

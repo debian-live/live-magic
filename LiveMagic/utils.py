@@ -6,6 +6,7 @@ def find_resource(resource):
         os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
         '/usr/share/live-magic',
         '/usr/local/share/live-magic',
+        '/usr/share/common-licenses',
     )
 
     tried = []

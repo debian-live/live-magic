@@ -1,14 +1,6 @@
 live-magic TODO
 ===============
 
-Release blockers
-----------------
-
- * Ability to select location of build in the wizard
-
-Other
------
-
 (Wizard)
 
  * Pressing 'ENTER' on fields moves to next page.

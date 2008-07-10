@@ -21,7 +21,7 @@ class BuildController(object):
         self.uid, self.gid = [int(x) for x in self.options.build_for.split(':', 2)]
 
         f = open(os.path.join(LOG_FILE), 'w')
-        f.write('I: live-magic respawned as root')
+        print >>f, "I: live-magic respawned as root"
         f.close()
 
         # Set initial titles and state
@@ -34,7 +34,7 @@ class BuildController(object):
         gobject.timeout_add(80, self.do_pulse_cb)
 
         # Fork command
-        cmd = [find_resource('live-magic-builder')]
+        cmd = ['/bin/bash', find_resource('live-magic-builder')]
         self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, os.getcwd())
 
         if self.pid < 0:
@@ -50,7 +50,8 @@ class BuildController(object):
 
     def on_vte_child_exited(self, *_):
         def _exec(*cmds):
-            args = ['/bin/sh', '-c', '; '.join(cmds)]
+            glue = ' | tee -a %s ;' % LOG_FILE
+            args = ['/bin/sh', '-c', glue.join(cmds)]
             self.view.vte_terminal.fork_command(args[0], args, None, os.getcwd())
 
         def set_cleaning_status():
@@ -79,8 +80,8 @@ class BuildController(object):
         def ok_clean():
             set_cleaning_status()
             _exec('lh_clean --chroot --stage --source --cache',
-                'rm -rvf config/ binary/',
-                'chown -Rv %d:%d .' % (self.uid, self.gid))
+                'rm -rf config/ binary/',
+                'chown -R %d:%d .' % (self.uid, self.gid))
             return OK
 
         def failed():
@@ -91,7 +92,7 @@ class BuildController(object):
         def failed_clean():
             set_cleaning_status()
             _exec('lh_clean --purge', 'rm -rvf config/',
-                'chown -Rv . %d:%d' % (self.uid, self.gid))
+                'chown -R %d:%d .' % (self.uid, self.gid))
             return FAILED
 
         def cancelled():

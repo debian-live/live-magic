@@ -11,12 +11,12 @@ class WizardView(object):
         self.asst.connect('apply', self.controller.on_wizard_apply)
         self.asst.connect('cancel', self.controller.on_wizard_cancel)
 
-        def add_expert_mode():
-            label = gtk.Label('Expert mode')
+        def add_about_button():
+            label = gtk.Label('About')
             label.show()
 
             image = gtk.Image()
-            image.set_from_stock(gtk.STOCK_EDIT, gtk.ICON_SIZE_BUTTON)
+            image.set_from_stock(gtk.STOCK_ABOUT, gtk.ICON_SIZE_BUTTON)
             image.show()
 
             vbox = gtk.HBox(spacing=4)
@@ -26,10 +26,11 @@ class WizardView(object):
 
             btn = gtk.Button()
             btn.add(vbox)
-            btn.connect('clicked', self.controller.on_wizard_expert_mode_selected)
+            btn.connect('clicked', self.controller.on_about_request)
             btn.show()
 
             self.asst.add_action_widget(btn)
+        add_about_button()
 
         # Load paages from Glade resource file.
         notebook = self['notebook_wizard']
@@ -39,7 +40,7 @@ class WizardView(object):
 
         for i in range(notebook.get_n_pages()):
             # Only show architecture page if using amd64
-            if notebook.get_n_pages() - 2 == i and \
+            if notebook.get_n_pages() - 3 == i and \
                 self.controller.get_host_architecture() != 'amd64':
                 continue
 
@@ -54,6 +55,9 @@ class WizardView(object):
         c = self['combobox_mirror']
         c.prepend_text(self.controller.get_suggested_mirror())
         c.set_active(0)
+
+        f = self['filechooser_build_directory']
+        f.set_uri(self.controller.get_homedir())
 
     def do_show_wizard(self):
         self.asst.show()
@@ -83,7 +87,9 @@ class WizardView(object):
         if self.controller.get_host_architecture() == 'amd64':
             data['architecture'] = get_active('radio_architecture_i386')
 
-        return data
+        dirs = self['filechooser_build_directory'].get_filenames()
+        assert len(dirs) == 1
+        return data, dirs[0]
 
     def do_show_wizard_cancel_confirm_window(self):
         dialog = gtk.MessageDialog(

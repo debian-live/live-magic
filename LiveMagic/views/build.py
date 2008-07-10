@@ -8,7 +8,6 @@ class BuildView(object):
 
     def do_show_window_build(self, build_close_callback):
         self.build_close_callback = build_close_callback
-        self['window_main'].set_sensitive(False)
 
         # Configure VteTerminal component if necessary
         if self.vte_terminal is None:

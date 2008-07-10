@@ -8,12 +8,16 @@ import subprocess
 
 from LiveMagic import utils
 from DebianLive import Config
-from DebianLive.utils import SourcesList, get_build_dir
+from DebianLive.utils import SourcesList
 
 class WizardController(object):
     def on_wizard_apply(self, _):
-        build_dir = get_build_dir()
-        data = self.view.get_wizard_completed_details()
+        data, build_dir = self.view.get_wizard_completed_details()
+
+        if build_dir in (self.get_homedir(), os.path.expanduser('~/DebianLive')):
+            build_dir = os.path.expanduser('~/DebianLive/build-%s' % time.strftime('%Y-%m-%d-%H%M-%S'))
+        elif len(os.listdir(build_dir)) != 0:
+            build_dir = os.path.join(build_dir, 'DebianLive')
 
         # Use cdebootstrap in some situations
         if os.path.exists('/usr/bin/cdebootstrap') and \
@@ -29,7 +33,6 @@ class WizardController(object):
         self.view.do_dim_wizard()
 
         os.chdir(build_dir)
-        build_for = '%d:%d' % (os.geteuid(), os.getegid())
 
         def gain_superuser():
             title = "Enter your password to continue"
@@ -38,7 +41,8 @@ class WizardController(object):
             for _ in range(3):
                 cmd = ['gksu', '--disable-grab', '--preserve-env',
                     '--message', '<big><b>%s</b></big>\n\n%s' % (title, text), '--',
-                    utils.find_resource('live-magic'), '--build-for', build_for,
+                    utils.find_resource('live-magic'),
+                    '--build-for', '%d:%d' % (os.geteuid(), os.getegid()),
                     '--kde-full-session', os.environ.get('KDE_FULL_SESSION', '-'),
                     '--gnome-desktop-session-id', os.environ.get('GNOME_DESKTOP_SESSION_ID', '-')]
                 p = subprocess.Popen(cmd)

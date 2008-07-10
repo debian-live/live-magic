@@ -9,7 +9,6 @@ import subprocess
 
 from LiveMagic import utils
 from DebianLive import Config
-from DebianLive.utils import SourcesList
 
 class WizardController(object):
     def on_wizard_apply(self, _):
@@ -73,9 +72,6 @@ class WizardController(object):
                 pass
 
         threading.Thread(target=gain_superuser).start()
-
-    def get_suggested_mirror(self):
-        return SourcesList().get_mirror()
 
     def on_wizard_cancel(self, *args):
         if self.view.do_show_wizard_cancel_confirm_window():

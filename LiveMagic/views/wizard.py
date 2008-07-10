@@ -1,5 +1,7 @@
 import gtk
 
+from DebianLive.utils import get_mirror
+
 class WizardView(object):
     def __init__(self):
         self.asst = gtk.Assistant()
@@ -53,7 +55,7 @@ class WizardView(object):
             self.asst.set_page_title(page, notebook.get_tab_label_text(page))
 
         c = self['combobox_mirror']
-        c.prepend_text(self.controller.get_suggested_mirror())
+        c.prepend_text(get_mirror())
         c.set_active(0)
 
         f = self['filechooser_build_directory']

@@ -1,50 +1,48 @@
 import os
 import re
 
-class SourcesList(object):
-    comments = re.compile(r'\s*#')
-    patterns = (
-        re.compile(r'http://ftp.?\..{2}\.debian\.org[^\s]*'),
-        re.compile(r'http://(localhost|127\.0\.0\.1)[^\s]*'),
-        re.compile(r'http://[^\s]*'),
-    )
-    reject_patterns = (
-        re.compile(r'backports\.'),
-        re.compile(r'security\.'),
-    )
+__all__ = ['get_mirror']
 
-    def __init__(self, filename='/etc/apt/sources.list'):
-        self.filename = filename
+COMMENTS = re.compile(r'\s*#')
+PATTERNS = (
+    re.compile(r'http://ftp.?\..{2}\.debian\.org[^\s]*'),
+    re.compile(r'http://(localhost|127\.0\.0\.1)[^\s]*'),
+    re.compile(r'http://[^\s]*'),
+)
+REJECT_PATTERNS = (
+    re.compile(r'backports\.'),
+    re.compile(r'security\.'),
+)
 
-    def get_mirror(self, fallback='http://www.us.debian.org/'):
-        result = fallback
+def get_mirror(fallback='http://www.us.debian.org/', sources_list='/etc/apt/sources.list'):
+    result = fallback
+
+    try:
+        f = open(sources_list, 'r')
 
         try:
-            f = open(self.filename, 'r')
+            for line in f.readlines():
+                if COMMENTS.match(line):
+                    continue
 
-            try:
-                for line in f.readlines():
-                    if self.comments.match(line):
+                flag = False
+                for pat in REJECT_PATTERNS:
+                    m = pat.search(line)
+                    if m:
+                        flag = True
+                        break
+                if flag:
+                    continue
+
+                for pat in PATTERNS:
+                    m = pat.search(line)
+                    if not m:
                         continue
 
-                    flag = False
-                    for pat in self.reject_patterns:
-                        m = pat.search(line)
-                        if m:
-                            flag = True
-                            break
-                    if flag:
-                        continue
+                    result = m.group(0)
+        finally:
+            f.close()
+    except IOError:
+        pass
 
-                    for pat in self.patterns:
-                        m = pat.search(line)
-                        if not m:
-                            continue
-
-                        result = m.group(0)
-            finally:
-                f.close()
-        except IOError:
-            pass
-
-        return result
+    return result

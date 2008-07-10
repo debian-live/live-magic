@@ -6,14 +6,13 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from DebianLive.utils import SourcesList
+from DebianLive.utils import get_mirror
 
 class TestSourcesList(unittest.TestCase):
     def setUp(self):
         import tempfile
         fd, self.filename = tempfile.mkstemp('live-magic')
         os.close(fd)
-        self.s = SourcesList(self.filename)
 
     def tearDown(self):
         try:
@@ -29,7 +28,7 @@ class TestSourcesList(unittest.TestCase):
 class TestMatch(TestSourcesList):
     def assertMatchLine(self, line):
         self.f_w(line)
-        self.assert_(self.s.get_mirror(None))
+        self.assert_(get_mirror(None, sources_list=self.filename))
 
     def testCountryDebianMirror(self):
         self.assertMatchLine('deb http://ftp.uk.debian.org/debian stable main')
@@ -46,7 +45,7 @@ class TestMatch(TestSourcesList):
 class TestNoMatch(TestSourcesList):
     def assertNoMatchLine(self, line):
         self.f_w(line)
-        self.failIf(self.s.get_mirror(None))
+        self.failIf(get_mirror(None, sources_list=self.filename))
 
     def testComments(self):
         self.assertNoMatchLine('# comment')
@@ -59,9 +58,7 @@ class TestNoMatch(TestSourcesList):
 
 class TestErrors(TestSourcesList):
     def testFileNotFound(self):
-        self.filename = '/proc/invisible-file'
-        self.s = SourcesList(self.filename)
-        self.failIf(self.s.get_mirror(None))
+        self.failIf(get_mirror(None, sources_list='/proc/invisible-file'))
 
 """
 # Not implemented yet

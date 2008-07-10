@@ -10,7 +10,7 @@ BUILDING, CANCELLED, CANCELLED_CLEAN, FAILED, \
 from LiveMagic.utils import find_resource
 
 LOG_FILE = 'build-log.txt'
-STATUS_FILE = './status'
+STATUS_FILE = '.status'
 
 class BuildController(object):
 

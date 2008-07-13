@@ -1,17 +1,25 @@
-live-magic (0.4) UNRELEASED; urgency=low
+live-magic (0.4) unstable; urgency=low
 
-  * Don't include "-num" in version.
-  * Update live-helper dependency to 1.0~a42.
-  * Prefer cebootstrap if available and add to Recommends.
-  * Move to GPL v3.
+  * Move to native package.
+  * debian/control:
+    - Add Depends: on gksu (Closes: #476071)
+    - Update package description.
+    - Bump live-helper dependency to >> 1.0~a48.
+    - Bump Standards-Version to 3.8.0.
+  * Temporarily remove non-wizard section; it is buggy and out of date.
+    (Closes: #440281)
   * Use LIVE_ not LH_ (Closes: #443124)
-  * Add Depends: on gksu (Closes: #476071)
+  * Completely rework build window; ensure proper status handling and
+    cleanup after build. (Closes: #454415)
+  * Set 'usb-hdd' option properly. (Closes: #478746)
   * Don't segfault when DISPLAY is not set. Thanks to W. Martin Borgert
     (debacle@debian.org>) for the patch. (Closes: #489904)
   * Show version when called with '--version'. Thanks to W. Martin Borgert
     (debacle@debian.org>) for the patch. (Closes: #450782)
-  * Bump Standards-Version to 3.8.0.
-  * Bump live-helper dependency to >> 1.0~a47-1.
+  * Add .desktop file. Thanks to Paul Wise <pabs@debian.org> for the patch.
+    (Closes: #450679)
+  * Move to GPL v3.
+  * Prefer cebootstrap in some sitatuions and add to Recommends.
   * Use --ignore-system-defaults option when calling lh_config.
 
  -- Chris Lamb <chris@chris-lamb.co.uk>  Wed, 09 Jul 2008 00:20:04 +0100

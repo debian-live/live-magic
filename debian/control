@@ -14,13 +14,11 @@ Package: live-magic
 Architecture: all
 Depends: live-helper (>= 1.0~a48), python-glade2 (>= 2.10), python-gtk2, python-vte, gksu, xdg-utils, ${python:Depends}
 Recommends: python-gnome2-desktop, cdebootstrap
-Description: Debian Live helper programs (GUI frontend)
+Description: GUI frontend to create Debian LiveCDs, etc.
  Live-helper is a collection of programs that can be used to build Debian Live
  system images. The philosophy behind live-helper is to provide a collection of
  small, simple, and easily understood tools that can be used in your own program
  to automate building of a Live system.
  .
- A typical program that uses live-helper will call several live-helper commands
- in sequence. Live-helper commands are all named with a "lh_" prefix.
- .
- This package contains the GUI frontend.
+ This package contains the GUI frontend to live-helper, offering a subset of the
+ features in an easy-to use user interface.

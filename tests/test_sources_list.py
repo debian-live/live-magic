@@ -20,8 +20,11 @@ class TestSourcesList(unittest.TestCase):
         except OSError:
             pass
 
-    def f_w(self, contents):
-        f = open(self.filename, 'w+')
+    def f_w(self, contents, filename=None):
+        if filename is None:
+            f = open(self.filename, 'w+')
+        else:
+            f = open(filename, 'w+')
         f.write(contents)
         f.close()
 
@@ -50,6 +53,9 @@ class TestNoMatch(TestSourcesList):
     def testComments(self):
         self.assertNoMatchLine('# comment')
 
+    def testBogus(self):
+        self.assertNoMatchLine('bogus')
+
     def testSecurity(self):
         self.assertNoMatchLine('deb http://security.debian.org/debian stable main')
 
@@ -60,6 +66,24 @@ class TestErrors(TestSourcesList):
     def testFileNotFound(self):
         self.failIf(get_mirror(None, sources_list='/proc/invisible-file', defaults=None))
 
+class TestDefaults(TestSourcesList):
+    def setUp(self):
+        TestSourcesList.setUp(self)
+        import tempfile
+        fd, self.defaults  = tempfile.mkstemp('live-magic')
+        os.close(fd)
+
+    def testDefaults(self):
+        mirror = 'http://test.com/debian'
+        self.f_w("bogus", self.filename)
+        self.f_w("LH_MIRROR_BOOTSTRAP=\"%s\"" % mirror, self.defaults)
+        ret = get_mirror(None, sources_list=self.filename, defaults=self.defaults)
+        self.assertEqual(ret, mirror)
+
+    def testDefaultsIOError(self):
+        self.f_w("bogus", self.filename)
+        ret = get_mirror('fallback', sources_list=self.filename, defaults='/proc/nosuchfile')
+        self.assertEqual(ret, 'fallback')
 """
 # Not implemented yet
 

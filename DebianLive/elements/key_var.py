@@ -30,7 +30,6 @@ class KeyVar(dict):
         else:
             self.filename = filename
 
-
         f = open(self.filename, 'r')
         try:
             line_no = 0

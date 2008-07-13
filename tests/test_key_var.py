@@ -56,6 +56,11 @@ class TestSimple(TestKeyVar):
         self.key_var['LH_SPAM'] = 'eggs'
         self.assertEqual(self.key_var['LH_SPAM'], 'eggs')
 
+    def testSetAndGetOptionSpecifyFilename(self):
+        self.key_var = KeyVar('/', 'dummy', self.spec, filename=self.filename)
+        self.key_var['LH_SPAM'] = 'eggs'
+        self.assertEqual(self.key_var['LH_SPAM'], 'eggs')
+
     def testSaveKnownOption(self):
         self.key_var['LH_SPAM'] = 'new value'
         self.key_var.save()

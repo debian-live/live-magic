@@ -1,3 +1,12 @@
+live-magic (0.6) unstable; urgency=low
+
+  * Remove "--preserve-env" when calling gksu. Contrary to #490134, the
+    "--preserve-env" switch actually works on some systems, but I don't think
+    we need it as we pass the environment variables we are interested in
+    manually. (Closes: #491242)
+
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Fri, 18 Jul 2008 13:49:31 +0100
+
 live-magic (0.5) unstable; urgency=low
 
   * Remove python-gnome2-desktop from Recommends (Closes: #491248)

@@ -57,7 +57,7 @@ class WizardController(object):
             text = "Live-magic requires superuser capabilities to build your Debian Live system."
 
             for _ in range(3):
-                cmd = ['gksu', '--disable-grab', '--preserve-env',
+                cmd = ['gksu', '--disable-grab',
                     '--message', '<big><b>%s</b></big>\n\n%s' % (title, text), '--',
                     utils.find_resource('live-magic'),
                     '--build-for', '%d:%d' % (os.geteuid(), os.getegid()),

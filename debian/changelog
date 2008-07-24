@@ -1,4 +1,4 @@
-live-magic (0.6) unstable; urgency=low
+live-magic (0.6) unstable; urgency=medium
 
   * Remove "--preserve-env" when calling gksu. Contrary to #490134, the
     "--preserve-env" switch actually works on some systems, but I don't think

@@ -61,7 +61,7 @@ class WizardView(object):
 
         for i in range(notebook.get_n_pages()):
             # Only show architecture page if using amd64
-            if notebook.get_n_pages() - 3 == i and \
+            if notebook.get_n_pages() - 4 == i and \
                 self.controller.get_host_architecture() != 'amd64':
                 continue
 
@@ -118,6 +118,7 @@ class WizardView(object):
             'packages_lists' : get_active('radio_desktop_gnome'),
             'binary_images' : get_active('radio_media_iso'),
             'distribution' : get_active('radio_distribution_etch'),
+            'debian_installer' : get_active('radio_installer_disabled'),
             'mirror' : self['combobox_mirror'].get_active_text()
         }
 

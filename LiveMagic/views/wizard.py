@@ -71,13 +71,12 @@ class WizardView(object):
             pass
 
         for i in range(notebook.get_n_pages()):
-            if i == notebook.get_n_pages() - 4 and \
-                self.controller.get_host_architecture() != 'amd64':
-                # Only show architecture page if using amd64
-                continue
-
             if i == 2 and hide_distribution:
                 # Hide distribution when running Lenny as stable.
+                continue
+
+            if i == 5 and self.controller.get_host_architecture() != 'amd64':
+                # Only show architecture page if using amd64
                 continue
 
             page = notebook.get_nth_page(i)

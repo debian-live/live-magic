@@ -200,6 +200,10 @@ Please wait while your Debian Live image is generated for you.</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <property name="label" translatable="yes">&lt;b&gt;Welcome to Debian Live Magic!&lt;/b&gt;
 
+A &lt;i&gt;live&lt;/i&gt; system is an operating system that does not require
+a classical installer to use it. It can boot from various media,
+including CDs, DVDs, USB sticks, or via netboot. 
+
 The following screens will lead you through the process
 of building your own Debian Live system.</property>
                 <property name="use_markup">True</property>

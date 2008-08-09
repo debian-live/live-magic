@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Version=0.4
+Version=1.0
 Name=Live Magic
 Comment=Create Debian Live systems (LiveCDs, etc.)
 Icon=/usr/share/live-magic/debian_openlogo-nd-100.png

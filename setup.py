@@ -21,7 +21,7 @@ from distutils.core import setup
 
 setup(
     name='live-magic',
-    version='0.4',
+    version='1.0',
     maintainer = "Chris Lamb",
     maintainer_email = "chris@chris-lamb.co.uk",
     description = "GTK+ frontend for configuring Debian Live systems",

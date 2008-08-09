@@ -119,7 +119,7 @@ class WizardView(object):
         data = {
             'packages_lists' : get_active('radio_desktop_gnome'),
             'binary_images' : get_active('radio_media_iso'),
-            'distribution' : get_active('radio_distribution_etch'),
+            'distribution' : get_active('radio_distribution_lenny'),
             'debian_installer' : get_active('radio_installer_disabled'),
             'mirror' : self['combobox_mirror'].get_active_text()
         }

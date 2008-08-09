@@ -57,7 +57,7 @@ class WizardController(object):
             title = _("Enter your password to continue")
             text = _("Debian Live Magic requires superuser capabilities to build your Debian Live system.")
 
-            for _ in range(3):
+            for num in range(3):
                 cmd = ['gksu', '--disable-grab',
                     '--message', '<big><b>%s</b></big>\n\n%s' % (title, text), '--',
                     utils.find_resource('live-magic'),

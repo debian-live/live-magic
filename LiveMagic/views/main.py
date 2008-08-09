@@ -19,8 +19,6 @@
 import gtk
 import gobject
 
-from LiveMagic.utils import find_resource
-
 class MainView(object):
     def __init__(self):
         self.controller.view = self
@@ -51,19 +49,3 @@ class MainView(object):
         filename = dialog.get_filename()
         dialog.destroy()
         return res, filename
-
-    def do_show_about_dialog(self):
-        about = gtk.AboutDialog()
-        about.set_name("Debian Live Magic")
-        about.set_comments("GUI tool to build Debian Live systems.")
-        about.set_copyright("Copyright (C) 2007-2008 Chris Lamb <chris@chris-lamb.co.uk>")
-
-        about.set_website("http://debian-live.alioth.debian.org/")
-        about.set_website_label("Debian Live homepage")
-        about.set_license(file(find_resource('GPL-3')).read())
-
-        logo = gtk.gdk.pixbuf_new_from_file(find_resource('debian_openlogo-nd-100.png'))
-        about.set_logo(logo)
-
-        about.run()
-        about.destroy()

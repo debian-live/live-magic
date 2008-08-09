@@ -21,6 +21,8 @@ import gtk
 from DebianLive.utils import get_mirror
 from DebianLive.elements import KeyVar
 
+from LiveMagic.utils import find_resource
+
 class WizardView(object):
     def __init__(self):
         self.asst = gtk.Assistant()
@@ -151,3 +153,21 @@ class WizardView(object):
             self['table_netboot_settings'].show()
         else:
             self['table_netboot_settings'].hide()
+
+    def do_show_about_dialog(self):
+        about = gtk.AboutDialog()
+        about.set_name("Debian Live Magic")
+        about.set_comments("GUI tool to build Debian Live systems.")
+        about.set_copyright("Copyright (C) 2007-2008 Chris Lamb <chris@chris-lamb.co.uk>")
+
+        about.set_website("http://debian-live.alioth.debian.org/")
+        about.set_website_label("Debian Live homepage")
+        about.set_license(file(find_resource('GPL-3')).read())
+
+        logo = gtk.gdk.pixbuf_new_from_file(find_resource('debian_openlogo-nd-100.png'))
+        about.set_logo(logo)
+
+        self.asst.set_sensitive(False)
+        about.run()
+        about.destroy()
+        self.asst.set_sensitive(True)

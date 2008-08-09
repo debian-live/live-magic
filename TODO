@@ -3,22 +3,13 @@ live-magic TODO
 
 (Wizard)
 
- * Pressing 'ENTER' on fields moves to next page.
-
  * Add simple package handling to wizard?
 
  * Add boolean for whether to use mirror as LH_MIRROR_BINARY mirror?
 
 (General)
 
- * Fix about box close dialog problem.
-
  * Translations
-
- * Make ProgressBar full-width when finished.
-
- * After successful build, purge cache configuration and then open containing folder
-  - Requires xdg-open (and xdg-utils build-dependency)
 
 (Expert mode)
 

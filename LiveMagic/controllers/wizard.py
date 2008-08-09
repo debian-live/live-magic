@@ -29,7 +29,7 @@ from LiveMagic import utils
 from DebianLive import Config
 
 class WizardController(object):
-    def on_wizard_apply(self, _):
+    def on_wizard_apply(self, asst):
         data, build_dir = self.view.get_wizard_completed_details()
 
         if build_dir in (self.get_homedir(), os.path.expanduser('~/DebianLive')):
@@ -53,8 +53,9 @@ class WizardController(object):
         os.chdir(build_dir)
 
         def gain_superuser():
-            title = "Enter your password to continue"
-            text = "Live-magic requires superuser capabilities to build your Debian Live system."
+            global _
+            title = _("Enter your password to continue")
+            text = _("Debian Live Magic requires superuser capabilities to build your Debian Live system.")
 
             for _ in range(3):
                 cmd = ['gksu', '--disable-grab',

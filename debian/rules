@@ -15,6 +15,7 @@ clean:
 	rm -f build-stamp
 	dh_clean
 	find -type f -name "*.pyc" -print0 | xargs -0 rm -f
+	rm -rf build live_magic.egg-info mo/
 
 install: build
 	dh_testdir

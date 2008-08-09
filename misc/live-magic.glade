@@ -1588,7 +1588,7 @@ If the specified directory is not empty, images will be created in a &lt;i&gt;De
                         <property name="use_preview_label">False</property>
                         <property name="action">GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER</property>
                         <property name="focus_on_click">False</property>
-                        <property name="title" translatable="yes">Select A Build Folder</property>
+                        <property name="title" translatable="yes">Select build folder</property>
                       </widget>
                       <packing>
                         <property name="left_attach">1</property>

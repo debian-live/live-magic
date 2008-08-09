@@ -31,10 +31,10 @@ class MainController(object):
         else:
             self.view.do_show_wizard()
 
-    def on_quit_request(self, *_):
+    def on_quit_request(self, *args):
         return self._confirm_save(lambda: gtk.main_quit(), quit_dialog=True)
 
-    def on_about_request(self, *_):
+    def on_about_request(self, *args):
         self.view.do_show_about_dialog()
 
     def get_host_architecture(self):

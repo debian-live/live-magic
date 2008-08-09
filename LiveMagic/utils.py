@@ -32,7 +32,7 @@ def find_resource(resource):
     tried = []
     for base in dirs:
         path = os.path.join(base, resource)
-        if os.path.isfile(path):
+        if os.path.exists(path):
             return path
         tried.append(path)
 

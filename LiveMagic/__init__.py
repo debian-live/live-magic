@@ -19,16 +19,37 @@
 import gtk
 import pygtk
 pygtk.require('2.0')
+import gtk.glade
 
+import locale
+import gettext
 import optparse
+import __builtin__
 
 from LiveMagic import views, controllers
+from LiveMagic.utils import find_resource
 
 __version__ = '1.0'
+
+def init_gettext():
+    try:
+        locale_dir = [find_resource('mo')]
+    except ValueError:
+        # Fall back to /usr/share/locale
+        locale_dir = []
+
+    locale.setlocale(locale.LC_ALL, '')
+    for module in gettext, gtk.glade:
+        module.bindtextdomain('live-magic', *locale_dir)
+        module.textdomain('live-magic')
+
+    __builtin__._ = gettext.gettext
 
 class LiveMagic(object):
 
     def __init__(self, args):
+        init_gettext()
+
         try:
             gtk.init_check()
         except RuntimeError, e:

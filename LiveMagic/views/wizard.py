@@ -26,7 +26,7 @@ from LiveMagic.utils import find_resource
 class WizardView(object):
     def __init__(self):
         self.asst = gtk.Assistant()
-        self.asst.set_title('Debian Live Magic')
+        self.asst.set_title(_('Debian Live Magic'))
         self.asst.set_default_size(640, 480)
         self.asst.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_MENU)
         self.asst.set_position(gtk.WIN_POS_CENTER)
@@ -35,7 +35,7 @@ class WizardView(object):
         self.asst.connect('cancel', self.controller.on_wizard_cancel)
 
         def add_about_button():
-            label = gtk.Label('About')
+            label = gtk.Label(_('About'))
             label.show()
 
             image = gtk.Image()
@@ -155,7 +155,7 @@ class WizardView(object):
             flags=gtk.DIALOG_MODAL,
             type=gtk.MESSAGE_QUESTION,
             buttons=gtk.BUTTONS_YES_NO,
-            message_format="Are you sure you wish to cancel?");
+            message_format=_("Are you sure you wish to cancel?"));
 
         res = dialog.run()
         dialog.destroy()
@@ -169,12 +169,12 @@ class WizardView(object):
 
     def do_show_about_dialog(self):
         about = gtk.AboutDialog()
-        about.set_name("Debian Live Magic")
-        about.set_comments("GUI tool to build Debian Live systems.")
+        about.set_name(_("Debian Live Magic"))
+        about.set_comments(_("GUI tool to build Debian Live systems."))
         about.set_copyright("Copyright (C) 2007-2008 Chris Lamb <chris@chris-lamb.co.uk>")
 
         about.set_website("http://debian-live.alioth.debian.org/")
-        about.set_website_label("Debian Live homepage")
+        about.set_website_label(_("Debian Live homepage"))
         about.set_license(file(find_resource('GPL-3')).read())
 
         logo = gtk.gdk.pixbuf_new_from_file(find_resource('debian_openlogo-nd-100.png'))

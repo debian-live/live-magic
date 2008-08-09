@@ -56,17 +56,17 @@ class BuildController(object):
         self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, os.getcwd())
 
         if self.pid < 0:
-            self.view.set_build_titles("Error creating Debian Live system!", \
+            self.view.set_build_titles(_("Error creating Debian Live system!"), \
                 "Could not fork the build process!")
             self.view.set_build_status_change(initial=False)
 
-    def on_window_build_delete_event(self, *_):
+    def on_window_build_delete_event(self, *args):
         # If no command is running, close the window
         if self.pid < 0:
             self.view.do_hide_window_build()
         return True
 
-    def on_vte_child_exited(self, *_):
+    def on_vte_child_exited(self, *args):
         def _exec(*cmds):
             glue = ' | tee -a %s ;' % LOG_FILE
             args = ['/bin/sh', '-c', glue.join(cmds)]
@@ -79,12 +79,12 @@ class BuildController(object):
                 # This may fail as we removed the build directory
                 pass
             self.view.set_build_uncancellable()
-            self.view.set_build_titles("Cleaning build process",
-                "Purging unnecessary parts of the build system...")
+            self.view.set_build_titles(_("Cleaning build system"),
+                _("Purging unnecessary parts of the build system..."))
 
         def ok():
-            self.view.set_build_titles("Build process finished",
-                "Your Debian Live system has been created successfully.")
+            self.view.set_build_titles(_("Build process finished"),
+                _("Your Debian Live system has been created successfully."))
 
             if self.options.kde_full_session != '-':
                 os.environ['KDE_FULL_SESSION'] = self.options.kde_full_session
@@ -103,8 +103,8 @@ class BuildController(object):
             return OK
 
         def failed():
-            self.view.set_build_titles("Error when building Debian Live system",
-                "There was an error when building your Debian Live system.")
+            self.view.set_build_titles(_("Error when building Debian Live system"),
+                _("There was an error when building your Debian Live system."))
             return DONE
 
         def failed_clean():
@@ -114,8 +114,8 @@ class BuildController(object):
             return FAILED
 
         def cancelled():
-            self.view.set_build_titles("Build process cancelled",
-                "The creation of your Debian Live system was cancelled.")
+            self.view.set_build_titles(_("Build process cancelled"),
+                _("The creation of your Debian Live system was cancelled."))
             return DONE
 
         def cancelled_clean():
@@ -153,14 +153,14 @@ class BuildController(object):
         if self.view.get_build_auto_close() and self.build_successful:
             self.view.do_hide_window_build()
 
-    def do_pulse_cb(self, *_):
+    def do_pulse_cb(self, *args):
         if self.state != DONE:
             self.view.do_build_pulse()
             return True
 
-    def on_button_build_close_clicked(self, *_):
+    def on_button_build_close_clicked(self, *args):
         self.view.do_hide_window_build()
 
-    def on_button_build_cancel_clicked(self, *_):
+    def on_button_build_cancel_clicked(self, *args):
         self.state = CANCELLED_CLEAN
         subprocess.call(['/bin/kill', '-s', 'KILL', '-%d' % self.pid])

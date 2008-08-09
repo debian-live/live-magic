@@ -17,7 +17,27 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import os
+
 from distutils.core import setup
+from distutils.file_util import copy_file
+from distutils.command.build_py import build_py
+from distutils.command.install_data import install_data
+
+from glob import glob
+from subprocess import check_call
+
+class my_install(install_data):
+    def run(self):
+        # Generating and installing .mo files
+        check_call('po/update-mo.sh')
+        for langdir in glob('mo/*'):
+            lang = os.path.basename(langdir)
+            src = os.path.join(langdir, 'LC_MESSAGES', 'live-magic.mo')
+            dst = os.path.join('share', 'locale', lang, 'LC_MESSAGES')
+            self.data_files.append((dst, [src]))
+
+        install_data.run(self)
 
 setup(
     name='live-magic',
@@ -27,7 +47,10 @@ setup(
     description = "GTK+ frontend for configuring Debian Live systems",
     license = "GNU GPL v3",
     scripts = ['live-magic'],
-    packages= [
+    cmdclass = {
+        'install_data': my_install,
+    },
+    packages = [
         'LiveMagic',
         'LiveMagic.views',
         'LiveMagic.controllers',

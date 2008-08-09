@@ -1,0 +1,4 @@
+APPLICATION="live-magic"
+EMAIL="chris@chris-lamb.co.uk"
+EXTENSIONS="glade py"
+DIRS="LiveMagic misc"

@@ -2,6 +2,7 @@ live-magic (1.0) unstable; urgency=low
 
   * 1.0 release for Lenny.
   * Set default distribution to Lenny.
+  * Don't show distribution page when running Lenny as stable.
 
  -- Chris Lamb <chris@chris-lamb.co.uk>  Sat, 09 Aug 2008 02:41:53 +0100
 

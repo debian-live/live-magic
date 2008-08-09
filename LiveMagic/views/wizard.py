@@ -61,10 +61,23 @@ class WizardView(object):
             [gtk.ASSISTANT_PAGE_CONTENT] * (notebook.get_n_pages() - 2) + \
             [gtk.ASSISTANT_PAGE_CONFIRM]
 
+        hide_distribution = False
+        try:
+            f = open('/etc/debian_version')
+            if f.read(4) == "5.0\n":
+                hide_distribution = True
+            f.close()
+        except:
+            pass
+
         for i in range(notebook.get_n_pages()):
-            # Only show architecture page if using amd64
-            if notebook.get_n_pages() - 4 == i and \
+            if i == notebook.get_n_pages() - 4 and \
                 self.controller.get_host_architecture() != 'amd64':
+                # Only show architecture page if using amd64
+                continue
+
+            if i == 2 and hide_distribution:
+                # Hide distribution when running Lenny as stable.
                 continue
 
             page = notebook.get_nth_page(i)

@@ -35,17 +35,3 @@ class MainView(object):
         except KeyError:
             return False
         return True
-
-    def do_folder_open(self):
-        dialog = gtk.FileChooserDialog("Open Configuration",
-            self['window_main'],
-            gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER,
-            (
-                gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
-                gtk.STOCK_OPEN, gtk.RESPONSE_ACCEPT,
-            ))
-
-        res = dialog.run()
-        filename = dialog.get_filename()
-        dialog.destroy()
-        return res, filename

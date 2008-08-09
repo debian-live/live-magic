@@ -21,6 +21,8 @@ import gtk
 import pwd
 import sys
 
+from LiveMagic.utils import find_resource
+
 class MainController(object):
 
     def ready(self, options, args):
@@ -46,3 +48,19 @@ class MainController(object):
     def get_homedir(self):
         uid = os.geteuid()
         return pwd.getpwuid(uid)[5]
+
+    def get_keyboard_layouts(self):
+        for line in open(find_resource('keyboard-layouts.txt')):
+            yield line.strip().split('\t', 2)
+
+    def get_locales(self):
+        locales = []
+        try:
+            for line in open('/usr/share/i18n/SUPPORTED'):
+                locale, codepage = line.strip().split(' ', 2)
+                locales.append(locale)
+        except:
+            locales = ['en_US.UTF-8']
+
+        locales.sort()
+        return locales

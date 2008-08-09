@@ -67,6 +67,7 @@ setup(
             'misc/gnome-logo-icon-transparent.png',
             'misc/kde.png',
             'misc/xfce.png',
+            'misc/keyboard-layouts.txt',
             ]),
         ('share/applications', [
             'misc/live-magic.desktop'

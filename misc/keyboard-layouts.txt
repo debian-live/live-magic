@@ -1,0 +1,82 @@
+af	Afghanistan
+al	Albania
+ad	Andorra
+ara	Arabic
+am	Armenia
+az	Azerbaijan
+bd	Bangladesh
+by	Belarus
+be	Belgium
+bt	Bhutan
+ba	Bosnia and Herzegovina
+braille	Braille
+br	Brazil
+bg	Bulgaria
+kh	Cambodia
+ca	Canada
+cn	China
+cd	Congo, Democratic Republic of the
+hr	Croatia
+cz	Czechia
+dk	Denmark
+epo	Esperanto
+ee	Estonia
+et	Ethiopia
+fo	Faroe Islands
+fi	Finland
+fr	France
+ge	Georgia
+de	Germany
+gh	Ghana
+gr	Greece
+gn	Guinea
+hu	Hungary
+is	Iceland
+in	India
+ir	Iran
+iq	Iraq
+ie	Ireland
+il	Israel
+it	Italy
+jp	Japan
+nec_vndr/jp	Japan (PC-98xx Series)
+kz	Kazakhstan
+kr	Korea, Republic of
+kg	Kyrgyzstan
+la	Laos
+latam	Latin American
+lv	Latvia
+lt	Lithuania
+mk	Macedonia
+mv	Maldives
+mt	Malta
+mao	Maori
+mn	Mongolia
+me	Montenegro
+ma	Morocco
+mm	Myanmar
+np	Nepal
+nl	Netherlands
+ng	Nigeria
+no	Norway
+pk	Pakistan
+pl	Poland
+pt	Portugal
+ro	Romania
+ru	Russia
+rs	Serbia
+sk	Slovakia
+si	Slovenia
+za	South Africa
+es	Spain
+lk	Sri Lanka
+se	Sweden
+ch	Switzerland
+sy	Syria
+tj	Tajikistan
+th	Thailand
+tr	Turkey
+us	USA
+ua	Ukraine
+uk	United Kingdom
+uz	Uzbekistan

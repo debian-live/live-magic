@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: live-magic\n"
 "Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
-"POT-Creation-Date: 2008-08-09 06:24+0100\n"
+"POT-Creation-Date: 2008-08-09 08:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,23 +15,23 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: LiveMagic/views/wizard.py:29 LiveMagic/views/wizard.py:172
+#: LiveMagic/views/wizard.py:31 LiveMagic/views/wizard.py:210
 msgid "Debian Live Magic"
 msgstr ""
 
-#: LiveMagic/views/wizard.py:38
+#: LiveMagic/views/wizard.py:40
 msgid "About"
 msgstr ""
 
-#: LiveMagic/views/wizard.py:158
+#: LiveMagic/views/wizard.py:196
 msgid "Are you sure you wish to cancel?"
 msgstr ""
 
-#: LiveMagic/views/wizard.py:173
+#: LiveMagic/views/wizard.py:211
 msgid "GUI tool to build Debian Live systems."
 msgstr ""
 
-#: LiveMagic/views/wizard.py:177
+#: LiveMagic/views/wizard.py:215
 msgid "Debian Live homepage"
 msgstr ""
 
@@ -105,8 +105,8 @@ msgid ""
 "<b>Welcome to Debian Live Magic!</b>\n"
 "\n"
 "A <i>live</i> system is an operating system that does not require\n"
-"a classical installer to use it. It can boot from various media,\n"
-"including CDs, DVDs, USB sticks, or via netboot. \n"
+"a classical installer to use it. It can boot from various types of\n"
+"media, including CDs, DVDs, USB sticks, or via netboot. \n"
 "\n"
 "The following screens will lead you through the process\n"
 "of building your own Debian Live system."
@@ -116,130 +116,130 @@ msgstr ""
 msgid "Welcome to Debian Live Magic!"
 msgstr ""
 
-#: misc/live-magic.glade:258
-msgid "<b>What type of image would you like?</b>"
+#: misc/live-magic.glade:248
+msgid "<b>What type of image would you like to build?</b>"
 msgstr ""
 
-#: misc/live-magic.glade:360
-msgid "GNOME desktop environment"
-msgstr ""
-
-#: misc/live-magic.glade:400
-msgid "KDE desktop environment"
-msgstr ""
-
-#: misc/live-magic.glade:442
-msgid "Xfce desktop environment"
-msgstr ""
-
-#: misc/live-magic.glade:484
+#: misc/live-magic.glade:302
 msgid "Standard Debian GNU/Linux image"
 msgstr ""
 
-#: misc/live-magic.glade:522
+#: misc/live-magic.glade:348
+msgid "GNOME desktop environment"
+msgstr ""
+
+#: misc/live-magic.glade:390
+msgid "KDE desktop environment"
+msgstr ""
+
+#: misc/live-magic.glade:432
+msgid "Xfce desktop environment"
+msgstr ""
+
+#: misc/live-magic.glade:470
 msgid "Debian GNU/Linux rescue image"
 msgstr ""
 
-#: misc/live-magic.glade:560
+#: misc/live-magic.glade:566
 msgid "Choose image type"
 msgstr ""
 
-#: misc/live-magic.glade:597
+#: misc/live-magic.glade:592
 msgid ""
 "<b>What distribution of Debian would you like to build?</b>\n"
 "\n"
 "If unsure, select \"<i>Testing (lenny)</i>\"."
 msgstr ""
 
-#: misc/live-magic.glade:625
-msgid "Stable (etch) - well-tested and rarely changes."
+#: misc/live-magic.glade:666
+msgid "Unstable (sid) - untested and frequently changing"
 msgstr ""
 
-#: misc/live-magic.glade:643
+#: misc/live-magic.glade:686
 msgid ""
 "Testing (lenny) - receives new versions from unstable if they are not too "
 "buggy."
 msgstr ""
 
-#: misc/live-magic.glade:664
-msgid "Unstable (sid) - untested and frequently changing"
+#: misc/live-magic.glade:707
+msgid "Stable (etch) - well-tested and rarely changes."
 msgstr ""
 
-#: misc/live-magic.glade:734
+#: misc/live-magic.glade:740
 msgid "Select distribution"
 msgstr ""
 
-#: misc/live-magic.glade:760
+#: misc/live-magic.glade:777
 msgid "<b>What media type would you like to target?</b>"
 msgstr ""
 
-#: misc/live-magic.glade:851
-msgid "ISO image for a CD or DVD"
-msgstr ""
-
-#: misc/live-magic.glade:892
-msgid "USB / HDD image"
-msgstr ""
-
-#: misc/live-magic.glade:936
-msgid "Network boot image"
-msgstr ""
-
-#: misc/live-magic.glade:998
-msgid "Server type:"
-msgstr ""
-
-#: misc/live-magic.glade:1008
-msgid "Server address:"
-msgstr ""
-
-#: misc/live-magic.glade:1019
+#: misc/live-magic.glade:817
 msgid "Server path:"
 msgstr ""
 
-#: misc/live-magic.glade:1071
+#: misc/live-magic.glade:829
+msgid "Server address:"
+msgstr ""
+
+#: misc/live-magic.glade:840
+msgid "Server type:"
+msgstr ""
+
+#: misc/live-magic.glade:921
+msgid "Network boot image"
+msgstr ""
+
+#: misc/live-magic.glade:964
+msgid "USB / HDD image"
+msgstr ""
+
+#: misc/live-magic.glade:1006
+msgid "ISO image for a CD or DVD"
+msgstr ""
+
+#: misc/live-magic.glade:1077
 msgid "Select media type"
 msgstr ""
 
-#: misc/live-magic.glade:1108
+#: misc/live-magic.glade:1103
 msgid ""
-"<b>Please choose a local mirror.</b>\n"
+"<b>Please choose your local mirror:</b>\n"
 "\n"
 "To select a mirror that is not on the list, simply enter it below."
 msgstr ""
 
-#: misc/live-magic.glade:1233
+#: misc/live-magic.glade:1239
 msgid "Choose mirror"
 msgstr ""
 
-#: misc/live-magic.glade:1270
+#: misc/live-magic.glade:1265
 msgid ""
 "<b>What type of machine is your Debian Live system for?</b>\n"
 "\n"
 "If you are unsure, select \"<i>i386</i>\"."
 msgstr ""
 
-#: misc/live-magic.glade:1321
-msgid ""
-"amd64\n"
-"Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
-"Intel Core2, Pentium 4xx, Pentium D CPUs."
-msgstr ""
-
-#: misc/live-magic.glade:1344
+#: misc/live-magic.glade:1304
 msgid ""
 "i386\n"
 "Computers with e.g. AMD Sempron or Intel Celeron, almost all\n"
 "desktop computers dating 2004 or earlier."
 msgstr ""
 
-#: misc/live-magic.glade:1380
+#: misc/live-magic.glade:1324
+msgid ""
+"amd64\n"
+"Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
+"Intel Core2, Pentium 4xx, Pentium D CPUs."
+msgstr ""
+
+#: misc/live-magic.glade:1386
 msgid "Select architecture"
 msgstr ""
 
-#: misc/live-magic.glade:1417
+#: misc/live-magic.glade:1412
 msgid ""
-"<b>Select Debian Installer integration</b>\n"
+"<b>Select Debian Installer integration:</b>\n"
 "\n"
 "Selecting \"<i>yes</i>\" below adds additional boot options that launch the "
 "Debian Installer, the\n"
@@ -248,19 +248,40 @@ msgid ""
 "If unsure, select \"<i>no</i>\"."
 msgstr ""
 
-#: misc/live-magic.glade:1448
-msgid "No, do not integrate the Debian Installer."
-msgstr ""
-
-#: misc/live-magic.glade:1481
+#: misc/live-magic.glade:1465
 msgid "Yes, integrate the Debian Installer."
 msgstr ""
 
-#: misc/live-magic.glade:1525
+#: misc/live-magic.glade:1495
+msgid "No, do not integrate the Debian Installer."
+msgstr ""
+
+#: misc/live-magic.glade:1531
 msgid "Select Debian Installer integration"
 msgstr ""
 
-#: misc/live-magic.glade:1551
+#: misc/live-magic.glade:1557
+msgid ""
+"<b>Select locale and keyboard layout:</b>\n"
+"\n"
+"A locale is an identifier that defines your language, country and related "
+"formatting\n"
+"settings. If unsure, please use the defaults."
+msgstr ""
+
+#: misc/live-magic.glade:1632
+msgid "Keyboard layout:"
+msgstr ""
+
+#: misc/live-magic.glade:1656
+msgid "Locale:"
+msgstr ""
+
+#: misc/live-magic.glade:1689
+msgid "Select locale and keyboard layout"
+msgstr ""
+
+#: misc/live-magic.glade:1726
 msgid ""
 "<b>Please choose a build folder:</b>\n"
 "\n"
@@ -268,17 +289,17 @@ msgid ""
 "<i>DebianLive/</i> subfolder."
 msgstr ""
 
-#: misc/live-magic.glade:1591 misc/live-magic.glade:1640
+#: misc/live-magic.glade:1777 misc/live-magic.glade:1804
 msgid "Select build folder"
 msgstr ""
 
-#: misc/live-magic.glade:1657
+#: misc/live-magic.glade:1821
 msgid ""
 "<b>Your Debian Live image is ready to build!</b>\n"
 "\n"
 "Press <i>Apply</i> to begin the build process."
 msgstr ""
 
-#: misc/live-magic.glade:1685
+#: misc/live-magic.glade:1849
 msgid "Ready to build!"
 msgstr ""

@@ -16,6 +16,8 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import os
+import re
 import gtk
 
 from DebianLive.utils import get_mirror
@@ -92,9 +94,32 @@ class WizardView(object):
         c.set_active(0)
 
         c = self['combo_net_root_filesystem']
-        c.prepend_text('CIFS')
-        c.prepend_text('NFS')
+        c.append_text('NFS')
+        c.append_text('CIFS')
         c.set_active(0)
+
+        c = self['combo_locale']
+        c.set_active(0)
+        match = os.environ.get('LANG', 'en_US.UTF-8')
+        for idx, locale in enumerate(self.controller.get_locales()):
+            c.append_text(locale)
+            if locale == match:
+                c.set_active(idx)
+
+        c = self['combo_keyboard']
+        try:
+            kv = KeyVar('/etc/default', 'console-setup', {}, filename='/etc/default/console-setup')
+            match = kv.get('XKBLAYOUT')
+            if match == 'gb':
+                match = 'uk'
+        except IOError:
+            match = "us"
+
+        for idx, layout in enumerate(self.controller.get_keyboard_layouts()):
+            code, name = layout
+            c.append_text('%s (%s)' % (name, code.upper()))
+            if code == match:
+                c.set_active(idx)
 
         server = '192.168.1.1'
         path = '/srv/debian-live'
@@ -129,12 +154,26 @@ class WizardView(object):
                     return button.get_name().split('_')[2]
 
         data = {
-            'packages_lists' : get_active('radio_desktop_gnome'),
-            'binary_images' : get_active('radio_media_iso'),
-            'distribution' : get_active('radio_distribution_lenny'),
-            'debian_installer' : get_active('radio_installer_disabled'),
-            'mirror' : self['combobox_mirror'].get_active_text()
+            'packages_lists': get_active('radio_desktop_standard'),
+            'binary_images': get_active('radio_media_iso'),
+            'distribution': get_active('radio_distribution_lenny'),
+            'debian_installer': get_active('radio_installer_disabled'),
+            'mirror_bootstrap': self['combobox_mirror'].get_active_text(),
         }
+
+        # Set locale
+        try:
+            locale = self['combo_locale'].get_active_text()
+            data['language'] = locale.split('_')[0]
+        except:
+            locale = "en_US.UTF_8"
+
+        # Get keyboard
+        m = re.search(r' \(([^\)]+)\)$', self['combo_keyboard'].get_active_text())
+        keyb = m.group(1).lower()
+
+        # Boot parameters
+        data['bootappend_live'] = "locale=%s keyb=%s" % (locale, keyb)
 
         if self.controller.get_host_architecture() == 'amd64':
             data['architecture'] = get_active('radio_architecture_i386')

@@ -4,6 +4,8 @@ live-magic (1.0) unstable; urgency=low
   * Set default distribution to Lenny.
   * Don't show distribution page when running Lenny as stable.
   * Add locale and keyboard layout step.
+  * Add gettext support:
+    - Added Russian translation by Yuri Kozlov (Closes: #494500)
 
  -- Chris Lamb <chris@chris-lamb.co.uk>  Sat, 09 Aug 2008 02:41:53 +0100
 

@@ -6,7 +6,7 @@ live-magic (1.0) unstable; urgency=low
   * Add locale and keyboard layout step.
   * Add gettext support:
     - Added Russian translation by Yuri Kozlov (Closes: #494500)
-    - Added Swedish translation by Martin Ågren
+    - Added Swedish translation by Martin Ågren (Closes: #494503)
 
  -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 10 Aug 2008 16:12:55 +0100
 

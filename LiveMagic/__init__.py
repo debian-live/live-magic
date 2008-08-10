@@ -38,7 +38,11 @@ def init_gettext():
         # Fall back to /usr/share/locale
         locale_dir = []
 
-    locale.setlocale(locale.LC_ALL, '')
+    try:
+        locale.setlocale(locale.LC_ALL, '')
+    except locale.Error:
+        pass
+
     for module in gettext, gtk.glade:
         module.bindtextdomain('live-magic', *locale_dir)
         module.textdomain('live-magic')

@@ -107,13 +107,28 @@ class WizardView(object):
                 c.set_active(idx)
 
         c = self['combo_keyboard']
+        match = None
+
         try:
             kv = KeyVar('/etc/default', 'console-setup', {}, filename='/etc/default/console-setup')
             match = kv.get('XKBLAYOUT')
-            if match == 'gb':
-                match = 'uk'
         except IOError:
+            pass
+
+        pat = re.compile(r'\s*Option\s*"XkbLayout"\s*"([^"]+)"')
+        try:
+            xorgconf = file('/etc/X11/xorg.conf')
+            for line in xorgconf:
+                m = pat.match(line)
+                if m:
+                    match = m.group(1)
+        except IOError:
+            pass
+
+        if match is None:
             match = "us"
+        elif match == 'gb':
+            match = 'uk'
 
         for idx, layout in enumerate(self.controller.get_keyboard_layouts()):
             code, name = layout

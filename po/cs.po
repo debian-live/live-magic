@@ -1,0 +1,348 @@
+# Czech translation of live-magic.
+# This file is put in the public domain.
+# Miroslav Kure <kurem@debian.cz>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: live-magic\n"
+"Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
+"POT-Creation-Date: 2008-08-09 23:23+0100\n"
+"PO-Revision-Date: 2008-08-10 14:53+0200\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: LiveMagic/views/wizard.py:31 LiveMagic/views/wizard.py:210
+msgid "Debian Live Magic"
+msgstr "Debian Live Magic"
+
+#: LiveMagic/views/wizard.py:40
+msgid "About"
+msgstr "O programu"
+
+#: LiveMagic/views/wizard.py:196
+msgid "Are you sure you wish to cancel?"
+msgstr "Jste si jisti, že chcete proces zrušit?"
+
+#: LiveMagic/views/wizard.py:211
+msgid "GUI tool to build Debian Live systems."
+msgstr "Grafický nástroj pro vytváření debianích live systémů."
+
+#: LiveMagic/views/wizard.py:215
+msgid "Debian Live homepage"
+msgstr "Domovská stránka Debian Live"
+
+#: LiveMagic/controllers/wizard.py:57
+msgid "Enter your password to continue"
+msgstr "Pro pokračování zadejte heslo"
+
+#: LiveMagic/controllers/wizard.py:58
+msgid ""
+"Debian Live Magic requires superuser capabilities to build your Debian Live "
+"system."
+msgstr ""
+"Debian Live Magic vyžaduje pro sestavení live systému superuživatelská "
+"oprávnění."
+
+#: LiveMagic/controllers/build.py:59
+msgid "Error creating Debian Live system!"
+msgstr "Chyba při vytváření live systému!"
+
+#: LiveMagic/controllers/build.py:82
+msgid "Cleaning build system"
+msgstr "Čistí se sestavovací systém"
+
+#: LiveMagic/controllers/build.py:83
+msgid "Purging unnecessary parts of the build system..."
+msgstr "Čistí se zbytečné části sestavovacího systému..."
+
+#: LiveMagic/controllers/build.py:86
+msgid "Build process finished"
+msgstr "Sestavování dokončeno"
+
+#: LiveMagic/controllers/build.py:87
+msgid "Your Debian Live system has been created successfully."
+msgstr "Váš live systém byl úspěšně vytvořen."
+
+#: LiveMagic/controllers/build.py:106
+msgid "Error when building Debian Live system"
+msgstr "Chyba při sestavování live systému"
+
+#: LiveMagic/controllers/build.py:107
+msgid "There was an error when building your Debian Live system."
+msgstr "Při sestavování live systému se vyskytla chyba."
+
+#: LiveMagic/controllers/build.py:117
+msgid "Build process cancelled"
+msgstr "Sestavování zrušeno"
+
+#: LiveMagic/controllers/build.py:118
+msgid "The creation of your Debian Live system was cancelled."
+msgstr "Vytváření vašeho live systému bylo zrušeno."
+
+#: misc/live-magic.glade:7
+msgid "Generating Debian Live system..."
+msgstr "Sestavuje se live systém Debian..."
+
+#: misc/live-magic.glade:44
+msgid ""
+"<big><b>Generating Debian Live system...</b></big>\n"
+"\n"
+"Please wait while your Debian Live image is generated for you."
+msgstr ""
+"<big><b>Sestavuje se live systém Debian...</b></big>\n"
+"\n"
+"Počkejte prosím, než se sestaví obraz live systému."
+
+#: misc/live-magic.glade:72
+msgid "Automatically close after Live system has been created"
+msgstr "Automaticky zavřít po vytvoření live systému"
+
+#: misc/live-magic.glade:112
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: misc/live-magic.glade:201
+msgid ""
+"<b>Welcome to Debian Live Magic!</b>\n"
+"\n"
+"A <i>live</i> system is an operating system that does not require\n"
+"a classical installer to use it. It can boot from various types of\n"
+"media, including CDs, DVDs, USB sticks, or via netboot. \n"
+"\n"
+"The following screens will lead you through the process\n"
+"of building your own Debian Live system."
+msgstr ""
+"<b>Vítejte v Debian Live Magic!</b>\n"
+"\n"
+"<i>Live</i> systém je operační systém, který nemusíte instalovat.\n"
+"Můžete jej spustit z nejrůznějších médií, jako jsou CD, DVD,\n"
+"USB klíčenky, nebo třeba síť (netboot). \n"
+"\n"
+"Následující obrazovky vás provedou procesem vytváření\n"
+"vašeho vlastního Live systému Debian."
+
+#: misc/live-magic.glade:223
+msgid "Welcome to Debian Live Magic!"
+msgstr "Vítejte v Debian Live Magic!"
+
+#: misc/live-magic.glade:248
+msgid "<b>What type of image would you like to build?</b>"
+msgstr "<b>Jaký typ systému chcete sestavit?</b>"
+
+#: misc/live-magic.glade:302
+msgid "Standard Debian GNU/Linux image"
+msgstr "Standardní obraz Debian GNU/Linuxu"
+
+#: misc/live-magic.glade:348
+msgid "GNOME desktop environment"
+msgstr "Desktopové prostředí GNOME"
+
+#: misc/live-magic.glade:390
+msgid "KDE desktop environment"
+msgstr "Desktopové prostředí KDE"
+
+#: misc/live-magic.glade:432
+msgid "Xfce desktop environment"
+msgstr "Desktopové prostředí Xfce"
+
+#: misc/live-magic.glade:470
+msgid "Debian GNU/Linux rescue image"
+msgstr "Záchranný obraz Debian GNU/Linuxu"
+
+#: misc/live-magic.glade:566
+msgid "Choose image type"
+msgstr "Výběr obrazu"
+
+#: misc/live-magic.glade:592
+msgid ""
+"<b>What distribution of Debian would you like to build?</b>\n"
+"\n"
+"If unsure, select \"<i>Testing (lenny)</i>\"."
+msgstr ""
+"<b>Kterou distribuci Debianu chcete sestavit?</b>\n"
+"\n"
+"Pokud si nejste jisti, zvolte „<i>Testovací (Lenny)</i>“."
+
+#: misc/live-magic.glade:666
+msgid "Unstable (sid) - untested and frequently changing"
+msgstr "Nestabilní (Sid) - nevyzkoušená a často se měnící"
+
+#: misc/live-magic.glade:686
+msgid ""
+"Testing (lenny) - receives new versions from unstable if they are not too "
+"buggy."
+msgstr "Testovací (Lenny) - získává balíky ze Sida (pokud nejsou moc chybové)."
+
+#: misc/live-magic.glade:707
+msgid "Stable (etch) - well-tested and rarely changes."
+msgstr "Stabilní (Etch) - dobře otestovaná, téměř se nemění."
+
+#: misc/live-magic.glade:740
+msgid "Select distribution"
+msgstr "Výběr distribuce"
+
+#: misc/live-magic.glade:777
+msgid "<b>What media type would you like to target?</b>"
+msgstr "<b>Jaké médium chcete vytvořit?</b>"
+
+#: misc/live-magic.glade:817
+msgid "Server path:"
+msgstr "Cesta na serveru:"
+
+#: misc/live-magic.glade:829
+msgid "Server address:"
+msgstr "Adresa serveru:"
+
+#: misc/live-magic.glade:840
+msgid "Server type:"
+msgstr "Typ serveru:"
+
+#: misc/live-magic.glade:921
+msgid "Network boot image"
+msgstr "Obraz pro zavedení ze sítě"
+
+#: misc/live-magic.glade:964
+msgid "USB / HDD image"
+msgstr "USB / HDD obraz"
+
+#: misc/live-magic.glade:1006
+msgid "ISO image for a CD or DVD"
+msgstr "ISO obraz pro CD nebo DVD"
+
+#: misc/live-magic.glade:1077
+msgid "Select media type"
+msgstr "Výběr média"
+
+#: misc/live-magic.glade:1103
+msgid ""
+"<b>Please choose your local mirror:</b>\n"
+"\n"
+"To select a mirror that is not on the list, simply enter it below."
+msgstr ""
+"<b>Vyberte nějaké blízké zrcadlo:</b>\n"
+"\n"
+"Chcete-li použít zrcadlo, které není v seznamu, jednoduše jej tam napište."
+
+#: misc/live-magic.glade:1239
+msgid "Choose mirror"
+msgstr "Výběr zrcadla"
+
+#: misc/live-magic.glade:1265
+msgid ""
+"<b>What type of machine is your Debian Live system for?</b>\n"
+"\n"
+"If you are unsure, select \"<i>i386</i>\"."
+msgstr ""
+"<b>Pro které počítače chcete svůj live systém Debian sestavit?</b>\n"
+"\n"
+"Pokud si nejste jisti, zvolte „<i>i386</i>“."
+
+#: misc/live-magic.glade:1304
+msgid ""
+"i386\n"
+"Computers with e.g. AMD Sempron or Intel Celeron, almost all\n"
+"desktop computers dating 2004 or earlier."
+msgstr ""
+"i386\n"
+"Např. počítače s procesory AMD Sempron nebo Intel Celeron, většina\n"
+"stolních počítačů před rokem 2004."
+
+#: misc/live-magic.glade:1324
+msgid ""
+"amd64\n"
+"Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
+"Intel Core2, Pentium 4xx, Pentium D CPUs."
+msgstr ""
+"amd64\n"
+"Novější počítače s procesory jako AMD Opteron, Turion 64, Athlon 64,\n"
+"Intel Core2, Pentium 4xx nebo Pentium D."
+
+#: misc/live-magic.glade:1386
+msgid "Select architecture"
+msgstr "Výběr architektury"
+
+#: misc/live-magic.glade:1412
+msgid ""
+"<b>Select Debian Installer integration:</b>\n"
+"\n"
+"Selecting \"<i>yes</i>\" below adds additional boot options that launch the "
+"Debian Installer, the\n"
+"official installation system for Debian systems. \n"
+"\n"
+"If unsure, select \"<i>no</i>\"."
+msgstr ""
+"<b>Integrace Debian Installeru:</b>\n"
+"\n"
+"Výběrem „<i>ano</i>“ se do zaváděcí nabídky přidají další položky, které umožní\n"
+"spustit Debian Installer, oficiální instalátor Debianu. \n"
+"\n"
+"Pokud si nejste jisti, zvolte „<i>ne</i>“."
+
+#: misc/live-magic.glade:1465
+msgid "Yes, integrate the Debian Installer."
+msgstr "Ano, integrovat Debian Installer."
+
+#: misc/live-magic.glade:1495
+msgid "No, do not integrate the Debian Installer."
+msgstr "Ne, neintegrovat Debian Installer."
+
+#: misc/live-magic.glade:1531
+msgid "Select Debian Installer integration"
+msgstr "Integrace Debian Installeru"
+
+#: misc/live-magic.glade:1557
+msgid ""
+"<b>Select locale and keyboard layout:</b>\n"
+"\n"
+"A locale is an identifier that defines your language, country and related "
+"formatting\n"
+"settings. If unsure, please use the defaults."
+msgstr ""
+"<b>Vyberte místní prostředí a rozložení klávesnice:</b>\n"
+"\n"
+"Místní prostředí (locale) určuje jazyk, zemi a způsob formátování\n"
+"údajů. Pokud si nejste jisti použijte výchozí hodnoty."
+
+#: misc/live-magic.glade:1632
+msgid "Keyboard layout:"
+msgstr "Rozložení klávesnice:"
+
+#: misc/live-magic.glade:1656
+msgid "Locale:"
+msgstr "Místní prostředí:"
+
+#: misc/live-magic.glade:1689
+msgid "Select locale and keyboard layout"
+msgstr "Výběr místního prostředí a klávesnice"
+
+#: misc/live-magic.glade:1726
+msgid ""
+"<b>Please choose a build folder:</b>\n"
+"\n"
+"If the specified directory is not empty, images will be created in a "
+"<i>DebianLive/</i> subfolder."
+msgstr ""
+"<b>Zadejte složku, která se použije pro sestavení obrazů:</b>\n"
+"\n"
+"Pokud nebude zadaná složka prázdná, vytvoří se obrazy v podsložce <i>DebianLive/</i>."
+
+#: misc/live-magic.glade:1777 misc/live-magic.glade:1804
+msgid "Select build folder"
+msgstr "Výběr složky pro sestavení"
+
+#: misc/live-magic.glade:1821
+msgid ""
+"<b>Your Debian Live image is ready to build!</b>\n"
+"\n"
+"Press <i>Apply</i> to begin the build process."
+msgstr ""
+"<b>Obraz live Debianu je připraven k sestavení!</b>\n"
+"\n"
+"Pro zahájení procesu klikněte na <i>Použít</i>."
+
+#: misc/live-magic.glade:1849
+msgid "Ready to build!"
+msgstr "Připraven k sestavení!"

@@ -1,16 +1,15 @@
 live-magic (1.0) unstable; urgency=low
 
-  * 1.0 release for Lenny.
-  * Set default distribution to Lenny.
-  * Don't show distribution page when running Lenny as stable.
+  * 1.0 release for Lenny:
+    - Set default distribution to Lenny.
+    - Don't show distribution page when running Lenny as stable.
+    - Depend on live-helper >= 1.0.0
   * Add locale and keyboard layout step.
-  * Depend on live-helper >= 1.0.0
-  * Add gettext support:
-    - Added Russian translation by Yuri Kozlov (Closes: #494500)
-    - Added Swedish translation by Martin Ågren (Closes: #494503)
-    - Added Czech translation by Miroslav Kure (Closes: #494548)
-    - Added French translation by Frederic Daniel Luc Lehobey (Closes:
-    #494742)
+  * Add gettext support and translations:
+    - Czech translation by Miroslav Kure (Closes: #494548)
+    - French translation by Frederic Daniel Luc Lehobey (Closes: #494742)
+    - Russian translation by Yuri Kozlov (Closes: #494500)
+    - Swedish translation by Martin Ågren (Closes: #494503)
 
  -- Chris Lamb <chris@chris-lamb.co.uk>  Tue, 12 Aug 2008 01:56:09 +0100
 

@@ -8,6 +8,7 @@ live-magic (1.0) unstable; urgency=low
   * Add gettext support and translations:
     - Czech translation by Miroslav Kure (Closes: #494548)
     - French translation by Frederic Daniel Luc Lehobey (Closes: #494742)
+    - German translation by Helge Kreutzmann (Closes: #494882)
     - Russian translation by Yuri Kozlov (Closes: #494500)
     - Swedish translation by Martin Ågren (Closes: #494503)
 

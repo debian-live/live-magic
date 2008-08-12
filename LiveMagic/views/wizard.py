@@ -101,9 +101,17 @@ class WizardView(object):
         c = self['combo_locale']
         c.set_active(0)
         match = os.environ.get('LANG', 'en_US.UTF-8')
+        found = False
         for idx, locale in enumerate(self.controller.get_locales()):
             c.append_text(locale)
-            if locale == match:
+
+            if found:
+                continue
+
+            if locale.replace('-', '_') == match.replace('-', '_'):
+                c.set_active(idx)
+                found = True
+            elif match.startswith(locale):
                 c.set_active(idx)
 
         c = self['combo_keyboard']

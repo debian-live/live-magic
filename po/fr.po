@@ -1,0 +1,352 @@
+# translation of fr.po to French
+# Frederic Daniel Luc Lehobey <Frederic@Lehobey.net>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
+"POT-Creation-Date: 2008-08-09 23:23+0100\n"
+"PO-Revision-Date: 2008-08-10 23:02-0300\n"
+"Last-Translator: Frederic Daniel Luc Lehobey <Frederic@Lehobey.net>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: LiveMagic/views/wizard.py:31 LiveMagic/views/wizard.py:210
+msgid "Debian Live Magic"
+msgstr "Debian Live Magic"
+
+#: LiveMagic/views/wizard.py:40
+msgid "About"
+msgstr "À propos"
+
+#: LiveMagic/views/wizard.py:196
+msgid "Are you sure you wish to cancel?"
+msgstr "Êtes-vous sûr de vouloir annuler ?"
+
+#: LiveMagic/views/wizard.py:211
+msgid "GUI tool to build Debian Live systems."
+msgstr "Interface utilisateur graphique pour construire des systèmes Debian volatils."
+
+#: LiveMagic/views/wizard.py:215
+msgid "Debian Live homepage"
+msgstr "Page d'accueil de Debian Live"
+
+#: LiveMagic/controllers/wizard.py:57
+msgid "Enter your password to continue"
+msgstr "Saisissez votre mot de passe pour continuer"
+
+#: LiveMagic/controllers/wizard.py:58
+msgid ""
+"Debian Live Magic requires superuser capabilities to build your Debian Live "
+"system."
+msgstr "Debian Live Magic a besoin des droits du superutilisateur pour construire votre système Debian volatil."
+
+#: LiveMagic/controllers/build.py:59
+msgid "Error creating Debian Live system!"
+msgstr "Erreur lors de la création du système Debian volatil !"
+
+#: LiveMagic/controllers/build.py:82
+msgid "Cleaning build system"
+msgstr "Nettoyage du système de construction"
+
+#: LiveMagic/controllers/build.py:83
+msgid "Purging unnecessary parts of the build system..."
+msgstr "Suppression d'éléments superflus présents dans le système de construction..."
+
+#: LiveMagic/controllers/build.py:86
+msgid "Build process finished"
+msgstr "Fin du processus de construction"
+
+#: LiveMagic/controllers/build.py:87
+msgid "Your Debian Live system has been created successfully."
+msgstr "Votre système Debian volatil a été créé avec succès."
+
+#: LiveMagic/controllers/build.py:106
+msgid "Error when building Debian Live system"
+msgstr "Erreur lors de la construction du système Debian volatil"
+
+#: LiveMagic/controllers/build.py:107
+msgid "There was an error when building your Debian Live system."
+msgstr "Il y a eu une erreur lors de la construction du système Debian volatil."
+
+#: LiveMagic/controllers/build.py:117
+msgid "Build process cancelled"
+msgstr "Processus de construction annulé"
+
+#: LiveMagic/controllers/build.py:118
+msgid "The creation of your Debian Live system was cancelled."
+msgstr "La création de votre système Debian volatil a été annulée."
+
+#: misc/live-magic.glade:7
+msgid "Generating Debian Live system..."
+msgstr "Production du système Debian volatil..."
+
+#: misc/live-magic.glade:44
+msgid ""
+"<big><b>Generating Debian Live system...</b></big>\n"
+"\n"
+"Please wait while your Debian Live image is generated for you."
+msgstr ""
+"<big><b>Production du système Debian volatil...</b></big>\n"
+"\n"
+"Veuillez patienter pendant la production de l'image de votre système Debian volatil."
+
+#: misc/live-magic.glade:72
+msgid "Automatically close after Live system has been created"
+msgstr "Fermer automatiquement une fois le système Debian volatil créé"
+
+#: misc/live-magic.glade:112
+msgid "Details"
+msgstr "Détails"
+
+#: misc/live-magic.glade:201
+msgid ""
+"<b>Welcome to Debian Live Magic!</b>\n"
+"\n"
+"A <i>live</i> system is an operating system that does not require\n"
+"a classical installer to use it. It can boot from various types of\n"
+"media, including CDs, DVDs, USB sticks, or via netboot. \n"
+"\n"
+"The following screens will lead you through the process\n"
+"of building your own Debian Live system."
+msgstr ""
+"<b>Bienvenue dans Debian Live Magic !</b>\n"
+"\n"
+"Un système <i>volatil</i> (« live » : installé seulement en\n"
+"mémoire) est un système d'exploitation qui\n"
+"ne nécessite\n"
+"pas un installateur classique pour l'utiliser. Il peut démarrer à\n"
+"partir de différents types de média, incluant CD, DVD, supports\n"
+"USB ou depuis le réseau (« netboot »). \n"
+"\n"
+"Les écrans suivants vous guideront à travers le processus\n"
+"de création de votre propre système Debian volatil."
+
+#: misc/live-magic.glade:223
+msgid "Welcome to Debian Live Magic!"
+msgstr "Bienvenue dans Debian Live Magic !"
+
+#: misc/live-magic.glade:248
+msgid "<b>What type of image would you like to build?</b>"
+msgstr "<b>Quel type d'image voulez-vous construire ?</b>"
+
+#: misc/live-magic.glade:302
+msgid "Standard Debian GNU/Linux image"
+msgstr "Image Debian GNU/Linux standard"
+
+#: misc/live-magic.glade:348
+msgid "GNOME desktop environment"
+msgstr "Environnement de bureau GNOME"
+
+#: misc/live-magic.glade:390
+msgid "KDE desktop environment"
+msgstr "Environnement de bureau KDE"
+
+#: misc/live-magic.glade:432
+msgid "Xfce desktop environment"
+msgstr "Environnement de bureau Xfce"
+
+#: misc/live-magic.glade:470
+msgid "Debian GNU/Linux rescue image"
+msgstr "Image de restauration Debian GNU/Linux"
+
+#: misc/live-magic.glade:566
+msgid "Choose image type"
+msgstr "Choisir le type de l'image"
+
+#: misc/live-magic.glade:592
+msgid ""
+"<b>What distribution of Debian would you like to build?</b>\n"
+"\n"
+"If unsure, select \"<i>Testing (lenny)</i>\"."
+msgstr ""
+"<b>Quelle version de Debian voulez-vous construire ?</b>\n"
+"\n"
+"Dans le doute, choisissez \"<i>version de test (lenny)</i>\"."
+
+#: misc/live-magic.glade:666
+msgid "Unstable (sid) - untested and frequently changing"
+msgstr "Instable (sid) - non testée et changeant fréquemment"
+
+#: misc/live-magic.glade:686
+msgid ""
+"Testing (lenny) - receives new versions from unstable if they are not too "
+"buggy."
+msgstr "Version de test (lenny) - reçoit les nouvelles versions de instable si elles n'ont pas trop de problèmes."
+
+#: misc/live-magic.glade:707
+msgid "Stable (etch) - well-tested and rarely changes."
+msgstr "Stable (etch) - bien testée et changeant rarement."
+
+#: misc/live-magic.glade:740
+msgid "Select distribution"
+msgstr "Choisir la version"
+
+#: misc/live-magic.glade:777
+msgid "<b>What media type would you like to target?</b>"
+msgstr "<b>Quel type de média voulez-vous comme destination ?</b>"
+
+#: misc/live-magic.glade:817
+msgid "Server path:"
+msgstr "Chemin du serveur :"
+
+#: misc/live-magic.glade:829
+msgid "Server address:"
+msgstr "Adresse du serveur :"
+
+#: misc/live-magic.glade:840
+msgid "Server type:"
+msgstr "Type de serveur :"
+
+#: misc/live-magic.glade:921
+msgid "Network boot image"
+msgstr "Image de démarrage par réseau"
+
+#: misc/live-magic.glade:964
+msgid "USB / HDD image"
+msgstr "Image USB / disque dur"
+
+#: misc/live-magic.glade:1006
+msgid "ISO image for a CD or DVD"
+msgstr "Image ISO pour CD ou DVD"
+
+#: misc/live-magic.glade:1077
+msgid "Select media type"
+msgstr "Choisir le type de média"
+
+#: misc/live-magic.glade:1103
+msgid ""
+"<b>Please choose your local mirror:</b>\n"
+"\n"
+"To select a mirror that is not on the list, simply enter it below."
+msgstr ""
+"<b>Veuillez choisir votre miroir local de Debian :</b>\n"
+"\n"
+"Pour choisir un miroir qui n'est pas dans la liste, saisissez-le simplement ci-dessous."
+
+#: misc/live-magic.glade:1239
+msgid "Choose mirror"
+msgstr "Choisir le miroir"
+
+#: misc/live-magic.glade:1265
+msgid ""
+"<b>What type of machine is your Debian Live system for?</b>\n"
+"\n"
+"If you are unsure, select \"<i>i386</i>\"."
+msgstr ""
+"<b>Pour quel type de machine est votre système Debian volatil ?</b>\n"
+"\n"
+"Dans le doute, choisissez \"<i>i386</i>\"."
+
+#: misc/live-magic.glade:1304
+msgid ""
+"i386\n"
+"Computers with e.g. AMD Sempron or Intel Celeron, almost all\n"
+"desktop computers dating 2004 or earlier."
+msgstr ""
+"i386\n"
+"Ordinateurs avec par exemple des Sempron d'AMD ou Celeron\n"
+"d'Intel ; presque tous les ordinateurs de bureautique datant de\n"
+"2004 ou avant."
+
+#: misc/live-magic.glade:1324
+msgid ""
+"amd64\n"
+"Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
+"Intel Core2, Pentium 4xx, Pentium D CPUs."
+msgstr ""
+"amd64\n"
+"La plupart des nouveaux ordinateurs avec, par exemple des\n"
+"processeurs Opteron, Turion 64, Athlon 64 d'AMD ou Core 2,\n"
+"Pentium 4xx, ou Pentium D d'Intel."
+
+#: misc/live-magic.glade:1386
+msgid "Select architecture"
+msgstr "Choisir l'architecture"
+
+#: misc/live-magic.glade:1412
+msgid ""
+"<b>Select Debian Installer integration:</b>\n"
+"\n"
+"Selecting \"<i>yes</i>\" below adds additional boot options that launch the "
+"Debian Installer, the\n"
+"official installation system for Debian systems. \n"
+"\n"
+"If unsure, select \"<i>no</i>\"."
+msgstr ""
+"<b>Choisir l'intégration de l'installateur Debian :</b>\n"
+"\n"
+"Choisir « <i>oui</i> » ci-dessous ajoute une option supplémentaire qui lance l'installateur Debian,\n"
+"le système d'installation officiel pour les systèmes Debian. \n"
+"\n"
+"Dans le doute, choisir « <i>non</i> »."
+
+#: misc/live-magic.glade:1465
+msgid "Yes, integrate the Debian Installer."
+msgstr "Oui, intégrer l'installateur Debian."
+
+#: misc/live-magic.glade:1495
+msgid "No, do not integrate the Debian Installer."
+msgstr "Non, ne pas intégrer l'installateur Debian."
+
+#: misc/live-magic.glade:1531
+msgid "Select Debian Installer integration"
+msgstr "Choisir l'intégration de l'installateur Debian"
+
+#: misc/live-magic.glade:1557
+msgid ""
+"<b>Select locale and keyboard layout:</b>\n"
+"\n"
+"A locale is an identifier that defines your language, country and related "
+"formatting\n"
+"settings. If unsure, please use the defaults."
+msgstr ""
+"<b>Choisir les paramètres linguistiques régionaux et la disposition du clavier :</b>\n"
+"\n"
+"Un paramètre linguistique régional est un identifiant qui définit vos langue,\n"
+"pays et paramétrages de format associés. Dans le doute, préférez les valeurs par défaut."
+
+#: misc/live-magic.glade:1632
+msgid "Keyboard layout:"
+msgstr "Disposition du clavier :"
+
+#: misc/live-magic.glade:1656
+msgid "Locale:"
+msgstr "Paramètres linguistiques régionaux :"
+
+#: misc/live-magic.glade:1689
+msgid "Select locale and keyboard layout"
+msgstr "Choisir vos paramètres linguistiques régionaux et la disposition de votre clavier"
+
+#: misc/live-magic.glade:1726
+msgid ""
+"<b>Please choose a build folder:</b>\n"
+"\n"
+"If the specified directory is not empty, images will be created in a "
+"<i>DebianLive/</i> subfolder."
+msgstr ""
+"<b>Veuillez choisir un dossier de construction :</b>\n"
+"\n"
+"Si le dossier indiqué n'est pas vide, les images seront créées dans un sous-dossier "
+"<i>DebianLive/</i>."
+
+#: misc/live-magic.glade:1777 misc/live-magic.glade:1804
+msgid "Select build folder"
+msgstr "Choisir le dossier de construction"
+
+#: misc/live-magic.glade:1821
+msgid ""
+"<b>Your Debian Live image is ready to build!</b>\n"
+"\n"
+"Press <i>Apply</i> to begin the build process."
+msgstr ""
+"<b>Votre image Debian volatile est prête à être construite !</b>\n"
+"\n"
+"Choisissez <i>Appliquer</i> pour commencer le processus de construction."
+
+#: misc/live-magic.glade:1849
+msgid "Ready to build!"
+msgstr "Prêt à construire !"
+

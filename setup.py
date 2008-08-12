@@ -18,6 +18,7 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import re
 
 from distutils.core import setup
 from distutils.file_util import copy_file
@@ -36,6 +37,22 @@ class my_install(install_data):
             src = os.path.join(langdir, 'LC_MESSAGES', 'live-magic.mo')
             dst = os.path.join('share', 'locale', lang, 'LC_MESSAGES')
             self.data_files.append((dst, [src]))
+
+        try:
+            credits = file('misc/translator-credits.txt', 'w')
+            for po in glob('po/*.po'):
+                f = file(po)
+                try:
+                    lang = os.path.basename(po).split('.')[0]
+                    for line in f:
+                        m = re.match(r'"Last-Translator: ([^\\]*)', line)
+                        if m:
+                            print >>credits, m.group(1), '(%s)' % lang
+                            break
+                finally:
+                    f.close()
+        finally:
+            credits.close()
 
         install_data.run(self)
 
@@ -68,6 +85,7 @@ setup(
             'misc/kde.png',
             'misc/xfce.png',
             'misc/keyboard-layouts.txt',
+            'misc/translator-credits.txt',
             ]),
         ('share/applications', [
             'misc/live-magic.desktop'

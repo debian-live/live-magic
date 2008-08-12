@@ -1,3 +1,4 @@
 *.pyc
 .coverage
 mo/
+misc/translator-credits.txt

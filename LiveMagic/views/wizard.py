@@ -237,6 +237,11 @@ class WizardView(object):
         about.set_website("http://debian-live.alioth.debian.org/")
         about.set_website_label(_("Debian Live homepage"))
         about.set_license(file(find_resource('GPL-3')).read())
+        try:
+            credits = file(find_resource('translator-credits.txt')).read()
+            about.set_translator_credits(credits)
+        except ValueError:
+            pass
 
         logo = gtk.gdk.pixbuf_new_from_file(find_resource('debian_openlogo-nd-100.png'))
         about.set_logo(logo)

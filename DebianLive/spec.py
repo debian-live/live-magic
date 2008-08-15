@@ -44,6 +44,7 @@ spec = {
         'LH_ISO_VOLUME': str,
         'LH_JFFS2_ERASEBLOCK': str,
         'LH_MEMTEST': str,
+        'LH_WIN32_LOADER': bool,
         'LH_NET_ROOT_FILESYSTEM': str,
         'LH_NET_ROOT_MOUNTOPTIONS': str,
         'LH_NET_ROOT_PATH': str,
@@ -156,4 +157,4 @@ constructor_args = ('apt', 'apt-ftp-proxy', 'apt-http-proxy', 'apt-pdiffs',
     'root-command', 'use-fakeroot', 'sections', 'security', 'source',
     'source-images', 'symlinks', 'syslinux-splash', 'syslinux-timeout',
     'syslinux-menu', 'sysvinit', 'tasksel', 'tasks', 'templates',
-    'union-filesystem', 'exposed-root', 'username')
+    'union-filesystem', 'exposed-root', 'username', 'win32-loader')

@@ -12,7 +12,7 @@ Vcs-Browser: http://git.debian.org/?p=users/lamby-guest/live-magic.git
 
 Package: live-magic
 Architecture: all
-Depends: live-helper (>= 1.0.0), python-glade2 (>= 2.10), python-gtk2, python-vte, gksu, xdg-utils, ${python:Depends}
+Depends: ${python:Depends}, live-helper (>= 1.0.0), python-glade2 (>= 2.10), python-gtk2, python-vte, gksu, xdg-utils
 Recommends: cdebootstrap
 Description: GUI frontend to create Debian LiveCDs, netboot images, etc.
  Live-helper is a collection of programs that can be used to build Debian Live
@@ -21,4 +21,4 @@ Description: GUI frontend to create Debian LiveCDs, netboot images, etc.
  to automate building of a Live system.
  .
  This package contains the GUI frontend to live-helper, offering a subset of the
- features in an easy-to use user interface.
+ features in an easy-to-use user interface.

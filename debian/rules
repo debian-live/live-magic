@@ -4,41 +4,10 @@ upstream:
 	cd .. && git clone git://git.debian.org/git/users/lamby-guest/live-magic.git || true
 	rm -rf ../live-magic/.git
 
-build: build-stamp
-build-stamp:
-	python setup.py build
-	touch $@
+%:
+	dh $@
 
 clean:
-	dh_testdir
-	dh_testroot
-	rm -f build-stamp
-	dh_clean
+	dh $@
+	rm -rf mo/
 	find -type f -name "*.pyc" -print0 | xargs -0 rm -f
-	rm -rf build live_magic.egg-info mo/
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean
-	dh_install
-	python setup.py install --root=$(CURDIR)/debian/live-magic
-
-binary-indep: build install
-	dh_testdir
-	dh_testroot
-	dh_pysupport
-	dh_installchangelogs
-	dh_installdocs
-	dh_installman live-magic.1
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
-
-binary-arch:
-
-binary: binary-arch binary-indep
-.PHONY: build clean binary-indep binary-arch binary install upstream

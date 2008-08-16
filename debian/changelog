@@ -5,6 +5,7 @@ live-magic (1.0) unstable; urgency=low
     - Don't show distribution page when running Lenny as stable.
     - Depend on live-helper >= 1.0.0
   * Add locale and keyboard layout step.
+  * Move to Debhelper 7.
   * Add gettext support and translations:
     - Czech translation by Miroslav Kure (Closes: #494548)
     - French translation by Frederic Daniel Luc Lehobey (Closes: #494742)

@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Debian Live <debian-live-maint@lists.alioth.debian.org>
 Uploaders: Chris Lamb <chris@chris-lamb.co.uk>, Daniel Baumann <daniel@debian.org>
-Build-Depends: debhelper (>= 5)
+Build-Depends: debhelper (>= 7)
 Build-Depends-Indep: python-support, gettext
 Standards-Version: 3.8.0
 Homepage: http://debian-live.alioth.debian.org/

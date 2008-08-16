@@ -332,7 +332,7 @@ msgid ""
 msgstr ""
 "<b>Debian Live -levykuva on valmis käännettäväksi!</b>\n"
 "\n"
-"Valitse <i>Apply</i> aloittaaksesi käännösprosessin."
+"Valitse <i>Toteuta</i> aloittaaksesi käännösprosessin."
 
 #: misc/live-magic.glade:1849
 msgid "Ready to build!"

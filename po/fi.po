@@ -1,0 +1,340 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: live-magic\n"
+"Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
+"POT-Creation-Date: 2008-08-09 23:23+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Finnish\n"
+"X-Poedit-Country: FINLAND\n"
+
+#: LiveMagic/views/wizard.py:31
+#: LiveMagic/views/wizard.py:210
+msgid "Debian Live Magic"
+msgstr "Debian Live Magic"
+
+#: LiveMagic/views/wizard.py:40
+msgid "About"
+msgstr "Tietoja"
+
+#: LiveMagic/views/wizard.py:196
+msgid "Are you sure you wish to cancel?"
+msgstr "Oletko varma, että haluat keskeyttää?"
+
+#: LiveMagic/views/wizard.py:211
+msgid "GUI tool to build Debian Live systems."
+msgstr "Graafinen käyttöliittymä Debian Live -järjestelmien kääntämiseen."
+
+#: LiveMagic/views/wizard.py:215
+msgid "Debian Live homepage"
+msgstr "Debian Live -kotisivu"
+
+#: LiveMagic/controllers/wizard.py:57
+msgid "Enter your password to continue"
+msgstr "Anna salasanasi jatkaaksesi"
+
+#: LiveMagic/controllers/wizard.py:58
+msgid "Debian Live Magic requires superuser capabilities to build your Debian Live system."
+msgstr "Debian Live Magic tarvitsee pääkäyttäjäoikeudet Debian Live -järjestelmän kääntämiseen."
+
+#: LiveMagic/controllers/build.py:59
+msgid "Error creating Debian Live system!"
+msgstr "Virhe luotaessa Debian Live -järjestelmää!"
+
+#: LiveMagic/controllers/build.py:82
+msgid "Cleaning build system"
+msgstr "Puhdistetaan käännösympäristö"
+
+#: LiveMagic/controllers/build.py:83
+msgid "Purging unnecessary parts of the build system..."
+msgstr "Siivotaan käännösympäristön tarpeettomat osat..."
+
+#: LiveMagic/controllers/build.py:86
+msgid "Build process finished"
+msgstr "Käännösprosessi on valmis"
+
+#: LiveMagic/controllers/build.py:87
+msgid "Your Debian Live system has been created successfully."
+msgstr "Debian Live -järjestelmä luotiin onnistuneesti."
+
+#: LiveMagic/controllers/build.py:106
+msgid "Error when building Debian Live system"
+msgstr "Virhe käännettäessä Debian Live -järjestelmää"
+
+#: LiveMagic/controllers/build.py:107
+msgid "There was an error when building your Debian Live system."
+msgstr "Debian Live -järjestelmän kääntämisessä tapahtui virhe."
+
+#: LiveMagic/controllers/build.py:117
+msgid "Build process cancelled"
+msgstr "Käännösprosessi keskeytetty"
+
+#: LiveMagic/controllers/build.py:118
+msgid "The creation of your Debian Live system was cancelled."
+msgstr "Debian Live -järjestelmän luonti keskeytettiin."
+
+#: misc/live-magic.glade:7
+msgid "Generating Debian Live system..."
+msgstr "Luodaan Debian Live -järjestelmää..."
+
+#: misc/live-magic.glade:44
+msgid ""
+"<big><b>Generating Debian Live system...</b></big>\n"
+"\n"
+"Please wait while your Debian Live image is generated for you."
+msgstr ""
+"<big><b>Luodaan Debian Live -järjestelmää...</b></bin>\n"
+"\n"
+"Odota, kun Debian Live -levykuvaa luodaan."
+
+#: misc/live-magic.glade:72
+msgid "Automatically close after Live system has been created"
+msgstr "Sulje automaattisesti, kun Live-järjestelmä on luotu"
+
+#: misc/live-magic.glade:112
+msgid "Details"
+msgstr "Yksityiskohdat"
+
+#: misc/live-magic.glade:201
+msgid ""
+"<b>Welcome to Debian Live Magic!</b>\n"
+"\n"
+"A <i>live</i> system is an operating system that does not require\n"
+"a classical installer to use it. It can boot from various types of\n"
+"media, including CDs, DVDs, USB sticks, or via netboot. \n"
+"\n"
+"The following screens will lead you through the process\n"
+"of building your own Debian Live system."
+msgstr ""
+"<b>Tervetuloa Debian Live Magic -ohjelmaan!</b>\n"
+"\n"
+"<i>Live</i>-järjestelmä on käyttöjärjestelmä, jota ei tarvitse asentaa\n"
+"perinteiseen tapaan asennusohjelman avulla. Se voidaan käynnistää verkon\n"
+"yli ja useilta eri medioilta, mukaan lukien CD- ja DVD-levyt ja USB-tikut.\n"
+"\n"
+"Seuraavat ruudut auttavat Debian Live -järjestelmän muokkaamisessa\n"
+"ja kääntämisessä."
+
+#: misc/live-magic.glade:223
+msgid "Welcome to Debian Live Magic!"
+msgstr "Tervetuloa Debian Live Magic -ohjelmaan!"
+
+#: misc/live-magic.glade:248
+msgid "<b>What type of image would you like to build?</b>"
+msgstr "<b>Millaisen levykuvan haluat kääntää?</b>"
+
+#: misc/live-magic.glade:302
+msgid "Standard Debian GNU/Linux image"
+msgstr "Standardi Debian GNU/Linux -levykuva"
+
+#: misc/live-magic.glade:348
+msgid "GNOME desktop environment"
+msgstr "GNOME-työpöytäympäristö"
+
+#: misc/live-magic.glade:390
+msgid "KDE desktop environment"
+msgstr "KDE-työpöytäympäristö"
+
+#: misc/live-magic.glade:432
+msgid "Xfce desktop environment"
+msgstr "Xfce-työpöytäympäristö"
+
+#: misc/live-magic.glade:470
+msgid "Debian GNU/Linux rescue image"
+msgstr "Debian GNU/Linux -pelastuslevykuva"
+
+#: misc/live-magic.glade:566
+msgid "Choose image type"
+msgstr "Valitse levykuvan tyyppi"
+
+#: misc/live-magic.glade:592
+msgid ""
+"<b>What distribution of Debian would you like to build?</b>\n"
+"\n"
+"If unsure, select \"<i>Testing (lenny)</i>\"."
+msgstr ""
+"<b>Minkä Debianin jakelun haluat kääntää?</b>\n"
+"\n"
+"Jos olet epävarma, valitse ”<i>Testattava (lenny)</i>”."
+
+#: misc/live-magic.glade:666
+msgid "Unstable (sid) - untested and frequently changing"
+msgstr "Epävakaa (sid) - testaamaton ja usein muuttuva"
+
+#: misc/live-magic.glade:686
+msgid "Testing (lenny) - receives new versions from unstable if they are not too buggy."
+msgstr "Testattava (lenny) - epävakaan jakelun versiot, joista ei löydy liikaa virheitä."
+
+#: misc/live-magic.glade:707
+msgid "Stable (etch) - well-tested and rarely changes."
+msgstr "Vakaa (etch) - hyvin testattu ja harvoin muuttuva."
+
+#: misc/live-magic.glade:740
+msgid "Select distribution"
+msgstr "Valitse jakelu"
+
+#: misc/live-magic.glade:777
+msgid "<b>What media type would you like to target?</b>"
+msgstr "<b>Millaista mediaa haluat käyttää?</b>"
+
+#: misc/live-magic.glade:817
+msgid "Server path:"
+msgstr "Palvelimen polku:"
+
+#: misc/live-magic.glade:829
+msgid "Server address:"
+msgstr "Palvelimen osoite:"
+
+#: misc/live-magic.glade:840
+msgid "Server type:"
+msgstr "Palvelimen tyyppi:"
+
+#: misc/live-magic.glade:921
+msgid "Network boot image"
+msgstr "Verkkokäynnistyslevykuva"
+
+#: misc/live-magic.glade:964
+msgid "USB / HDD image"
+msgstr "USB/HDD-levykuva"
+
+#: misc/live-magic.glade:1006
+msgid "ISO image for a CD or DVD"
+msgstr "ISO-levykuva CD:lle tai DVD:lle"
+
+#: misc/live-magic.glade:1077
+msgid "Select media type"
+msgstr "Valitse median tyyppi"
+
+#: misc/live-magic.glade:1103
+msgid ""
+"<b>Please choose your local mirror:</b>\n"
+"\n"
+"To select a mirror that is not on the list, simply enter it below."
+msgstr ""
+"<b>Valitse paikallinen peili:</b>\n"
+"\n"
+"Voit valita muun kuin luettelossa olevan syöttämällä sen alle."
+
+#: misc/live-magic.glade:1239
+msgid "Choose mirror"
+msgstr "Valitse peili"
+
+#: misc/live-magic.glade:1265
+msgid ""
+"<b>What type of machine is your Debian Live system for?</b>\n"
+"\n"
+"If you are unsure, select \"<i>i386</i>\"."
+msgstr ""
+"<b>Minkä tyyppiselle koneelle Debian Live -järjestelmä tehdään?</b>\n"
+"\n"
+"Jos olet epävarma, valitse ”<i>i386</i>”"
+
+#: misc/live-magic.glade:1304
+msgid ""
+"i386\n"
+"Computers with e.g. AMD Sempron or Intel Celeron, almost all\n"
+"desktop computers dating 2004 or earlier."
+msgstr ""
+"i386\n"
+"Tietokoneet, joissa on AMD Sempron tai Intel Celeron -prosessori.\n"
+"Lähes kaikki vuotta 2004 edeltävät koneet."
+
+#: misc/live-magic.glade:1324
+msgid ""
+"amd64\n"
+"Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
+"Intel Core2, Pentium 4xx, Pentium D CPUs."
+msgstr ""
+"amd64\n"
+"Useimmat uudet tietokoneet eli sellaiset, joiden prosessori on AMD Opteron,\n"
+"Turion 64 tai Athlon 64, tai Intel Core2, Pentium 4xx tai Pentium D."
+
+#: misc/live-magic.glade:1386
+msgid "Select architecture"
+msgstr "Valitse arkkitehtuuri"
+
+#: misc/live-magic.glade:1412
+msgid ""
+"<b>Select Debian Installer integration:</b>\n"
+"\n"
+"Selecting \"<i>yes</i>\" below adds additional boot options that launch the Debian Installer, the\n"
+"official installation system for Debian systems. \n"
+"\n"
+"If unsure, select \"<i>no</i>\"."
+msgstr ""
+"<b>Valitse Debianin asentimen integraatio:</b>\n"
+"\n"
+"Jos valitset tämän, levylle lisätään käynnistysvalitsimet Debianin\n"
+"virallisen asentimen käynnistämiseksi.\n"
+"\n"
+"Jos olet epävarma, älä valitse tätä vaihtoehtoa."
+
+#: misc/live-magic.glade:1465
+msgid "Yes, integrate the Debian Installer."
+msgstr "Kyllä, integroi Debianin asennin."
+
+#: misc/live-magic.glade:1495
+msgid "No, do not integrate the Debian Installer."
+msgstr "Ei, älä integroi Debianin asenninta."
+
+#: misc/live-magic.glade:1531
+msgid "Select Debian Installer integration"
+msgstr "Valitse Debianin asentimen integraatio"
+
+#: misc/live-magic.glade:1557
+msgid ""
+"<b>Select locale and keyboard layout:</b>\n"
+"\n"
+"A locale is an identifier that defines your language, country and related formatting\n"
+"settings. If unsure, please use the defaults."
+msgstr ""
+"<b>Valitse maa-asetus ja näppäinasettelu:</b>\n"
+"\n"
+"Maa-asetus määrittää maan, käytettävän kielen ja näihin liittyvät muotoiluasetukset\n"
+"Jos olet epävarma, käytä oletusarvoja."
+
+#: misc/live-magic.glade:1632
+msgid "Keyboard layout:"
+msgstr "Näppäinasettelu:"
+
+#: misc/live-magic.glade:1656
+msgid "Locale:"
+msgstr "Maa-asetus:"
+
+#: misc/live-magic.glade:1689
+msgid "Select locale and keyboard layout"
+msgstr "Valitse maa-asetus ja näppäinasettelu"
+
+#: misc/live-magic.glade:1726
+msgid ""
+"<b>Please choose a build folder:</b>\n"
+"\n"
+"If the specified directory is not empty, images will be created in a <i>DebianLive/</i> subfolder."
+msgstr ""
+"<b>Valitse käännöshakemisto:</b>\n"
+"\n"
+"Jos annettu hakemisto ei ole tyhjä, levykuvat kirjoitetaan alihakemistoon <i>DebianLive/</i>."
+
+#: misc/live-magic.glade:1777
+#: misc/live-magic.glade:1804
+msgid "Select build folder"
+msgstr "Valitse käännöshakemisto"
+
+#: misc/live-magic.glade:1821
+msgid ""
+"<b>Your Debian Live image is ready to build!</b>\n"
+"\n"
+"Press <i>Apply</i> to begin the build process."
+msgstr ""
+"<b>Debian Live -levykuva on valmis käännettäväksi!</b>\n"
+"\n"
+"Valitse <i>Apply</i> aloittaaksesi käännösprosessin."
+
+#: misc/live-magic.glade:1849
+msgid "Ready to build!"
+msgstr "Valmiina käännettäväksi!"
+

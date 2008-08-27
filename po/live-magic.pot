@@ -181,6 +181,7 @@ msgstr ""
 msgid "Server address:"
 msgstr ""
 
+# Netboot server type (e.g NFS / CIFS)
 #: misc/live-magic.glade:840
 msgid "Server type:"
 msgstr ""
@@ -293,6 +294,8 @@ msgstr ""
 msgid "Select build folder"
 msgstr ""
 
+# Shown in the final wizard screen. The text for the 'Apply' button is
+# translated by GTK (gtk-apply).
 #: misc/live-magic.glade:1821
 msgid ""
 "<b>Your Debian Live image is ready to build!</b>\n"

@@ -91,8 +91,15 @@ class BuildController(object):
             if self.options.gnome_desktop_session_id != '-':
                 os.environ['GNOME_DESKTOP_SESSION_ID'] = self.options.gnome_desktop_session_id
 
-            cmd = ['su', pwd.getpwuid(self.uid)[0], '-c', 'xdg-open .']
-            subprocess.call(cmd)
+            # Try some file managers.
+            for manager in ('/usr/bin/xdg-open', '/usr/bin/pcmanfm'):
+                if not os.path.exists(manager):
+                    continue
+
+                cmd = ['su', pwd.getpwuid(self.uid)[0], '-c', '%s .' % manager]
+                if not subprocess.call(cmd):
+                    continue
+
             return DONE
 
         def ok_clean():

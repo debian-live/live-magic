@@ -1,3 +1,10 @@
+live-magic (1.1) unstable; urgency=low
+
+  * Add translations:
+    - Italian translation by Fabio Balzano (Closes: #496848)
+
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Thu, 28 Aug 2008 05:10:33 +0100
+
 live-magic (1.0) unstable; urgency=low
 
   * 1.0 release for Lenny:

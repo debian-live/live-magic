@@ -1,0 +1,360 @@
+# Japanese translations for Live Magic
+# Live Magic の日本語訳
+# Copyright (C) 2008 Noritada Kobayashi <noritadak@gmail.com>.
+# This file is distributed under the same license as the live-magic package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: live-magic 1.0\n"
+"Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
+"POT-Creation-Date: 2008-08-09 08:53+0100\n"
+"PO-Revision-Date: 2008-08-28 21:34+0900\n"
+"Last-Translator: Noritada Kobayashi <noritadak@gmail.com>\n"
+"Language-Team: Japanese <debian-doc@debian.or.jp>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: LiveMagic/views/wizard.py:31 LiveMagic/views/wizard.py:210
+msgid "Debian Live Magic"
+msgstr "Debian Live Magic"
+
+#: LiveMagic/views/wizard.py:40
+msgid "About"
+msgstr "このソフトウェアについて"
+
+#: LiveMagic/views/wizard.py:196
+msgid "Are you sure you wish to cancel?"
+msgstr "本当に中止しますか?"
+
+#: LiveMagic/views/wizard.py:211
+msgid "GUI tool to build Debian Live systems."
+msgstr "Debian Live システムの構築用 GUI ツール。"
+
+#: LiveMagic/views/wizard.py:215
+msgid "Debian Live homepage"
+msgstr "Debian Live ホームページ"
+
+#: LiveMagic/controllers/wizard.py:57
+msgid "Enter your password to continue"
+msgstr "先に進むにはパスワードを入力してください"
+
+#: LiveMagic/controllers/wizard.py:58
+msgid ""
+"Debian Live Magic requires superuser capabilities to build your Debian Live "
+"system."
+msgstr ""
+"Debian Live Magic で Debian Live システムを構築するにはスーパユーザ権限が必要"
+"です。"
+
+#: LiveMagic/controllers/build.py:59
+msgid "Error creating Debian Live system!"
+msgstr "Debian Live システムの作成中にエラーが発生しました!"
+
+#: LiveMagic/controllers/build.py:82
+msgid "Cleaning build system"
+msgstr "ビルドシステムを片付けています"
+
+#: LiveMagic/controllers/build.py:83
+msgid "Purging unnecessary parts of the build system..."
+msgstr "ビルドシステムの不要な要素を削除しています..."
+
+#: LiveMagic/controllers/build.py:86
+msgid "Build process finished"
+msgstr "構築プロセスを終了しました"
+
+#: LiveMagic/controllers/build.py:87
+msgid "Your Debian Live system has been created successfully."
+msgstr "Debian Live システムの作成に成功しました。"
+
+#: LiveMagic/controllers/build.py:106
+msgid "Error when building Debian Live system"
+msgstr "Debian Live システムの構築中にエラーが発生しました"
+
+#: LiveMagic/controllers/build.py:107
+msgid "There was an error when building your Debian Live system."
+msgstr "Debian Live システムの構築中にエラーが発生しました。"
+
+#: LiveMagic/controllers/build.py:117
+msgid "Build process cancelled"
+msgstr "構築プロセスを中止しました"
+
+#: LiveMagic/controllers/build.py:118
+msgid "The creation of your Debian Live system was cancelled."
+msgstr "Debian Live システムの作成を中止しました。"
+
+#: misc/live-magic.glade:7
+msgid "Generating Debian Live system..."
+msgstr "Debian Live システムを作成しています..."
+
+#: misc/live-magic.glade:44
+msgid ""
+"<big><b>Generating Debian Live system...</b></big>\n"
+"\n"
+"Please wait while your Debian Live image is generated for you."
+msgstr ""
+"<big><b>Debian Live システムを作成しています...</b></big>\n"
+"\n"
+"Debian Live イメージの作成が終わるまでお待ちください。"
+
+#: misc/live-magic.glade:72
+msgid "Automatically close after Live system has been created"
+msgstr "Live システムの作成終了後に自動的に終了します"
+
+#: misc/live-magic.glade:112
+msgid "Details"
+msgstr "詳細"
+
+#: misc/live-magic.glade:201
+msgid ""
+"<b>Welcome to Debian Live Magic!</b>\n"
+"\n"
+"A <i>live</i> system is an operating system that does not require\n"
+"a classical installer to use it. It can boot from various types of\n"
+"media, including CDs, DVDs, USB sticks, or via netboot. \n"
+"\n"
+"The following screens will lead you through the process\n"
+"of building your own Debian Live system."
+msgstr ""
+"<b>Debian Live Magic へようこそ!</b>\n"
+"\n"
+"<i>ライブ</i>システムは、使用するのに昔ながらのインストーラを必要としな\n"
+"いオペレーティングシステムです。CD、DVD、USB メモリ、ネットブートなど、\n"
+"様々な種類のメディアから起動できます。\n"
+"\n"
+"この後の画面で、あなたの Debian Live システムを構築する手順を説明してい\n"
+"きます。"
+
+#: misc/live-magic.glade:223
+msgid "Welcome to Debian Live Magic!"
+msgstr "Debian Live Magic へようこそ!"
+
+#: misc/live-magic.glade:248
+msgid "<b>What type of image would you like to build?</b>"
+msgstr "<b>構築したいイメージの種類はどれですか?</b>"
+
+#: misc/live-magic.glade:302
+msgid "Standard Debian GNU/Linux image"
+msgstr "標準の Debian GNU/Linux イメージ"
+
+#: misc/live-magic.glade:348
+msgid "GNOME desktop environment"
+msgstr "GNOME デスクトップ環境"
+
+#: misc/live-magic.glade:390
+msgid "KDE desktop environment"
+msgstr "KDE デスクトップ環境"
+
+#: misc/live-magic.glade:432
+msgid "Xfce desktop environment"
+msgstr "Xfce デスクトップ環境"
+
+#: misc/live-magic.glade:470
+msgid "Debian GNU/Linux rescue image"
+msgstr "Debian GNU/Linux レスキューイメージ"
+
+#: misc/live-magic.glade:566
+msgid "Choose image type"
+msgstr "イメージの種類を選択してください"
+
+#: misc/live-magic.glade:592
+msgid ""
+"<b>What distribution of Debian would you like to build?</b>\n"
+"\n"
+"If unsure, select \"<i>Testing (lenny)</i>\"."
+msgstr ""
+"<b>構築したいのは Debian のどのディストリビューションですか?</b>\n"
+"\n"
+"よく分からない場合は \"<i>Testing (lenny)</i>\" を選択してください。"
+
+# FIXME: Add a trailing period.
+#: misc/live-magic.glade:666
+msgid "Unstable (sid) - untested and frequently changing"
+msgstr "不安定版 (unstable, sid) - テストされていなく、変更が頻繁に入ります。"
+
+# From Translator: 意訳しています
+#: misc/live-magic.glade:686
+msgid ""
+"Testing (lenny) - receives new versions from unstable if they are not too "
+"buggy."
+msgstr ""
+"テスト版 (testing, lenny) - あまりバグの多くない新しいバージョンのみが不安定"
+"版から入ります。"
+
+#: misc/live-magic.glade:707
+msgid "Stable (etch) - well-tested and rarely changes."
+msgstr "安定版 (stable, etch) - よくテストされ、変更はほとんどありません。"
+
+#: misc/live-magic.glade:740
+msgid "Select distribution"
+msgstr "ディストリビューションを選択してください"
+
+#: misc/live-magic.glade:777
+msgid "<b>What media type would you like to target?</b>"
+msgstr "<b>対象とするメディアの種類はどれにしますか?</b>"
+
+#: misc/live-magic.glade:817
+msgid "Server path:"
+msgstr "サーバのパス:"
+
+#: misc/live-magic.glade:829
+msgid "Server address:"
+msgstr "サーバのアドレス:"
+
+# Netboot server type (e.g NFS / CIFS)
+#: misc/live-magic.glade:840
+msgid "Server type:"
+msgstr "サーバの種類:"
+
+#: misc/live-magic.glade:921
+msgid "Network boot image"
+msgstr "ネットワークブートイメージ"
+
+#: misc/live-magic.glade:964
+msgid "USB / HDD image"
+msgstr "USB/HDD 用イメージ"
+
+#: misc/live-magic.glade:1006
+msgid "ISO image for a CD or DVD"
+msgstr "CD/DVD 用 ISO イメージ"
+
+#: misc/live-magic.glade:1077
+msgid "Select media type"
+msgstr "メディアの種類を選択してください"
+
+#: misc/live-magic.glade:1103
+msgid ""
+"<b>Please choose your local mirror:</b>\n"
+"\n"
+"To select a mirror that is not on the list, simply enter it below."
+msgstr ""
+"<b>ローカルミラーを選択してください:</b>\n"
+"\n"
+"一覧に載っていないミラーを選択したい場合は、単にここでは Enter を入力してくだ"
+"さい。"
+
+#: misc/live-magic.glade:1239
+msgid "Choose mirror"
+msgstr "ミラーを選択してください"
+
+#: misc/live-magic.glade:1265
+msgid ""
+"<b>What type of machine is your Debian Live system for?</b>\n"
+"\n"
+"If you are unsure, select \"<i>i386</i>\"."
+msgstr ""
+"<b>Debian Live システムを使用するマシンの種類は?</b>\n"
+"\n"
+"よく分からない場合は \"<i>i386</i>\" を選択してください。"
+
+#: misc/live-magic.glade:1304
+msgid ""
+"i386\n"
+"Computers with e.g. AMD Sempron or Intel Celeron, almost all\n"
+"desktop computers dating 2004 or earlier."
+msgstr ""
+"i386\n"
+"\n"
+"AMD Sempron や Intel Celeron などを搭載したコンピュータ。2004 年以前の\n"
+"デスクトップコンピュータのほぼすべてがこれです。"
+
+#: misc/live-magic.glade:1324
+msgid ""
+"amd64\n"
+"Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
+"Intel Core2, Pentium 4xx, Pentium D CPUs."
+msgstr ""
+"amd64\n"
+"\n"
+"最近のコンピュータの大半。AMD Opteron、Turion 64、Athlon 64、Intel\n"
+"Core2、Pentium 4xx、Pentium D などの CPU を搭載しています。"
+
+#: misc/live-magic.glade:1386
+msgid "Select architecture"
+msgstr "アーキテクチャを選択してください"
+
+#: misc/live-magic.glade:1412
+msgid ""
+"<b>Select Debian Installer integration:</b>\n"
+"\n"
+"Selecting \"<i>yes</i>\" below adds additional boot options that launch the "
+"Debian Installer, the\n"
+"official installation system for Debian systems. \n"
+"\n"
+"If unsure, select \"<i>no</i>\"."
+msgstr ""
+"<b>Debian Installer を統合するかしないかを選択してください:</b>\n"
+"\n"
+"ここで \"<i>yes</i>\" を選択すると、Debian システムの公式インストールシス\n"
+"テムである Debian Installer を立ち上げる起動オプションが追加されます。\n"
+"\n"
+"よく分からない場合は \"<i>いいえ</i>\" を選択してください。"
+
+#: misc/live-magic.glade:1465
+msgid "Yes, integrate the Debian Installer."
+msgstr "はい、Debian Installer を統合します。"
+
+#: misc/live-magic.glade:1495
+msgid "No, do not integrate the Debian Installer."
+msgstr "いいえ、Debian Installer を統合しません。"
+
+#: misc/live-magic.glade:1531
+msgid "Select Debian Installer integration"
+msgstr "Debian Installer を統合するかしないかを選択してください"
+
+#: misc/live-magic.glade:1557
+msgid ""
+"<b>Select locale and keyboard layout:</b>\n"
+"\n"
+"A locale is an identifier that defines your language, country and related "
+"formatting\n"
+"settings. If unsure, please use the defaults."
+msgstr ""
+"<b>ロケールとキーボードレイアウトを選択してください:</b>\n"
+"\n"
+"ロケールとは、言語や国、その他関連する表記の設定を識別する名前です。よ\n"
+"く分からない場合はデフォルトを使用してください。"
+
+#: misc/live-magic.glade:1632
+msgid "Keyboard layout:"
+msgstr "キーボードレイアウト:"
+
+#: misc/live-magic.glade:1656
+msgid "Locale:"
+msgstr "ロケール:"
+
+#: misc/live-magic.glade:1689
+msgid "Select locale and keyboard layout"
+msgstr "ロケールとキーボードレイアウトを選択してください"
+
+#: misc/live-magic.glade:1726
+msgid ""
+"<b>Please choose a build folder:</b>\n"
+"\n"
+"If the specified directory is not empty, images will be created in a "
+"<i>DebianLive/</i> subfolder."
+msgstr ""
+"<b>構築用のフォルダを選択してください:</b>\n"
+"\n"
+"指定したディレクトリが空でない場合は、その <i>DebianLive/</i> サブフォルダ内"
+"にイメージが作成されます。"
+
+#: misc/live-magic.glade:1777 misc/live-magic.glade:1804
+msgid "Select build folder"
+msgstr "構築用のフォルダを選択してください"
+
+# Shown in the final wizard screen. The text for the 'Apply' button is
+# translated by GTK (gtk-apply).
+#: misc/live-magic.glade:1821
+msgid ""
+"<b>Your Debian Live image is ready to build!</b>\n"
+"\n"
+"Press <i>Apply</i> to begin the build process."
+msgstr ""
+"<b>Debian Live イメージを構築する準備ができました!</b>\n"
+"\n"
+"構築プロセスを開始するには <i>適用</i> を押してください。"
+
+#: misc/live-magic.glade:1849
+msgid "Ready to build!"
+msgstr "構築する準備ができました!"

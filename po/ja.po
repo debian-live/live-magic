@@ -53,7 +53,7 @@ msgstr "Debian Live システムの作成中にエラーが発生しました!"
 
 #: LiveMagic/controllers/build.py:82
 msgid "Cleaning build system"
-msgstr "ビルドシステムを片付けています"
+msgstr "ビルドシステムをクリーンアップしています"
 
 #: LiveMagic/controllers/build.py:83
 msgid "Purging unnecessary parts of the build system..."
@@ -327,6 +327,7 @@ msgstr "ロケール:"
 msgid "Select locale and keyboard layout"
 msgstr "ロケールとキーボードレイアウトを選択してください"
 
+# FIXME: Unify terminology: "folder" or "directory"?
 #: misc/live-magic.glade:1726
 msgid ""
 "<b>Please choose a build folder:</b>\n"
@@ -336,8 +337,8 @@ msgid ""
 msgstr ""
 "<b>構築用のフォルダを選択してください:</b>\n"
 "\n"
-"指定したディレクトリが空でない場合は、その <i>DebianLive/</i> サブフォルダ内"
-"にイメージが作成されます。"
+"指定したフォルダが空でない場合は、その <i>DebianLive/</i> サブフォルダ内にイ"
+"メージが作成されます。"
 
 #: misc/live-magic.glade:1777 misc/live-magic.glade:1804
 msgid "Select build folder"

@@ -53,11 +53,11 @@ msgstr "Debian Live システムの作成中にエラーが発生しました!"
 
 #: LiveMagic/controllers/build.py:82
 msgid "Cleaning build system"
-msgstr "ビルドシステムをクリーンアップしています"
+msgstr "構築システムをクリーンアップしています"
 
 #: LiveMagic/controllers/build.py:83
 msgid "Purging unnecessary parts of the build system..."
-msgstr "ビルドシステムの不要な要素を削除しています..."
+msgstr "構築システムの不要な要素を削除しています..."
 
 #: LiveMagic/controllers/build.py:86
 msgid "Build process finished"

@@ -4,6 +4,7 @@ live-magic (1.1) unstable; urgency=low
   * Try some alternative file managers to open the completed build window other
     than xdg-open.
   * Add translations:
+    - Gujurati translation by Kartik Mistry. (Closes: #496876)
     - Italian translation by Fabio Balzano. Additional thanks to
       Marco Amadori and tp.linux.it. (Closes: #496848)
     - Spanish translation by Fabio Balzano. Additional thanks to

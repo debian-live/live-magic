@@ -1,0 +1,345 @@
+# Gujarati Translation of live-magic.
+# This file is put in the public domain.
+# Kartik Mistry <kartik.mistry@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: live-magic-gu\n"
+"Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
+"POT-Creation-Date: 2008-08-09 08:53+0100\n"
+"PO-Revision-Date: 2008-08-28 13:04+0530\n"
+"Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
+"Language-Team: Gujarati <support@utkarsh.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: LiveMagic/views/wizard.py:31
+#: LiveMagic/views/wizard.py:210
+msgid "Debian Live Magic"
+msgstr "ડેબિયન લાઇવ મેજીક"
+
+#: LiveMagic/views/wizard.py:40
+msgid "About"
+msgstr "વિશે"
+
+#: LiveMagic/views/wizard.py:196
+msgid "Are you sure you wish to cancel?"
+msgstr "શું તમે રદ કરવા માટે ચોક્કસ છો?"
+
+#: LiveMagic/views/wizard.py:211
+msgid "GUI tool to build Debian Live systems."
+msgstr "ડેબિયન લાઇવ સિસ્ટમ્સ બનાવવા માટેનાં GUI સાધન."
+
+#: LiveMagic/views/wizard.py:215
+msgid "Debian Live homepage"
+msgstr "ડેબિયન લાઇવ ઘરપાનું"
+
+#: LiveMagic/controllers/wizard.py:57
+msgid "Enter your password to continue"
+msgstr "ચાલુ રાખવા માટે તમારો પાસવર્ડ દાખલ કરો"
+
+#: LiveMagic/controllers/wizard.py:58
+msgid "Debian Live Magic requires superuser capabilities to build your Debian Live system."
+msgstr "ડેબિયન લાઇવ મેજીકને તમારી ડેબિયન લાઇવ સિસ્ટમ બનાવવા માટે સુપરયુઝર ક્ષમતાઓ જરૂરી છે."
+
+#: LiveMagic/controllers/build.py:59
+msgid "Error creating Debian Live system!"
+msgstr "લાઇવ સિસ્ટમ બનાવતી વખતે ક્ષતિ!"
+
+#: LiveMagic/controllers/build.py:82
+msgid "Cleaning build system"
+msgstr "બનાવવાની સિસ્ટમ સાફ કરે છે"
+
+#: LiveMagic/controllers/build.py:83
+msgid "Purging unnecessary parts of the build system..."
+msgstr "બનાવેલ સિસ્ટમનો ન જોઇતાં ભાગો દૂર કરે છે..."
+
+#: LiveMagic/controllers/build.py:86
+msgid "Build process finished"
+msgstr "બનાવવાની પ્રક્રિયા પૂર્ણ થઇ"
+
+#: LiveMagic/controllers/build.py:87
+msgid "Your Debian Live system has been created successfully."
+msgstr "તમારી લાઇવ સિસ્ટમ સફળતાપૂર્વક બનાવવામાં આવી છે."
+
+#: LiveMagic/controllers/build.py:106
+msgid "Error when building Debian Live system"
+msgstr "ડેબિયન લાઇવ સિસ્ટમ બનાવતી વખતે ક્ષતિ આવી"
+
+#: LiveMagic/controllers/build.py:107
+msgid "There was an error when building your Debian Live system."
+msgstr "તમારી ડેબિયન લાઇવ સિસ્ટમ બનાવતી વખતે ક્ષતિ આવી હતી."
+
+#: LiveMagic/controllers/build.py:117
+msgid "Build process cancelled"
+msgstr "બનાવવાની પ્રક્રિયા રદ થઇ"
+
+#: LiveMagic/controllers/build.py:118
+msgid "The creation of your Debian Live system was cancelled."
+msgstr "તમારી લાઇવ સિસ્ટમની બનાવટ રદ કરવામાં આવી હતી."
+
+#: misc/live-magic.glade:7
+msgid "Generating Debian Live system..."
+msgstr "લાઇવ સિસ્ટમ બનાવે છે..."
+
+#: misc/live-magic.glade:44
+msgid ""
+"<big><b>Generating Debian Live system...</b></big>\n"
+"\n"
+"Please wait while your Debian Live image is generated for you."
+msgstr ""
+"<big><b>ડેબિયન લાઇવ સિસ્ટમ બનાવે છે...</b></big>\n"
+"\n"
+"તમારા માટે ડેબિયન લાઇવ ઇમેજ બનાવવામાં આવે ત્યાં સુધી મહેરબાની કરી રાહ જુઓ."
+
+#: misc/live-magic.glade:72
+msgid "Automatically close after Live system has been created"
+msgstr "લાઇવ સિસ્ટમ બનાવવામાં આવે પછી આપમેળે બંધ કરો"
+
+#: misc/live-magic.glade:112
+msgid "Details"
+msgstr "વિગતો"
+
+#: misc/live-magic.glade:201
+msgid ""
+"<b>Welcome to Debian Live Magic!</b>\n"
+"\n"
+"A <i>live</i> system is an operating system that does not require\n"
+"a classical installer to use it. It can boot from various types of\n"
+"media, including CDs, DVDs, USB sticks, or via netboot. \n"
+"\n"
+"The following screens will lead you through the process\n"
+"of building your own Debian Live system."
+msgstr ""
+"<b>ડેબિયન લાઇવ મેજીકમાં તમારું સ્વાગત છે!</b>\n"
+"\n"
+"<i>લાઇવ</i> સિસ્ટમ એ ઓપરેટિંગ સિસ્ટમ છે જેનો ઉપયોગ કરવા માટે પરંપરાગત\n"
+"સ્થાપકની જરૂર નથી. જે વિવિધ પ્રકારનાં મિડીઆ, જેવાંકે\n"
+"CDs, DVDs, USB સ્ટિક્સ, અથવા નેટબૂટ દ્વારા શરૂ કરી શકાય છે. \n"
+"\n"
+"નીચેનાં સ્ક્રિન્સ તમને તમારી પોતાની ડેબિયન લાઇવ સિસ્ટમ\n"
+"બનાવવાની પ્રક્રિયામાં લઇ જશે."
+
+#: misc/live-magic.glade:223
+msgid "Welcome to Debian Live Magic!"
+msgstr "ડેબિયન લાઇવ મેજીકમાં તમારું સ્વાગત છે!"
+
+#: misc/live-magic.glade:248
+msgid "<b>What type of image would you like to build?</b>"
+msgstr "<b>કયા પ્રકારની ઇમેજ તમે બનાવવા માંગો છો?</b>"
+
+#: misc/live-magic.glade:302
+msgid "Standard Debian GNU/Linux image"
+msgstr "પ્રમાણભૂત ડેબિયન GNU/લિનક્સ ઇમેજ"
+
+#: misc/live-magic.glade:348
+msgid "GNOME desktop environment"
+msgstr "GNOME ડેસ્કટોપ વાતાવરણ"
+
+#: misc/live-magic.glade:390
+msgid "KDE desktop environment"
+msgstr "KDE ડેસ્કટોપ વાતાવરણ"
+
+#: misc/live-magic.glade:432
+msgid "Xfce desktop environment"
+msgstr "Xfce ડેસ્કટોપ વાતાવરણ"
+
+#: misc/live-magic.glade:470
+msgid "Debian GNU/Linux rescue image"
+msgstr "ડેબિયન GNU/લિનક્સ બચાવ ઇમેજ"
+
+#: misc/live-magic.glade:566
+msgid "Choose image type"
+msgstr "ઇમેજનો પ્રકાર પસંદ કરો"
+
+#: misc/live-magic.glade:592
+msgid ""
+"<b>What distribution of Debian would you like to build?</b>\n"
+"\n"
+"If unsure, select \"<i>Testing (lenny)</i>\"."
+msgstr ""
+"<b>ડેબિયનનું કયું ડિસ્ટ્રીબ્યુશન તમે બનાવવા માંગો છો?</b>\n"
+"\n"
+"જો અચોક્કસ હોવ તો, \"<i>ટેસ્ટીંગ (લેન્ની)</i>\" પસંદ કરો."
+
+#: misc/live-magic.glade:666
+msgid "Unstable (sid) - untested and frequently changing"
+msgstr "અનસ્ટેબલ (સિડ) - ચકાસણી ન કરેલ અને વારંવાર બદલાય છે"
+
+#: misc/live-magic.glade:686
+msgid "Testing (lenny) - receives new versions from unstable if they are not too buggy."
+msgstr "ટેસ્ટિંગ (લેન્ની) - અનસ્ટેબલ માંથી નવી આવૃત્તિ મેળવે છે જો તે બહુ ક્ષતિઓ ન ધરાવતી હોય."
+
+#: misc/live-magic.glade:707
+msgid "Stable (etch) - well-tested and rarely changes."
+msgstr "સ્ટેબલ (ઇચ) - યોગ્ય રીતે ચકાસણી કરેલ અને ભાગ્યે જ બદલાય છે."
+
+#: misc/live-magic.glade:740
+msgid "Select distribution"
+msgstr "ડિસ્ટ્રીબ્યુશન પસંદ કરો"
+
+#: misc/live-magic.glade:777
+msgid "<b>What media type would you like to target?</b>"
+msgstr "<b>કયો મિડીઆ પ્રકાર તમે રાખવા માંગો છો?</b>"
+
+#: misc/live-magic.glade:817
+msgid "Server path:"
+msgstr "સર્વર પથ:"
+
+#: misc/live-magic.glade:829
+msgid "Server address:"
+msgstr "સર્વર સરનામું:"
+
+# Netboot server type (e.g NFS / CIFS)
+#: misc/live-magic.glade:840
+msgid "Server type:"
+msgstr "સર્વર પ્રકાર:"
+
+#: misc/live-magic.glade:921
+msgid "Network boot image"
+msgstr "નેટવર્ક બૂટ ઇમેજ"
+
+#: misc/live-magic.glade:964
+msgid "USB / HDD image"
+msgstr "USB / HDD ઇમેજ"
+
+#: misc/live-magic.glade:1006
+msgid "ISO image for a CD or DVD"
+msgstr "CD અથવા DVD માટે ISO ઇમેજ"
+
+#: misc/live-magic.glade:1077
+msgid "Select media type"
+msgstr "મિડીયા પ્રકાર પસંદ કરો"
+
+#: misc/live-magic.glade:1103
+msgid ""
+"<b>Please choose your local mirror:</b>\n"
+"\n"
+"To select a mirror that is not on the list, simply enter it below."
+msgstr ""
+"<b>મહેરબાની કરી તમારો સ્થાનિક મિરર પસંદ કરો:</b>\n"
+"\n"
+"યાદીમાં ન હોય તેવો મિરર પસંદ કરવા માટે, તેને નીચે દાખલ કરો."
+
+#: misc/live-magic.glade:1239
+msgid "Choose mirror"
+msgstr "મિરર પસંદ કરો"
+
+#: misc/live-magic.glade:1265
+msgid ""
+"<b>What type of machine is your Debian Live system for?</b>\n"
+"\n"
+"If you are unsure, select \"<i>i386</i>\"."
+msgstr ""
+"<b>તમારી ડેબિયન લાઇવ સિસ્ટમ કયા પ્રકારનાં મશીન માટે છે?</b>\n"
+"\n"
+"જો તમે અચોક્કસ હોવ તો, \"<i>i386</i>\" પસંદ કરો."
+
+#: misc/live-magic.glade:1304
+msgid ""
+"i386\n"
+"Computers with e.g. AMD Sempron or Intel Celeron, almost all\n"
+"desktop computers dating 2004 or earlier."
+msgstr ""
+"i386\n"
+"દા.ત. AMD સેમ્પ્રોન અથવા ઇન્ટેલ સેલેરોન કોમ્પ્યુટરો, લગભગ બધા\n"
+"કોમ્પ્યુટરો જે ૨૦૦૪ અથવા પછીની તારીખનાં હોય."
+
+#: misc/live-magic.glade:1324
+msgid ""
+"amd64\n"
+"Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
+"Intel Core2, Pentium 4xx, Pentium D CPUs."
+msgstr ""
+"amd64\n"
+"મોટાભાગનાં કોમ્પ્યુટરો દા.ત. AMD ઓપ્ટેરોન, ટ્યુરિઓન 64, એથેલોન 64, અથવા\n"
+"ઇન્ટેલ કોર ૨, પેન્ટિયમ ૪xx, પેન્ટિયમ D CPUઓ."
+
+#: misc/live-magic.glade:1386
+msgid "Select architecture"
+msgstr "બંધારણ પસંદ કરો"
+
+#: misc/live-magic.glade:1412
+msgid ""
+"<b>Select Debian Installer integration:</b>\n"
+"\n"
+"Selecting \"<i>yes</i>\" below adds additional boot options that launch the Debian Installer, the\n"
+"official installation system for Debian systems. \n"
+"\n"
+"If unsure, select \"<i>no</i>\"."
+msgstr ""
+"<b>ડેબિયન સ્થાપનનું જોડાણ પસંદ કરો:</b>\n"
+"\n"
+"\"<i>હા</i>\" પસંદ કરતાં નીચે વધારાનાં બૂટ વિકલ્પો ઉમેરશે જે ડેબિયન સ્થાપકને ચલાવશે, જે\n"
+"ડેબિયન સિસ્ટમ્સ માટેની અધિકૃત સ્થાપન સિસ્ટમ છે. \n"
+"\n"
+"જો તમે અચોક્કસ હોવ તો, \"<i>ના</i>\" પસંદ કરો."
+
+#: misc/live-magic.glade:1465
+msgid "Yes, integrate the Debian Installer."
+msgstr "હા, ડેબિયન સ્થાપક જોડો."
+
+#: misc/live-magic.glade:1495
+msgid "No, do not integrate the Debian Installer."
+msgstr "ના, ડેબિયન સ્થાપક જોડો નહી."
+
+#: misc/live-magic.glade:1531
+msgid "Select Debian Installer integration"
+msgstr "ડેબિયન સ્થાપક જોડાણ પસંદ કરો"
+
+#: misc/live-magic.glade:1557
+msgid ""
+"<b>Select locale and keyboard layout:</b>\n"
+"\n"
+"A locale is an identifier that defines your language, country and related formatting\n"
+"settings. If unsure, please use the defaults."
+msgstr ""
+"<b>લોકેલ અને કીબોર્ડ દેખાવ પસંદ કરો:</b>\n"
+"\n"
+"લોકેલ તમારી ભાષા, દેશ અને સંબંધિત બંધારણ ગોઠવણીઓ નક્કી કરે છે. જો અચોક્કસ હોવ તો, \n"
+"મહેરબાની કરીને મૂળભૂત પસંદ કરો."
+
+#: misc/live-magic.glade:1632
+msgid "Keyboard layout:"
+msgstr "કીબોર્ડ દેખાવ:"
+
+#: misc/live-magic.glade:1656
+msgid "Locale:"
+msgstr "લોકેલ:"
+
+#: misc/live-magic.glade:1689
+msgid "Select locale and keyboard layout"
+msgstr "લોકેલ અને કીબોર્ડ દેખાવ પસંદ કરો"
+
+#: misc/live-magic.glade:1726
+msgid ""
+"<b>Please choose a build folder:</b>\n"
+"\n"
+"If the specified directory is not empty, images will be created in a <i>DebianLive/</i> subfolder."
+msgstr ""
+"<b>મહેરબાની કરી બનાવવાનું ફોલ્ડર પસંદ કરો:</b>\n"
+"\n"
+"જો સ્પષ્ટ કરેલ ડિરેક્ટરી ખાલી નહી હોય તો, ઇમેજો <i>DebianLive/</i> નામનાં ઉપફોલ્ડરમાં બનાવવામાં આવશે."
+
+#: misc/live-magic.glade:1777
+#: misc/live-magic.glade:1804
+msgid "Select build folder"
+msgstr "બનાવવાનાં ફોલ્ડરનું નામ પસંદ કરો"
+
+# Shown in the final wizard screen. The text for the 'Apply' button is
+# translated by GTK (gtk-apply).
+#: misc/live-magic.glade:1821
+msgid ""
+"<b>Your Debian Live image is ready to build!</b>\n"
+"\n"
+"Press <i>Apply</i> to begin the build process."
+msgstr ""
+"<b>તમારી ડેબિયન લાઇવ ઇમેજ બનવા માટે તૈયાર છે!</b>\n"
+"\n"
+"પ્રક્રિયા શરૂ કરવા માટે <i>લાગુ પાડો</i> દબાવો."
+
+#: misc/live-magic.glade:1849
+msgid "Ready to build!"
+msgstr "બનાવવા માટે તૈયાર!"
+

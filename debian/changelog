@@ -1,12 +1,13 @@
 live-magic (1.1) unstable; urgency=low
 
+  * Refer to new mailing list in Maintainer field.
   * Try some alternative file managers to open the completed build window other
     than xdg-open.
   * Add translations:
     - Italian translation by Fabio Balzano (Closes: #496848)
     - Spanish translation by Fabio Balzano (Closes: #496857)
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Thu, 28 Aug 2008 08:47:48 +0100
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 31 Aug 2008 19:14:41 +0100
 
 live-magic (1.0) unstable; urgency=low
 

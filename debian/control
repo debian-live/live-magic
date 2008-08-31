@@ -1,7 +1,7 @@
 Source: live-magic
 Section: misc
 Priority: optional
-Maintainer: Debian Live <debian-live-maint@lists.alioth.debian.org>
+Maintainer: Debian Live <debian-live@lists.debian.org>
 Uploaders: Chris Lamb <chris@chris-lamb.co.uk>, Daniel Baumann <daniel@debian.org>
 Build-Depends: debhelper (>= 7)
 Build-Depends-Indep: python-support, gettext

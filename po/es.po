@@ -1,19 +1,21 @@
-# Spanish translation of po file.
-# This file is put in the public domain.
+# Spanish translation of live-magic template
+# This original file is put in the public domain.
+# This file is distributed under the same license as the live-magic package.
 # Fabio Balzano <fabio.balzano@elfaronetworks.com>, 2008.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: live-magic\n"
 "Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
 "POT-Creation-Date: 2008-08-09 08:53+0100\n"
-"PO-Revision-Date: 2008-08-28 02:00+0100\n"
+"PO-Revision-Date: 2008-08-28 14:00+0100\n"
 "Last-Translator: Fabio Balzano <fabio.balzano@elfaronetworks.com>\n"
 "Language-Team: Spanish <debian-l10n-spanish@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+
 
 #: LiveMagic/views/wizard.py:31 LiveMagic/views/wizard.py:210
 msgid "Debian Live Magic"
@@ -55,7 +57,7 @@ msgstr "Limpiando el sistema de creación"
 
 #: LiveMagic/controllers/build.py:83
 msgid "Purging unnecessary parts of the build system..."
-msgstr "Borrando innecesarios partes del sistema de creación..."
+msgstr "Borrando partes innecesarias del sistema de creación..."
 
 #: LiveMagic/controllers/build.py:86
 msgid "Build process finished"
@@ -63,7 +65,7 @@ msgstr "Proceso de creación terminado"
 
 #: LiveMagic/controllers/build.py:87
 msgid "Your Debian Live system has been created successfully."
-msgstr "Su sistema Debian Live ha sido creado con éxito."
+msgstr "Tu sistema Debian Live ha sido creado con éxito."
 
 #: LiveMagic/controllers/build.py:106
 msgid "Error when building Debian Live system"
@@ -71,7 +73,7 @@ msgstr "Error en la construcción del sistema Debian Live"
 
 #: LiveMagic/controllers/build.py:107
 msgid "There was an error when building your Debian Live system."
-msgstr "Se ha producido un error al construir su sistema Debian Live."
+msgstr "Se ha producido un error al construir tu sistema Debian Live."
 
 #: LiveMagic/controllers/build.py:117
 msgid "Build process cancelled"
@@ -79,7 +81,7 @@ msgstr "Proceso de construcción anulado"
 
 #: LiveMagic/controllers/build.py:118
 msgid "The creation of your Debian Live system was cancelled."
-msgstr "La creación de su sistema Debian Live fue anulada."
+msgstr "La creación de tu sistema Debian Live fue anulada."
 
 #: misc/live-magic.glade:7
 msgid "Generating Debian Live system..."
@@ -93,7 +95,7 @@ msgid ""
 msgstr ""
 "<big><b>Generación de sistema Debian Live...</b></big>\n"
 "\n"
-"Por favor, espere mientras se genera su imagen de Debian Live."
+"Por favor, espere mientras se genera tu imagen de Debian Live."
 
 #: misc/live-magic.glade:72
 msgid "Automatically close after Live system has been created"
@@ -121,7 +123,7 @@ msgstr ""
 "medios, como CD, DVD, memoria USB o a través de aaranque desde remoto. \n"
 "\n"
 "Las siguientes pantallas le llevará a través del proceso de\n"
-"construir su propio sistema Debian Live."
+"construir tu propio sistema Debian Live."
 
 #: misc/live-magic.glade:223
 msgid "Welcome to Debian Live Magic!"
@@ -129,7 +131,7 @@ msgstr "Bienvenido a Debian Live Magic!"
 
 #: misc/live-magic.glade:248
 msgid "<b>What type of image would you like to build?</b>"
-msgstr "<b>¿Qué tipo de imagen le gustaría construir?</b>"
+msgstr "<b>¿Qué tipo de imagen te gustaría construir?</b>"
 
 #: misc/live-magic.glade:302
 msgid "Standard Debian GNU/Linux image"
@@ -161,13 +163,13 @@ msgid ""
 "\n"
 "If unsure, select \"<i>Testing (lenny)</i>\"."
 msgstr ""
-"<b>¿Qué distribución de Debian le gustaría construir?</b>\n"
+"<b>¿Qué distribución de Debian te gustaría construir?</b>\n"
 "\n"
-"Si no está seguro, seleccione \"<i>Testing (lenny)</i>\"."
+"Si no está seguro, selecciona \"<i>Testing (lenny)</i>\"."
 
 #: misc/live-magic.glade:666
 msgid "Unstable (sid) - untested and frequently changing"
-msgstr "Inestable (sid)- no probado y que varía con frecuencia"
+msgstr "Unstable (sid)- no probado y que varía con frecuencia"
 
 #: misc/live-magic.glade:686
 msgid ""
@@ -175,15 +177,15 @@ msgid ""
 "buggy."
 msgstr ""
 "Testing (lenny) - recibe nuevas versiones desde la inestable cuando no sean demasiado "
-"erroneos."
+"erroneas."
 
 #: misc/live-magic.glade:707
 msgid "Stable (etch) - well-tested and rarely changes."
-msgstr "Estable (etch) - bien probado y con rara vez cambios."
+msgstr "Stable (etch) - bien probado y con rara vez cambios."
 
 #: misc/live-magic.glade:740
 msgid "Select distribution"
-msgstr "Seleccione la distribución"
+msgstr "Selecciona la distribución"
 
 #: misc/live-magic.glade:777
 msgid "<b>What media type would you like to target?</b>"
@@ -216,7 +218,7 @@ msgstr "Imagen ISO por un CD o DVD"
 
 #: misc/live-magic.glade:1077
 msgid "Select media type"
-msgstr "Seleccione el tipo de medios"
+msgstr "Selecciona el tipo de medio"
 
 #: misc/live-magic.glade:1103
 msgid ""
@@ -224,14 +226,14 @@ msgid ""
 "\n"
 "To select a mirror that is not on the list, simply enter it below."
 msgstr ""
-"<b>Por favor, elija su servidor espejo local:</b>\n"
+"<b>Por favor, elije tu servidor espejo local:</b>\n"
 "\n"
 "Para seleccionar un servidor espejo que no está en la lista, simplemente indicar "
 "abajo."
 
 #: misc/live-magic.glade:1239
 msgid "Choose mirror"
-msgstr "Elegir servidor espejo"
+msgstr "Elije el servidor espejo"
 
 #: misc/live-magic.glade:1265
 msgid ""
@@ -239,9 +241,9 @@ msgid ""
 "\n"
 "If you are unsure, select \"<i>i386</i>\"."
 msgstr ""
-"<b>¿Qué tipo de máquina es su sistema Debian Live?</b>\n"
+"<b>¿Qué tipo de máquina es tu sistema Debian Live?</b>\n"
 "\n"
-"Si no está seguro, seleccione \"<i>i386</i>\"."
+"Si no estás seguro, selecciona \"<i>i386</i>\"."
 
 #: misc/live-magic.glade:1304
 msgid ""
@@ -266,7 +268,7 @@ msgstr ""
 
 #: misc/live-magic.glade:1386
 msgid "Select architecture"
-msgstr "Seleccione la arquitectura"
+msgstr "Selecciona la arquitectura"
 
 #: misc/live-magic.glade:1412
 msgid ""
@@ -278,13 +280,13 @@ msgid ""
 "\n"
 "If unsure, select \"<i>no</i>\"."
 msgstr ""
-"<b>Seleccione la integración del instalador de Debian:</b>\n"
+"<b>Selecciona la integración del instalador de Debian:</b>\n"
 "\n"
 "Selección de \"<i>si</i>\" a continuación añade más opciones de arranque que lanzará el "
 "Instalador de Debian, "
 "el sistema oficial de instalación para los sistemas Debian. \n"
 "\n"
-"Si no está seguro, seleccione \"<i>no</i>\"."
+"Si no estás seguro, selecciona \"<i>no</i>\"."
 
 #: misc/live-magic.glade:1465
 msgid "Yes, integrate the Debian Installer."
@@ -296,7 +298,7 @@ msgstr "No, no integrar el instalador de Debian."
 
 #: misc/live-magic.glade:1531
 msgid "Select Debian Installer integration"
-msgstr "Seleccione la integración del instalador de Debian"
+msgstr "Selecciona la integración del instalador de Debian"
 
 #: misc/live-magic.glade:1557
 msgid ""
@@ -310,7 +312,7 @@ msgstr ""
 "\n"
 "Un local es un identificador que define su idioma, país y "
 "los formatos de configuración.\n"
-"Si no está seguro, por favor utilice los valores predeterminados."
+"Si no estás seguro, por favor utiliza los valores predeterminados."
 
 #: misc/live-magic.glade:1632
 msgid "Keyboard layout:"
@@ -331,14 +333,14 @@ msgid ""
 "If the specified directory is not empty, images will be created in a "
 "<i>DebianLive/</i> subfolder."
 msgstr ""
-"<b>Por favor, elija una carpeta para la imagen:</b>\n"
+"<b>Por favor, elije una carpeta para la imagen:</b>\n"
 "\n"
 "Si el directorio especificado no está vacío, las imágenes se creará en un"
 "subcarpeta <i>DebianLive/</i>."
 
 #: misc/live-magic.glade:1777 misc/live-magic.glade:1804
 msgid "Select build folder"
-msgstr "Seleccione la carpeta para la imagen"
+msgstr "Selecciona la carpeta para la imagen"
 
 # Shown in the final wizard screen. The text for the 'Apply' button is
 # translated by GTK (gtk-apply).
@@ -348,9 +350,9 @@ msgid ""
 "\n"
 "Press <i>Apply</i> to begin the build process."
 msgstr ""
-"<b>Su imagen Debian Live está lista para construir!</b>\n"
+"<b>Tu imagen Debian Live está lista para construir!</b>\n"
 "\n"
-"Presione <i>Aplicar</i> para iniciar el proceso de construcción."
+"Presiona <i>Aplicar</i> para iniciar el proceso de construcción."
 
 #: misc/live-magic.glade:1849
 msgid "Ready to build!"

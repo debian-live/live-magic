@@ -5,8 +5,10 @@ live-magic (1.1) unstable; urgency=low
     than xdg-open.
   * Add translations:
     - Gujurati translation by Kartik Mistry. (Closes: #496876)
-    - Italian translation by Fabio Balzano. Additional thanks to
-      Marco Amadori and tp.linux.it. (Closes: #496848)
+    - Italian translation by Fabio Balzano. Additional thanks to Marco
+      Amadori and tp.linux.it. (Closes: #496848)
+    - Japanese translation by Kobayashi Noritada. Additional thanks to
+      Nobuhiro Iwamatsu. (Closes: #497264)
     - Spanish translation by Fabio Balzano. Additional thanks to
       tomas@tuxteam.de and the Spanish language team. (Closes: #496857)
 

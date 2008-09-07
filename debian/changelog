@@ -2,8 +2,9 @@ live-magic (1.2) unstable; urgency=low
 
   * Translations:
     - Indonesian translation by Iwan Setiawan. (Closes: #498110)
+    - Update Italian translation by Fabio Balzano. (Closes: #497390)
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 07 Sep 2008 13:09:10 +0100
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 07 Sep 2008 13:14:44 +0100
 
 live-magic (1.1) unstable; urgency=low
 

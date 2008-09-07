@@ -29,7 +29,7 @@ msgstr "Annullare veramente?"
 
 #: LiveMagic/views/wizard.py:211
 msgid "GUI tool to build Debian Live systems."
-msgstr "Interfaccia grafica per creare un sistema Debian Live"
+msgstr "Interfaccia grafica per creare un sistemi Debian Live"
 
 #: LiveMagic/views/wizard.py:215
 msgid "Debian Live homepage"
@@ -52,11 +52,11 @@ msgstr "Errore durante la creazione del sistema Debian Live"
 
 #: LiveMagic/controllers/build.py:82
 msgid "Cleaning build system"
-msgstr "Ripulendo il sistema"
+msgstr "Pulizia del sistema di creazione in corso"
 
 #: LiveMagic/controllers/build.py:83
 msgid "Purging unnecessary parts of the build system..."
-msgstr "Eliminando le parti non necessarie del sistema di creazione..."
+msgstr "Eliminazione delle parti non necessarie del sistema di creazione in corso..."
 
 #: LiveMagic/controllers/build.py:86
 msgid "Build process finished"
@@ -72,11 +72,11 @@ msgstr "Errore durante la creazione del sistema Debian Live"
 
 #: LiveMagic/controllers/build.py:107
 msgid "There was an error when building your Debian Live system."
-msgstr "Errore durante la creazione del sistema Debian Live."
+msgstr "Si è verificato un errore durante la creazione del sistema Debian Live."
 
 #: LiveMagic/controllers/build.py:117
 msgid "Build process cancelled"
-msgstr "Il processo di creazione è annullato"
+msgstr "Interruzione del processo di creazione"
 
 #: LiveMagic/controllers/build.py:118
 msgid "The creation of your Debian Live system was cancelled."
@@ -84,7 +84,7 @@ msgstr "La creazione del sistema Debian Live è stata annullata."
 
 #: misc/live-magic.glade:7
 msgid "Generating Debian Live system..."
-msgstr "Generando il sistema Debian Live..."
+msgstr "Generazione del sistema Debian Live in corso..."
 
 #: misc/live-magic.glade:44
 msgid ""
@@ -92,9 +92,9 @@ msgid ""
 "\n"
 "Please wait while your Debian Live image is generated for you."
 msgstr ""
-"<big><b>Creando il sistema Debian Live...</b></big>\n"
+"<big><b>Generazione del sistema Debian Live in corso...</b></big>\n"
 "\n"
-"Prego, attendere fino a creazione ultimata dell'immagine di Debian Live."
+"Attendere fino a creazione ultimata dell'immagine di Debian Live."
 
 #: misc/live-magic.glade:72
 msgid "Automatically close after Live system has been created"
@@ -119,9 +119,9 @@ msgstr ""
 "\n"
 "Un sistema <i>live</i> è un sistema operativo che non richiede\n"
 "un classico installatore per l'utilizzo. Può essere avviato da vari tipi di\n"
-"supporti, compreso CD, DVD, chiavette USB o tramite avvio da rete. \n"
+"supporto, compresi CD; DVD; chiavette USB o tramite avvio da rete. \n"
 "\n"
-"Le seguenti schermate guidano attraverso il procedimento\n"
+"Le schermate sucessive vi guideranno attraverso il procedimento\n"
 "di creazione del sistema Debian Live."
 
 #: misc/live-magic.glade:223
@@ -150,7 +150,7 @@ msgstr "Ambiente desktop Xfce"
 
 #: misc/live-magic.glade:470
 msgid "Debian GNU/Linux rescue image"
-msgstr "Immagine di recupero (rescue)"
+msgstr "Immagine di recupero Debian GNU/Linux (rescue)"
 
 #: misc/live-magic.glade:566
 msgid "Choose image type"
@@ -162,13 +162,13 @@ msgid ""
 "\n"
 "If unsure, select \"<i>Testing (lenny)</i>\"."
 msgstr ""
-"<b>Che distribuzione di Debian vorresti creare?</b>\n"
+"<b>Che distribuzione di Debian creare?</b>\n"
 "\n"
 "In caso di dubbio, scegliere \"<i>Testing (lenny)</i>\"."
 
 #: misc/live-magic.glade:666
 msgid "Unstable (sid) - untested and frequently changing"
-msgstr "Unstable (sid)- non testata, con cambi frequenti"
+msgstr "Unstable (sid) - non testata, con cambi frequenti"
 
 #: misc/live-magic.glade:686
 msgid ""
@@ -188,7 +188,7 @@ msgstr "Scegliere la distribuzione"
 
 #: misc/live-magic.glade:777
 msgid "<b>What media type would you like to target?</b>"
-msgstr "<b>Scegliere il tipo di supporto da creare?</b>"
+msgstr "<b>Che tipo di supporto si vuole utilizzare?</b>"
 
 #: misc/live-magic.glade:817
 msgid "Server path:"
@@ -209,11 +209,11 @@ msgstr "Immagine di avvio da rete"
 
 #: misc/live-magic.glade:964
 msgid "USB / HDD image"
-msgstr "USB / immagine Hard Disk"
+msgstr "Immagine per USB o disco rigido"
 
 #: misc/live-magic.glade:1006
 msgid "ISO image for a CD or DVD"
-msgstr "Immagine ISO per un CD o DVD"
+msgstr "Immagine ISO per CD o DVD"
 
 #: misc/live-magic.glade:1077
 msgid "Select media type"
@@ -225,14 +225,14 @@ msgid ""
 "\n"
 "To select a mirror that is not on the list, simply enter it below."
 msgstr ""
-"<b>Scegliere il server mirror locale:</b>\n"
+"<b>Scegliere il mirror locale:</b>\n"
 "\n"
 "Per scegliere un mirror che non è nella lista, indicarlo semplicemente "
 "qui sotto."
 
 #: misc/live-magic.glade:1239
 msgid "Choose mirror"
-msgstr "Scegliere un server mirror"
+msgstr "Scegliere un mirror"
 
 #: misc/live-magic.glade:1265
 msgid ""
@@ -280,7 +280,7 @@ msgid ""
 msgstr ""
 "<b>Scelta dell'integrazione con l'Installatore Debian:</b>\n"
 "\n"
-"Scegliendo \"<i>si</i>\", verranno aggiunte le opzioni addizionali di avvio "
+"Scegliendo \"<i>sì</i>\", verranno aggiunte le opzioni addizionali di avvio "
 "che lanciano l'installatore Debian, "
 "il sistema di installazione ufficiale per sistemi Debian. \n"
 "\n"
@@ -288,7 +288,7 @@ msgstr ""
 
 #: misc/live-magic.glade:1465
 msgid "Yes, integrate the Debian Installer."
-msgstr "Si, integrare l'Installatore Debian."
+msgstr "Sì, integrare l'Installatore Debian."
 
 #: misc/live-magic.glade:1495
 msgid "No, do not integrate the Debian Installer."
@@ -308,7 +308,7 @@ msgid ""
 msgstr ""
 "<b>Scelta delle impostazioni locali e della tastiera:</b>\n"
 "\n"
-"Un locale è un identificatore che definisce la lingua, paese e relative "
+"Una localizzazione è un identificatore che definisce lingua, paese e relative "
 "impostazioni di formattazione.\n"
 "In caso di dubbio, utilizzare il predefinito."
 
@@ -318,11 +318,11 @@ msgstr "Configurazione tastiera:"
 
 #: misc/live-magic.glade:1656
 msgid "Locale:"
-msgstr "Locale:"
+msgstr "Localizzazione:"
 
 #: misc/live-magic.glade:1689
 msgid "Select locale and keyboard layout"
-msgstr "Scelta del locale e della configurazione della tastiera"
+msgstr "Scelta della localizzazione e della configurazione della tastiera"
 
 #: misc/live-magic.glade:1726
 msgid ""

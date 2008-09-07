@@ -1,0 +1,360 @@
+# Indonesian translation for live-magic.
+#
+# Iwan Setiawan <stwn@kuliax.org>, 2008.
+#
+# The original file is put in the public domain.
+# This file is distributed under the same license as live-magic.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: live-magic\n"
+"Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
+"POT-Creation-Date: 2008-08-09 08:53+0100\n"
+"PO-Revision-Date: 2008-08-07 13:40+0700\n"
+"Last-Translator: Iwan Setiawan <stwn@kuliax.org>\n"
+"Language-Team: i15n Team <i15n@yahoogroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: LiveMagic/views/wizard.py:31 LiveMagic/views/wizard.py:210
+msgid "Debian Live Magic"
+msgstr "Debian Live Magic"
+
+#: LiveMagic/views/wizard.py:40
+msgid "About"
+msgstr "Tentang"
+
+#: LiveMagic/views/wizard.py:196
+msgid "Are you sure you wish to cancel?"
+msgstr "Apakah Anda yakin akan membatalkan?"
+
+#: LiveMagic/views/wizard.py:211
+msgid "GUI tool to build Debian Live systems."
+msgstr "Perkakas GUI untuk membangun sistem Debian Live."
+
+#: LiveMagic/views/wizard.py:215
+msgid "Debian Live homepage"
+msgstr "Situs Debian Live"
+
+#: LiveMagic/controllers/wizard.py:57
+msgid "Enter your password to continue"
+msgstr "Masukkan kata sandi untuk melanjutkan"
+
+#: LiveMagic/controllers/wizard.py:58
+msgid ""
+"Debian Live Magic requires superuser capabilities to build your Debian Live "
+"system."
+msgstr ""
+"Debian Live Magic membutuhkan kemampuan superuser untuk membangun sistem "
+"Debian Live Anda."
+
+#: LiveMagic/controllers/build.py:59
+msgid "Error creating Debian Live system!"
+msgstr "Kesalahan membuat sistem Debian Live!"
+
+#: LiveMagic/controllers/build.py:82
+msgid "Cleaning build system"
+msgstr "Membersihkan sistem pembangunan"
+
+#: LiveMagic/controllers/build.py:83
+msgid "Purging unnecessary parts of the build system..."
+msgstr "Menghapus bagian-bagian tidak penting pada sistem pembangunan..."
+
+#: LiveMagic/controllers/build.py:86
+msgid "Build process finished"
+msgstr "Proses pembangunan selesai"
+
+#: LiveMagic/controllers/build.py:87
+msgid "Your Debian Live system has been created successfully."
+msgstr "Sistem Debian Live Anda telah berhasil dibuat."
+
+#: LiveMagic/controllers/build.py:106
+msgid "Error when building Debian Live system"
+msgstr "Kesalahan ketika membangun sistem Debian Live"
+
+#: LiveMagic/controllers/build.py:107
+msgid "There was an error when building your Debian Live system."
+msgstr "Terdapat kesalahan ketika membangun sistem Debian Live Anda."
+
+#: LiveMagic/controllers/build.py:117
+msgid "Build process cancelled"
+msgstr "Proses pembangunan dibatalkan"
+
+#: LiveMagic/controllers/build.py:118
+msgid "The creation of your Debian Live system was cancelled."
+msgstr "Pembuatan sistem Debian Live Anda dibatalkan."
+
+#: misc/live-magic.glade:7
+msgid "Generating Debian Live system..."
+msgstr "Menghasilkan sistem Debian Live..."
+
+#: misc/live-magic.glade:44
+msgid ""
+"<big><b>Generating Debian Live system...</b></big>\n"
+"\n"
+"Please wait while your Debian Live image is generated for you."
+msgstr ""
+"<big><b>Menghasilkan sistem Debian Live...</b></big>\n"
+"\n"
+"Sila menunggu image Debian Live dihasilkan untuk Anda."
+
+#: misc/live-magic.glade:72
+msgid "Automatically close after Live system has been created"
+msgstr "Secara otomatis menutup aplikasi setelah sistem Live telah dibuat"
+
+#: misc/live-magic.glade:112
+msgid "Details"
+msgstr "Rincian"
+
+#: misc/live-magic.glade:201
+msgid ""
+"<b>Welcome to Debian Live Magic!</b>\n"
+"\n"
+"A <i>live</i> system is an operating system that does not require\n"
+"a classical installer to use it. It can boot from various types of\n"
+"media, including CDs, DVDs, USB sticks, or via netboot. \n"
+"\n"
+"The following screens will lead you through the process\n"
+"of building your own Debian Live system."
+msgstr ""
+"<b>Selamat datang di Debian Live Magic!</b>\n"
+"\n"
+"Sebuah sistem <i>live</i> adalah sistem operasi yang tidak memerlukan\n"
+"installer klasik untuk menggunakannya. Sistem ini dapat di-boot dari\n"
+"berbagai tipe media, termasuk CD, DVD, USB disk, atau lewat netboot. \n"
+"\n"
+"Layar berikut akan memandu Anda melakukan proses\n"
+"pembangunan sistem Debian Live Anda sendiri."
+
+#: misc/live-magic.glade:223
+msgid "Welcome to Debian Live Magic!"
+msgstr "Selamat datang di Debian Live Magic!"
+
+#: misc/live-magic.glade:248
+msgid "<b>What type of image would you like to build?</b>"
+msgstr "<b>Tipe image apa yang ingin Anda bangun?</b>"
+
+#: misc/live-magic.glade:302
+msgid "Standard Debian GNU/Linux image"
+msgstr "Image Debian GNU/Linux standar"
+
+#: misc/live-magic.glade:348
+msgid "GNOME desktop environment"
+msgstr "Lingkungan desktop GNOME"
+
+#: misc/live-magic.glade:390
+msgid "KDE desktop environment"
+msgstr "Lingkungan desktop KDE"
+
+#: misc/live-magic.glade:432
+msgid "Xfce desktop environment"
+msgstr "Lingkungan desktop Xfce"
+
+#: misc/live-magic.glade:470
+msgid "Debian GNU/Linux rescue image"
+msgstr "Image rescue Debian GNU/Linux"
+
+#: misc/live-magic.glade:566
+msgid "Choose image type"
+msgstr "Pilih tipe image"
+
+#: misc/live-magic.glade:592
+msgid ""
+"<b>What distribution of Debian would you like to build?</b>\n"
+"\n"
+"If unsure, select \"<i>Testing (lenny)</i>\"."
+msgstr ""
+"<b>Distribusi Debian apa yang ingin Anda bangun?</b>\n"
+"\n"
+"Jika tidak yakin, pilih \"<i>Testing (lenny)</i>\"."
+
+#: misc/live-magic.glade:666
+msgid "Unstable (sid) - untested and frequently changing"
+msgstr "Unstable (sid) - belum diujicoba dan cepat berubah"
+
+#: misc/live-magic.glade:686
+msgid ""
+"Testing (lenny) - receives new versions from unstable if they are not too "
+"buggy."
+msgstr ""
+"Testing (lenny) - mendapatkan versi terbaru dari unstable jika tidak terlalu "
+"banyak kutu."
+
+#: misc/live-magic.glade:707
+msgid "Stable (etch) - well-tested and rarely changes."
+msgstr "Stable (etch) - teruji dengan baik dan jarang ada perubahan."
+
+#: misc/live-magic.glade:740
+msgid "Select distribution"
+msgstr "Pilih distribusi"
+
+#: misc/live-magic.glade:777
+msgid "<b>What media type would you like to target?</b>"
+msgstr "<b>Tipe media apa yang ingin Anda targetkan?</b>"
+
+#: misc/live-magic.glade:817
+msgid "Server path:"
+msgstr "Path server:"
+
+#: misc/live-magic.glade:829
+msgid "Server address:"
+msgstr "Alamat server:"
+
+# Netboot server type (e.g NFS / CIFS)
+#: misc/live-magic.glade:840
+msgid "Server type:"
+msgstr "Tipe server:"
+
+#: misc/live-magic.glade:921
+msgid "Network boot image"
+msgstr "Image boot jaringan"
+
+#: misc/live-magic.glade:964
+msgid "USB / HDD image"
+msgstr "Image USB / HDD"
+
+#: misc/live-magic.glade:1006
+msgid "ISO image for a CD or DVD"
+msgstr "Image ISO untuk CD atau DVD"
+
+#: misc/live-magic.glade:1077
+msgid "Select media type"
+msgstr "Pilih tipe media"
+
+#: misc/live-magic.glade:1103
+msgid ""
+"<b>Please choose your local mirror:</b>\n"
+"\n"
+"To select a mirror that is not on the list, simply enter it below."
+msgstr ""
+"<b>Sila pilih cermin lokal Anda:</b>\n"
+"\n"
+"Masukkan entri di bawah ini untuk memilih sebuah cermin yang tidak ada di dalam daftar."
+
+#: misc/live-magic.glade:1239
+msgid "Choose mirror"
+msgstr "Pilih cermin"
+
+#: misc/live-magic.glade:1265
+msgid ""
+"<b>What type of machine is your Debian Live system for?</b>\n"
+"\n"
+"If you are unsure, select \"<i>i386</i>\"."
+msgstr ""
+"<b>Apa tipe mesin untuk sistem Debian Live Anda?</b>\n"
+"\n"
+"Jika tidak yakin, pilih \"<i>i386</i>\"."
+
+#: misc/live-magic.glade:1304
+msgid ""
+"i386\n"
+"Computers with e.g. AMD Sempron or Intel Celeron, almost all\n"
+"desktop computers dating 2004 or earlier."
+msgstr ""
+"i386\n"
+"Komputer dengan misal AMD Sempron atau Intel Celeron, hampir semua\n"
+"komputer desktop tahun 2004 atau sebelumnya."
+
+#: misc/live-magic.glade:1324
+msgid ""
+"amd64\n"
+"Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
+"Intel Core2, Pentium 4xx, Pentium D CPUs."
+msgstr ""
+"amd64\n"
+"Kebanyakkan komputer baru dengan CPU misal AMD Opteron, Turion 64, \n"
+"Athlon 64, atau Intel Core2, Pentium 4xx, Pentium D."
+
+#: misc/live-magic.glade:1386
+msgid "Select architecture"
+msgstr "Pilih arsitektur"
+
+#: misc/live-magic.glade:1412
+msgid ""
+"<b>Select Debian Installer integration:</b>\n"
+"\n"
+"Selecting \"<i>yes</i>\" below adds additional boot options that launch the "
+"Debian Installer, the\n"
+"official installation system for Debian systems. \n"
+"\n"
+"If unsure, select \"<i>no</i>\"."
+msgstr ""
+"<b>Pilih integrasi Debian Installer:</b>\n"
+"\n"
+"Pilih \"<i>ya</i>\" di bawah ini untuk menambahkan pilihan boot yang menjalankan "
+"Debian Installer, \n"
+"sistem instalasi resmi Debian. \n"
+"\n"
+"Jika tidak yakin, pilih \"<i>tidak</i>\"."
+
+#: misc/live-magic.glade:1465
+msgid "Yes, integrate the Debian Installer."
+msgstr "Ya, integrasikan Debian Installer."
+
+#: misc/live-magic.glade:1495
+msgid "No, do not integrate the Debian Installer."
+msgstr "Tidak, jangan integrasikan Debian Installer."
+
+#: misc/live-magic.glade:1531
+msgid "Select Debian Installer integration"
+msgstr "Pilih integrasi Debian Installer"
+
+#: misc/live-magic.glade:1557
+msgid ""
+"<b>Select locale and keyboard layout:</b>\n"
+"\n"
+"A locale is an identifier that defines your language, country and related "
+"formatting\n"
+"settings. If unsure, please use the defaults."
+msgstr ""
+"<b>Pilih locale dan layout papan ketik:</b>\n"
+"\n"
+"Sebuah locale adalah pengidentifikasi bahasa, negara dan yang berhubungan "
+"dengan seting formatnya.\n"
+"Jika tidak yakin, sila gunakan default."
+
+#: misc/live-magic.glade:1632
+msgid "Keyboard layout:"
+msgstr "Layout papan ketik:"
+
+#: misc/live-magic.glade:1656
+msgid "Locale:"
+msgstr "Locale:"
+
+#: misc/live-magic.glade:1689
+msgid "Select locale and keyboard layout"
+msgstr "Pilih locale dan layout papan ketik"
+
+#: misc/live-magic.glade:1726
+msgid ""
+"<b>Please choose a build folder:</b>\n"
+"\n"
+"If the specified directory is not empty, images will be created in a "
+"<i>DebianLive/</i> subfolder."
+msgstr ""
+"<b>Sila pilih folder pembangunan:</b>\n"
+"\n"
+"Jika direktori yang ditentukan tidak kosong, image akan dibuat di dalam "
+"subfolder <i>DebianLive/</i>."
+
+#: misc/live-magic.glade:1777 misc/live-magic.glade:1804
+msgid "Select build folder"
+msgstr "Pilih folder pembangunan"
+
+# Shown in the final wizard screen. The text for the 'Apply' button is
+# translated by GTK (gtk-apply).
+#: misc/live-magic.glade:1821
+msgid ""
+"<b>Your Debian Live image is ready to build!</b>\n"
+"\n"
+"Press <i>Apply</i> to begin the build process."
+msgstr ""
+"<b>Image Debian Live Anda siap untuk dibangun!</b>\n"
+"\n"
+"Tekan <i>Apply</i> untuk memulai proses pembangunan."
+
+#: misc/live-magic.glade:1849
+msgid "Ready to build!"
+msgstr "Siap untuk membangun!"

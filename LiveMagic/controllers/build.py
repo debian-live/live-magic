@@ -92,7 +92,7 @@ class BuildController(object):
                 os.environ['GNOME_DESKTOP_SESSION_ID'] = self.options.gnome_desktop_session_id
 
             # Try some file managers.
-            for manager in ('/usr/bin/xdg-open', '/usr/bin/pcmanfm'):
+            for manager in ('/usr/bin/xdg-open', '/usr/bin/pcmanfm', '/usr/bin/thunar'):
                 if not os.path.exists(manager):
                     continue
 

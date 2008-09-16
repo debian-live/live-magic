@@ -1,10 +1,11 @@
 live-magic (1.2) unstable; urgency=low
 
+  * Support Xfce's "thunar" window manager.
   * Translations:
     - Indonesian translation by Iwan Setiawan. (Closes: #498110)
     - Update Italian translation by Fabio Balzano. (Closes: #497390)
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 07 Sep 2008 13:14:44 +0100
+ -- Chris Lamb <chris@chris-lamb.co.uk>  Tue, 16 Sep 2008 19:22:35 +0100
 
 live-magic (1.1) unstable; urgency=low
 

@@ -2,6 +2,7 @@ live-magic (1.2) unstable; urgency=low
 
   * Support Xfce's "thunar" window manager.
   * Update maintainer email address.
+  * Update Depends on live-helper.
   * Translations:
     - Indonesian translation by Iwan Setiawan. (Closes: #498110)
     - Update Italian translation by Fabio Balzano. (Closes: #497390)

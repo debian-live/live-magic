@@ -77,7 +77,7 @@ spec = {
         'LH_MIRROR_CHROOT_SECURITY': str,
         'LH_MIRROR_BINARY': str,
         'LH_MIRROR_BINARY_SECURITY': str,
-        'LH_SECTIONS': list,
+        'LH_CATEGORIES': list,
     }),
 
     'chroot': (KeyVar, {
@@ -154,7 +154,7 @@ constructor_args = ('apt', 'apt-ftp-proxy', 'apt-http-proxy', 'apt-pdiffs',
     'net-root-filesystem', 'net-root-mountoptions', 'net-root-path',
     'net-root-server', 'net-cow-filesystem', 'net-cow-mountoptions',
     'net-cow-path', 'net-cow-server', 'net-tarball', 'packages-lists', 'packages',
-    'root-command', 'use-fakeroot', 'sections', 'security', 'source',
+    'root-command', 'use-fakeroot', 'categories', 'security', 'source',
     'source-images', 'symlinks', 'syslinux-splash', 'syslinux-timeout',
     'syslinux-menu', 'sysvinit', 'tasksel', 'tasks', 'templates',
     'union-filesystem', 'exposed-root', 'username', 'win32-loader')

@@ -79,6 +79,12 @@ class TestNoMatch(TestSourcesList):
     def testBackports(self):
         self.assertNoMatchLine('deb http://backports.debian.org/debian stable main')
 
+    def testVolatile(self):
+        self.assertNoMatchLine('deb http://volatile.debian.org/debian stable main')
+
+    def testMultimedia(self):
+        self.assertNoMatchLine('deb http://www.debian-multimedia.org/debian stable main')
+
 class TestErrors(TestSourcesList):
     def testFileNotFound(self):
         self.failIf(get_mirror(None, sources_list='/proc/invisible-file', defaults=None))

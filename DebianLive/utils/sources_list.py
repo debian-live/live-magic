@@ -32,6 +32,8 @@ PATTERNS = (
 REJECT_PATTERNS = (
     re.compile(r'backports\.'),
     re.compile(r'security\.'),
+    re.compile(r'debian-multimedia\.'),
+    re.compile(r'volatile\.'),
 )
 
 def get_mirror(fallback='http://www.us.debian.org/', sources_list='/etc/apt/sources.list', defaults='/etc/default/live-helper'):

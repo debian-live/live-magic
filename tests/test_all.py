@@ -18,6 +18,7 @@
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import os
+import sys
 import unittest
 
 def suite():
@@ -32,4 +33,5 @@ def is_test(filename):
     return filename.startswith('test_') and filename.endswith('.py')
 
 if __name__ == "__main__":
+    sys.path.insert(0, '.')
     unittest.main(defaultTest="suite")

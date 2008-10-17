@@ -3,8 +3,9 @@ live-magic (1.3) unstable; urgency=low
   * Sync option specification with live-helper 1.0.1-1.
   * Modify mirror auto-detection to ignore the debian-multimedia and
     volatile.debian.org repositories. (Closes: #502335)
+  * Ensure local code copy is used when running tests.
 
- -- Chris Lamb <lamby@debian.org>  Sat, 18 Oct 2008 00:02:14 +0100
+ -- Chris Lamb <lamby@debian.org>  Sat, 18 Oct 2008 00:07:41 +0100
 
 live-magic (1.2) unstable; urgency=low
 

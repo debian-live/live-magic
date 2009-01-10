@@ -5,6 +5,7 @@ live-magic (1.4) unstable; urgency=low
     - Bump Depends on live-helper to 1.0.2-2.
   * Open file manager with absolute path to the current directory as PCMan
     does not open displaying target with `cd /target && pcmanfm .`.
+  * Add missing ${misc:Depends}.
 
  -- Chris Lamb <lamby@debian.org>  Sat, 10 Jan 2009 02:54:52 +0000
 

@@ -109,6 +109,7 @@ spec = {
         'LH_BOOTSTRAP': str,
         'LH_CACHE': bool,
         'LH_CACHE_INDICES': bool,
+        'LH_CACHE_PACKAGES': bool,
         'LH_CACHE_STAGES': list,
         'LH_DEBCONF_FRONTEND': str,
         'LH_DEBCONF_NOWARNINGS': bool,

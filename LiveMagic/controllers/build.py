@@ -96,7 +96,8 @@ class BuildController(object):
                 if not os.path.exists(manager):
                     continue
 
-                cmd = ['su', pwd.getpwuid(self.uid)[0], '-c', '%s .' % manager]
+                cmd = ['su', pwd.getpwuid(self.uid)[0], '-c', '%s "%s"' % \
+                    (manager, os.path.abspath(os.curdir))]
                 if not subprocess.call(cmd):
                     continue
 

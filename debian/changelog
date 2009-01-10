@@ -2,6 +2,7 @@ live-magic (1.4) unstable; urgency=low
 
   * Update DebianLive/spec.py:
     - Add missing LH_CACHE_PACKAGES.
+    - Bump Depends on live-helper to 1.0.2-2.
 
  -- Chris Lamb <lamby@debian.org>  Sat, 10 Jan 2009 02:54:52 +0000
 

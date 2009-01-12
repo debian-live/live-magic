@@ -1,3 +1,11 @@
+live-magic (1.5) unstable; urgency=low
+
+  * Re-order import of GTK and PyGTK as GTK requires that PyGTK is imported
+    first. This is required for compatibility with python-gtk2 2.13 (currently
+    in experimental). Thanks to Michael Vogt.
+
+ -- Chris Lamb <lamby@debian.org>  Mon, 12 Jan 2009 10:05:48 +0000
+
 live-magic (1.4) unstable; urgency=low
 
   * Update DebianLive/spec.py:

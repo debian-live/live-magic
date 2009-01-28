@@ -3,6 +3,7 @@ live-magic (1.5) unstable; urgency=low
   * Re-order import of GTK and PyGTK as GTK requires that PyGTK is imported
     first. This is required for compatibility with python-gtk2 2.13 (currently
     in experimental). Thanks to Michael Vogt.
+  * Correct (and clarify) logic of file manager fallback.
   * Add missing 'ignore-system-defaults' and 'color' constructor arguments.
 
  -- Chris Lamb <lamby@debian.org>  Sat, 10 Jan 2009 04:01:59 +0000

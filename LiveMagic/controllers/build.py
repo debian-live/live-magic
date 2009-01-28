@@ -98,8 +98,8 @@ class BuildController(object):
 
                 cmd = ['su', pwd.getpwuid(self.uid)[0], '-c', '%s "%s"' % \
                     (manager, os.path.abspath(os.curdir))]
-                if not subprocess.call(cmd):
-                    continue
+                if subprocess.call(cmd) == 0:
+                    break
 
             return DONE
 

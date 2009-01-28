@@ -4,6 +4,9 @@ live-magic (1.5) unstable; urgency=low
     first. This is required for compatibility with python-gtk2 2.13 (currently
     in experimental). Thanks to Michael Vogt.
   * Correct (and clarify) logic of file manager fallback.
+  * Use WINDOW_TYPE_HINT_DIALOG hint instead of WINDOW_TYPE_HINT_MENU to
+    prevent awkward and non-intuitive behaviour when iconifying window.
+    Thanks to Daniel Watkins <daniel@daniel-watkins.co.uk>. (Closes: #511632)
   * Add missing 'ignore-system-defaults' and 'color' constructor arguments.
 
  -- Chris Lamb <lamby@debian.org>  Sat, 10 Jan 2009 04:01:59 +0000

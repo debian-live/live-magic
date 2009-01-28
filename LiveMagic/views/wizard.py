@@ -30,7 +30,7 @@ class WizardView(object):
         self.asst = gtk.Assistant()
         self.asst.set_title(_('Debian Live Magic'))
         self.asst.set_default_size(640, 480)
-        self.asst.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_MENU)
+        self.asst.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_DIALOG)
         self.asst.set_position(gtk.WIN_POS_CENTER)
 
         self.asst.connect('apply', self.controller.on_wizard_apply)

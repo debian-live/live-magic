@@ -1,9 +1,9 @@
-live-magic (1.6) UNRELEASED; urgency=low
+live-magic (1.6) unstable; urgency=low
 
   * Don't assume /etc/debian_version will contain the string "5.0\n" for the
     entirety of the lenny release - just check for a prefix of "5.0".
 
- -- Chris Lamb <lamby@debian.org>  Tue, 05 May 2009 23:25:26 +0100
+ -- Chris Lamb <lamby@debian.org>  Tue, 05 May 2009 23:29:14 +0100
 
 live-magic (1.5) unstable; urgency=low
 

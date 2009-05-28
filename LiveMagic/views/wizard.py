@@ -66,7 +66,7 @@ class WizardView(object):
         hide_distribution = False
         try:
             f = open('/etc/debian_version')
-            if f.read(4) == "5.0\n":
+            if f.read(3) == "5.0":
                 hide_distribution = True
             f.close()
         except:

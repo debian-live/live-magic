@@ -1,3 +1,9 @@
+live-magic (1.5+lenny2) UNRELEASED; urgency=low
+
+  * Rebuild in non-tainted environment. (Closes: #532421)
+
+ -- Chris Lamb <lamby@debian.org>  Wed, 17 Jun 2009 12:20:03 +0100
+
 live-magic (1.5+lenny1) stable; urgency=low
 
   * Don't assume /etc/debian_version will contain the string "5.0\n" for the

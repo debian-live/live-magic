@@ -1,8 +1,8 @@
-live-magic (1.5+lenny2) UNRELEASED; urgency=low
+live-magic (1.5+lenny2) stable; urgency=low
 
   * Rebuild in non-tainted environment. (Closes: #532421)
 
- -- Chris Lamb <lamby@debian.org>  Wed, 17 Jun 2009 12:20:03 +0100
+ -- Chris Lamb <lamby@debian.org>  Wed, 17 Jun 2009 12:21:55 +0100
 
 live-magic (1.5+lenny1) stable; urgency=low
 

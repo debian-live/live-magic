@@ -14,6 +14,7 @@ live-magic (1.7) UNRELEASED; urgency=low
   * Add support for squeeze and update "stable -> etch" in user interface and
     translations.
   * Bump Standards-Version to 3.8.2.
+  * Bump Depends on live-helper to 1.0.5.
 
  -- Chris Lamb <lamby@debian.org>  Wed, 08 Jul 2009 22:26:23 +0100
 

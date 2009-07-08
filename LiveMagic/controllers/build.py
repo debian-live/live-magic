@@ -86,11 +86,6 @@ class BuildController(object):
             self.view.set_build_titles(_("Build process finished"),
                 _("Your Debian Live system has been created successfully."))
 
-            if self.options.kde_full_session != '-':
-                os.environ['KDE_FULL_SESSION'] = self.options.kde_full_session
-            if self.options.gnome_desktop_session_id != '-':
-                os.environ['GNOME_DESKTOP_SESSION_ID'] = self.options.gnome_desktop_session_id
-
             # Try some file managers.
             for manager in ('/usr/bin/xdg-open', '/usr/bin/pcmanfm', '/usr/bin/thunar'):
                 if not os.path.exists(manager):

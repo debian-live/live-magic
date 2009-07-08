@@ -60,12 +60,11 @@ class WizardController(object):
             text = _("Debian Live Magic requires superuser capabilities to build your Debian Live system.")
 
             for num in range(3):
-                cmd = ['gksu', '--disable-grab',
+                cmd = ['gksu', '--disable-grab', '--preserve-env',
                     '--message', '<big><b>%s</b></big>\n\n%s' % (title, text), '--',
                     utils.find_resource('live-magic'),
                     '--build-for', '%d:%d' % (os.geteuid(), os.getegid()),
-                    '--kde-full-session', os.environ.get('KDE_FULL_SESSION', '-'),
-                    '--gnome-desktop-session-id', os.environ.get('GNOME_DESKTOP_SESSION_ID', '-')]
+                ]
                 p = subprocess.Popen(cmd)
 
                 os.waitpid(p.pid, 0)

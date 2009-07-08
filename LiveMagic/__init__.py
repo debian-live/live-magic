@@ -64,12 +64,6 @@ class LiveMagic(object):
         parser.add_option('--build-for', dest='build_for',
             metavar='owner:group', help="Perform build on behalf of owner:group. "
             "This option is used internally.")
-        parser.add_option('--kde-full-session', dest='kde_full_session',
-            metavar='', help="Value of KDE_FULL_SESSION. "
-            "This option is used internally.")
-        parser.add_option('--gnome-desktop-session-id', dest='gnome_desktop_session_id',
-            metavar='', help="Value of GNOME_DESKTOP_SESSION_ID. "
-            "This option is used internally.")
         options, args = parser.parse_args()
 
         c = controllers.Controller()

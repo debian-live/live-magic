@@ -1,3 +1,11 @@
+live-magic (1.7) UNRELEASED; urgency=low
+
+  * Only delete build directory if we created it. This is not only safer, but
+    fixes a weird bug where Live Magic deletes its own DebianLive Python module
+    when run from Git (as that directory is considered a build directory).
+
+ -- Chris Lamb <lamby@debian.org>  Wed, 08 Jul 2009 22:26:23 +0100
+
 live-magic (1.6) unstable; urgency=low
 
   * Don't assume /etc/debian_version will contain the string "5.0\n" for the

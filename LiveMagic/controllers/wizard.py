@@ -37,6 +37,8 @@ class WizardController(object):
         elif len(os.listdir(build_dir)) != 0:
             build_dir = os.path.join(build_dir, 'DebianLive')
 
+        existed_before = os.path.exists(build_dir)
+
         # Use cdebootstrap in some situations
         if os.path.exists('/usr/bin/cdebootstrap') and \
                                 data['distribution'] in ('etch', 'lenny'):
@@ -79,8 +81,10 @@ class WizardController(object):
 
             self.view.do_undim_wizard()
             os.chdir('..')
+
             try:
-                shutil.rmtree(self.model.dir)
+                if not existed_before:
+                    shutil.rmtree(self.model.dir)
             except:
                 # Tree may not exist if we cancelled build
                 pass

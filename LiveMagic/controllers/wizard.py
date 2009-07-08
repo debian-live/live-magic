@@ -41,7 +41,7 @@ class WizardController(object):
 
         # Use cdebootstrap in some situations
         if os.path.exists('/usr/bin/cdebootstrap') and \
-                                data['distribution'] in ('etch', 'lenny'):
+                                data['distribution'] in ('lenny',):
             data['bootstrap'] = 'cdebootstrap'
 
         # Disabling caching

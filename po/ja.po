@@ -161,11 +161,11 @@ msgstr "イメージの種類を選択してください"
 msgid ""
 "<b>What distribution of Debian would you like to build?</b>\n"
 "\n"
-"If unsure, select \"<i>Testing (lenny)</i>\"."
+"If unsure, select \"<i>Stable (lenny)</i>\"."
 msgstr ""
 "<b>構築したいのは Debian のどのディストリビューションですか?</b>\n"
 "\n"
-"よく分からない場合は \"<i>Testing (lenny)</i>\" を選択してください。"
+"よく分からない場合は \"<i>Stable (lenny)</i>\" を選択してください。"
 
 # FIXME: Add a trailing period.
 #: misc/live-magic.glade:666
@@ -175,15 +175,15 @@ msgstr "不安定版 (unstable, sid) - テストされていなく、変更が�
 # From Translator: 意訳しています
 #: misc/live-magic.glade:686
 msgid ""
-"Testing (lenny) - receives new versions from unstable if they are not too "
+"Testing (squeeze) - receives new versions from unstable if they are not too "
 "buggy."
 msgstr ""
-"テスト版 (testing, lenny) - あまりバグの多くない新しいバージョンのみが不安定"
+"テスト版 (testing, squeeze) - あまりバグの多くない新しいバージョンのみが不安定"
 "版から入ります。"
 
 #: misc/live-magic.glade:707
-msgid "Stable (etch) - well-tested and rarely changes."
-msgstr "安定版 (stable, etch) - よくテストされ、変更はほとんどありません。"
+msgid "Stable (lenny) - well-tested and rarely changes."
+msgstr "安定版 (stable, lenny) - よくテストされ、変更はほとんどありません。"
 
 #: misc/live-magic.glade:740
 msgid "Select distribution"

@@ -155,23 +155,23 @@ msgstr "Valitse levykuvan tyyppi"
 msgid ""
 "<b>What distribution of Debian would you like to build?</b>\n"
 "\n"
-"If unsure, select \"<i>Testing (lenny)</i>\"."
+"If unsure, select \"<i>Stable (lenny)</i>\"."
 msgstr ""
 "<b>Minkä Debianin jakelun haluat kääntää?</b>\n"
 "\n"
-"Jos olet epävarma, valitse ”<i>Testattava (lenny)</i>”."
+"Jos olet epävarma, valitse ”<i>Vakaa (lenny)</i>”."
 
 #: misc/live-magic.glade:666
 msgid "Unstable (sid) - untested and frequently changing"
 msgstr "Epävakaa (sid) - testaamaton ja usein muuttuva"
 
 #: misc/live-magic.glade:686
-msgid "Testing (lenny) - receives new versions from unstable if they are not too buggy."
-msgstr "Testattava (lenny) - epävakaan jakelun versiot, joista ei löydy liikaa virheitä."
+msgid "Testing (squeeze) - receives new versions from unstable if they are not too buggy."
+msgstr "Testattava (squeeze) - epävakaan jakelun versiot, joista ei löydy liikaa virheitä."
 
 #: misc/live-magic.glade:707
-msgid "Stable (etch) - well-tested and rarely changes."
-msgstr "Vakaa (etch) - hyvin testattu ja harvoin muuttuva."
+msgid "Stable (lenny) - well-tested and rarely changes."
+msgstr "Vakaa (lenny) - hyvin testattu ja harvoin muuttuva."
 
 #: misc/live-magic.glade:740
 msgid "Select distribution"

@@ -160,11 +160,11 @@ msgstr "Výběr obrazu"
 msgid ""
 "<b>What distribution of Debian would you like to build?</b>\n"
 "\n"
-"If unsure, select \"<i>Testing (lenny)</i>\"."
+"If unsure, select \"<i>Stable (lenny)</i>\"."
 msgstr ""
 "<b>Kterou distribuci Debianu chcete sestavit?</b>\n"
 "\n"
-"Pokud si nejste jisti, zvolte „<i>Testovací (Lenny)</i>“."
+"Pokud si nejste jisti, zvolte „<i>Stabilní (Lenny)</i>“."
 
 #: misc/live-magic.glade:666
 msgid "Unstable (sid) - untested and frequently changing"
@@ -172,13 +172,13 @@ msgstr "Nestabilní (Sid) - nevyzkoušená a často se měnící"
 
 #: misc/live-magic.glade:686
 msgid ""
-"Testing (lenny) - receives new versions from unstable if they are not too "
+"Testing (squeeze) - receives new versions from unstable if they are not too "
 "buggy."
-msgstr "Testovací (Lenny) - získává balíky ze Sida (pokud nejsou moc chybové)."
+msgstr "Testovací (Squeeze) - získává balíky ze Sida (pokud nejsou moc chybové)."
 
 #: misc/live-magic.glade:707
-msgid "Stable (etch) - well-tested and rarely changes."
-msgstr "Stabilní (Etch) - dobře otestovaná, téměř se nemění."
+msgid "Stable (lenny) - well-tested and rarely changes."
+msgstr "Stabilní (Lenny) - dobře otestovaná, téměř se nemění."
 
 #: misc/live-magic.glade:740
 msgid "Select distribution"

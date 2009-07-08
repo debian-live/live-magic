@@ -161,11 +161,11 @@ msgstr "Wählen Sie den Image-Typ aus"
 msgid ""
 "<b>What distribution of Debian would you like to build?</b>\n"
 "\n"
-"If unsure, select \"<i>Testing (lenny)</i>\"."
+"If unsure, select \"<i>Stable (lenny)</i>\"."
 msgstr ""
 "<b>Welche Debian-Distribution möchten Sie gerne bauen?</b>\n"
 "\n"
-"Falls Sie sich unsicher sind, wählen Sie »<i>Testing (Lenny)</i>«."
+"Falls Sie sich unsicher sind, wählen Sie »<i>Stable (Lenny)</i>«."
 
 #: misc/live-magic.glade:666
 msgid "Unstable (sid) - untested and frequently changing"
@@ -173,15 +173,15 @@ msgstr "Unstable (Sid) - ungetestet und mit häufigen Veränderungen"
 
 #: misc/live-magic.glade:686
 msgid ""
-"Testing (lenny) - receives new versions from unstable if they are not too "
+"Testing (squeeze) - receives new versions from unstable if they are not too "
 "buggy."
 msgstr ""
-"Testing (Lenny) - erhält neue Versionen von Unstable falls diese nicht zu "
+"Testing (Squeeze) - erhält neue Versionen von Unstable falls diese nicht zu "
 "fehlerhaft sind."
 
 #: misc/live-magic.glade:707
-msgid "Stable (etch) - well-tested and rarely changes."
-msgstr "Stable (Etch) - gut getestet und mit seltenen Änderungen"
+msgid "Stable (lenny) - well-tested and rarely changes."
+msgstr "Stable (Lenny) - gut getestet und mit seltenen Änderungen"
 
 #: misc/live-magic.glade:740
 msgid "Select distribution"

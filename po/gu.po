@@ -161,19 +161,19 @@ msgid ""
 msgstr ""
 "<b>ડેબિયનનું કયું ડિસ્ટ્રીબ્યુશન તમે બનાવવા માંગો છો?</b>\n"
 "\n"
-"જો અચોક્કસ હોવ તો, \"<i>ટેસ્ટીંગ (લેન્ની)</i>\" પસંદ કરો."
+"જો અચોક્કસ હોવ તો, \"<i>સ્ટેબલ (લેન્ની)</i>\" પસંદ કરો."
 
 #: misc/live-magic.glade:666
 msgid "Unstable (sid) - untested and frequently changing"
 msgstr "અનસ્ટેબલ (સિડ) - ચકાસણી ન કરેલ અને વારંવાર બદલાય છે"
 
 #: misc/live-magic.glade:686
-msgid "Testing (lenny) - receives new versions from unstable if they are not too buggy."
-msgstr "ટેસ્ટિંગ (લેન્ની) - અનસ્ટેબલ માંથી નવી આવૃત્તિ મેળવે છે જો તે બહુ ક્ષતિઓ ન ધરાવતી હોય."
+msgid "Testing (squeeze) - receives new versions from unstable if they are not too buggy."
+msgstr "ટેસ્ટિંગ (squeeze) - અનસ્ટેબલ માંથી નવી આવૃત્તિ મેળવે છે જો તે બહુ ક્ષતિઓ ન ધરાવતી હોય."
 
 #: misc/live-magic.glade:707
-msgid "Stable (etch) - well-tested and rarely changes."
-msgstr "સ્ટેબલ (ઇચ) - યોગ્ય રીતે ચકાસણી કરેલ અને ભાગ્યે જ બદલાય છે."
+msgid "Stable (lenny) - well-tested and rarely changes."
+msgstr "સ્ટેબલ (લેન્ની) - યોગ્ય રીતે ચકાસણી કરેલ અને ભાગ્યે જ બદલાય છે."
 
 #: misc/live-magic.glade:740
 msgid "Select distribution"

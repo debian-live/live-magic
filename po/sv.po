@@ -162,11 +162,11 @@ msgstr "Välj avbildningstyp"
 msgid ""
 "<b>What distribution of Debian would you like to build?</b>\n"
 "\n"
-"If unsure, select \"<i>Testing (lenny)</i>\"."
+"If unsure, select \"<i>Stable (lenny)</i>\"."
 msgstr ""
 "<b>Vilken utgåva av Debian vill du bygga?</b>\n"
 "\n"
-"Om du är osäker, välj \"<i>Uttestningsutgåvan (lenny)</i>\"."
+"Om du är osäker, välj \"<i>Den stabila utgåvan (lenny)</i>\"."
 
 #: misc/live-magic.glade:666
 msgid "Unstable (sid) - untested and frequently changing"
@@ -174,15 +174,15 @@ msgstr "Den instabila utgåvan (sid) - otestad utgåva som ändras ofta"
 
 #: misc/live-magic.glade:686
 msgid ""
-"Testing (lenny) - receives new versions from unstable if they are not too "
+"Testing (squeeze) - receives new versions from unstable if they are not too "
 "buggy."
 msgstr ""
-"Uttestningsutgåvan (lenny) - tar emot nya versioner från den instabila "
+"Uttestningsutgåvan (squeeze) - tar emot nya versioner från den instabila "
 "utgåvan om de inte innehåller för många fel."
 
 #: misc/live-magic.glade:707
-msgid "Stable (etch) - well-tested and rarely changes."
-msgstr "Den stabila utgåvan (etch) - vältestad utgåva som sällan ändras."
+msgid "Stable (lenny) - well-tested and rarely changes."
+msgstr "Den stabila utgåvan (lenny) - vältestad utgåva som sällan ändras."
 
 #: misc/live-magic.glade:740
 msgid "Select distribution"

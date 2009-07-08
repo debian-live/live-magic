@@ -85,22 +85,22 @@ msgstr ""
 msgid "Generating Debian Live system..."
 msgstr ""
 
-#: misc/live-magic.glade:44
+#: misc/live-magic.glade:45
 msgid ""
 "<big><b>Generating Debian Live system...</b></big>\n"
 "\n"
 "Please wait while your Debian Live image is generated for you."
 msgstr ""
 
-#: misc/live-magic.glade:72
+#: misc/live-magic.glade:73
 msgid "Automatically close after Live system has been created"
 msgstr ""
 
-#: misc/live-magic.glade:112
+#: misc/live-magic.glade:115
 msgid "Details"
 msgstr ""
 
-#: misc/live-magic.glade:201
+#: misc/live-magic.glade:213
 msgid ""
 "<b>Welcome to Debian Live Magic!</b>\n"
 "\n"
@@ -112,133 +112,132 @@ msgid ""
 "of building your own Debian Live system."
 msgstr ""
 
-#: misc/live-magic.glade:223
+#: misc/live-magic.glade:235
 msgid "Welcome to Debian Live Magic!"
 msgstr ""
 
-#: misc/live-magic.glade:248
+#: misc/live-magic.glade:259
 msgid "<b>What type of image would you like to build?</b>"
 msgstr ""
 
-#: misc/live-magic.glade:302
+#: misc/live-magic.glade:317
 msgid "Standard Debian GNU/Linux image"
 msgstr ""
 
-#: misc/live-magic.glade:348
+#: misc/live-magic.glade:360
 msgid "GNOME desktop environment"
 msgstr ""
 
-#: misc/live-magic.glade:390
+#: misc/live-magic.glade:405
 msgid "KDE desktop environment"
 msgstr ""
 
-#: misc/live-magic.glade:432
+#: misc/live-magic.glade:450
 msgid "Xfce desktop environment"
 msgstr ""
 
-#: misc/live-magic.glade:470
+#: misc/live-magic.glade:488
 msgid "Debian GNU/Linux rescue image"
 msgstr ""
 
-#: misc/live-magic.glade:566
+#: misc/live-magic.glade:591
 msgid "Choose image type"
 msgstr ""
 
-#: misc/live-magic.glade:592
+#: misc/live-magic.glade:616
 msgid ""
 "<b>What distribution of Debian would you like to build?</b>\n"
 "\n"
-"If unsure, select \"<i>Testing (lenny)</i>\"."
+"If unsure, select \"<i>Stable (lenny)</i>\"."
 msgstr ""
 
-#: misc/live-magic.glade:666
+#: misc/live-magic.glade:688
 msgid "Unstable (sid) - untested and frequently changing"
 msgstr ""
 
-#: misc/live-magic.glade:686
+#: misc/live-magic.glade:708
 msgid ""
-"Testing (lenny) - receives new versions from unstable if they are not too "
+"Testing (squeeze) - receives new versions from unstable if they are not too "
 "buggy."
 msgstr ""
 
-#: misc/live-magic.glade:707
-msgid "Stable (etch) - well-tested and rarely changes."
+#: misc/live-magic.glade:729
+msgid "Stable (lenny) - well-tested and rarely changes."
 msgstr ""
 
-#: misc/live-magic.glade:740
+#: misc/live-magic.glade:766
 msgid "Select distribution"
 msgstr ""
 
-#: misc/live-magic.glade:777
+#: misc/live-magic.glade:802
 msgid "<b>What media type would you like to target?</b>"
 msgstr ""
 
-#: misc/live-magic.glade:817
+#: misc/live-magic.glade:843
 msgid "Server path:"
 msgstr ""
 
-#: misc/live-magic.glade:829
+#: misc/live-magic.glade:855
 msgid "Server address:"
 msgstr ""
 
-# Netboot server type (e.g NFS / CIFS)
-#: misc/live-magic.glade:840
+#: misc/live-magic.glade:866
 msgid "Server type:"
 msgstr ""
 
-#: misc/live-magic.glade:921
+#: misc/live-magic.glade:950
 msgid "Network boot image"
 msgstr ""
 
-#: misc/live-magic.glade:964
+#: misc/live-magic.glade:996
 msgid "USB / HDD image"
 msgstr ""
 
-#: misc/live-magic.glade:1006
+#: misc/live-magic.glade:1041
 msgid "ISO image for a CD or DVD"
 msgstr ""
 
-#: misc/live-magic.glade:1077
+#: misc/live-magic.glade:1113
 msgid "Select media type"
 msgstr ""
 
-#: misc/live-magic.glade:1103
+#: misc/live-magic.glade:1138
 msgid ""
 "<b>Please choose your local mirror:</b>\n"
 "\n"
 "To select a mirror that is not on the list, simply enter it below."
 msgstr ""
 
-#: misc/live-magic.glade:1239
+#: misc/live-magic.glade:1268
 msgid "Choose mirror"
 msgstr ""
 
-#: misc/live-magic.glade:1265
+#: misc/live-magic.glade:1293
 msgid ""
 "<b>What type of machine is your Debian Live system for?</b>\n"
 "\n"
 "If you are unsure, select \"<i>i386</i>\"."
 msgstr ""
 
-#: misc/live-magic.glade:1304
+#: misc/live-magic.glade:1330
 msgid ""
 "i386\n"
 "Computers with e.g. AMD Sempron or Intel Celeron, almost all\n"
 "desktop computers dating 2004 or earlier."
 msgstr ""
 
-#: misc/live-magic.glade:1324
+#: misc/live-magic.glade:1350
 msgid ""
 "amd64\n"
 "Most new computers with e.g. AMD Opteron, Turion 64, Athlon 64, or\n"
 "Intel Core2, Pentium 4xx, Pentium D CPUs."
 msgstr ""
 
-#: misc/live-magic.glade:1386
+#: misc/live-magic.glade:1416
 msgid "Select architecture"
 msgstr ""
 
-#: misc/live-magic.glade:1412
+#: misc/live-magic.glade:1441
 msgid ""
 "<b>Select Debian Installer integration:</b>\n"
 "\n"
@@ -249,19 +248,19 @@ msgid ""
 "If unsure, select \"<i>no</i>\"."
 msgstr ""
 
-#: misc/live-magic.glade:1465
+#: misc/live-magic.glade:1492
 msgid "Yes, integrate the Debian Installer."
 msgstr ""
 
-#: misc/live-magic.glade:1495
+#: misc/live-magic.glade:1522
 msgid "No, do not integrate the Debian Installer."
 msgstr ""
 
-#: misc/live-magic.glade:1531
+#: misc/live-magic.glade:1562
 msgid "Select Debian Installer integration"
 msgstr ""
 
-#: misc/live-magic.glade:1557
+#: misc/live-magic.glade:1587
 msgid ""
 "<b>Select locale and keyboard layout:</b>\n"
 "\n"
@@ -270,19 +269,19 @@ msgid ""
 "settings. If unsure, please use the defaults."
 msgstr ""
 
-#: misc/live-magic.glade:1632
+#: misc/live-magic.glade:1663
 msgid "Keyboard layout:"
 msgstr ""
 
-#: misc/live-magic.glade:1656
+#: misc/live-magic.glade:1687
 msgid "Locale:"
 msgstr ""
 
-#: misc/live-magic.glade:1689
+#: misc/live-magic.glade:1722
 msgid "Select locale and keyboard layout"
 msgstr ""
 
-#: misc/live-magic.glade:1726
+#: misc/live-magic.glade:1758
 msgid ""
 "<b>Please choose a build folder:</b>\n"
 "\n"
@@ -290,19 +289,17 @@ msgid ""
 "<i>DebianLive/</i> subfolder."
 msgstr ""
 
-#: misc/live-magic.glade:1777 misc/live-magic.glade:1804
+#: misc/live-magic.glade:1809 misc/live-magic.glade:1837
 msgid "Select build folder"
 msgstr ""
 
-# Shown in the final wizard screen. The text for the 'Apply' button is
-# translated by GTK (gtk-apply).
-#: misc/live-magic.glade:1821
+#: misc/live-magic.glade:1854
 msgid ""
 "<b>Your Debian Live image is ready to build!</b>\n"
 "\n"
 "Press <i>Apply</i> to begin the build process."
 msgstr ""
 
-#: misc/live-magic.glade:1849
+#: misc/live-magic.glade:1885
 msgid "Ready to build!"
 msgstr ""

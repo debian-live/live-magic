@@ -53,7 +53,7 @@ class BuildController(object):
 
         # Fork command
         cmd = [find_resource('live-magic-builder')]
-        self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, None, os.getcwd())
+        self.pid = self.view.vte_terminal.fork_command(cmd[0], cmd, [], os.getcwd())
 
         if self.pid < 0:
             self.view.set_build_titles(_("Error creating Debian Live system!"), \
@@ -70,7 +70,7 @@ class BuildController(object):
         def _exec(*cmds):
             glue = ' | tee -a %s ;' % LOG_FILE
             args = ['/bin/sh', '-c', glue.join(cmds)]
-            self.view.vte_terminal.fork_command(args[0], args, None, os.getcwd())
+            self.view.vte_terminal.fork_command(args[0], args, [], os.getcwd())
 
         def set_cleaning_status():
             try:

@@ -9,6 +9,8 @@ live-magic (1.7) UNRELEASED; urgency=low
     seems a more robust way of ensuring that the child process can actually
     talk to X. We set the path manually in live-magic-builder to prevent the
     actual failure originally reported in #491242.
+  * Update vte form_command calls to new API. Thanks to Jor <jor123@gmail.com>.
+    (Closes: #533556)
 
  -- Chris Lamb <lamby@debian.org>  Wed, 08 Jul 2009 22:26:23 +0100
 

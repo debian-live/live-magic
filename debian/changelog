@@ -1,3 +1,10 @@
+live-magic (1.8) unstable; urgency=low
+
+  * Update live-helper calls for version 2 (Closes: #561712).
+  * Bump Standards-Version to 3.8.4.
+
+ -- Daniel Baumann <daniel@debian.org>  Mon, 01 Feb 2010 04:19:59 +0100
+
 live-magic (1.7) unstable; urgency=low
 
   * Only delete build directory if we created it. This is not only safer, but

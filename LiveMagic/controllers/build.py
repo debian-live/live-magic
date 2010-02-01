@@ -100,7 +100,7 @@ class BuildController(object):
 
         def ok_clean():
             set_cleaning_status()
-            _exec('lh_clean --chroot --stage --source --cache',
+            _exec('lh clean --chroot --stage --source --cache',
                 'rm -rf config/ binary/ tftpboot/',
                 'chown -R %d:%d .' % (self.uid, self.gid))
             return OK
@@ -112,7 +112,7 @@ class BuildController(object):
 
         def failed_clean():
             set_cleaning_status()
-            _exec('lh_clean --purge', 'rm -rvf config/',
+            _exec('lh clean --purge', 'rm -rvf config/',
                 'chown -R %d:%d .' % (self.uid, self.gid))
             return FAILED
 
@@ -123,7 +123,7 @@ class BuildController(object):
 
         def cancelled_clean():
             set_cleaning_status()
-            _exec('lh_clean --purge', 'rm -rvf $(pwd)')
+            _exec('lh clean --purge', 'rm -rvf $(pwd)')
             return CANCELLED
 
         if self.state == BUILDING:

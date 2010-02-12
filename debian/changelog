@@ -1,3 +1,9 @@
+live-magic (1.9) unstable; urgency=low
+
+  * Correcting versioned depends on live-helper (Closes: #569204).
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 12 Feb 2010 10:44:51 +0100
+
 live-magic (1.8) unstable; urgency=low
 
   * Update live-helper calls for version 2 (Closes: #561712).

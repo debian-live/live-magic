@@ -36,7 +36,7 @@ class TestKeyVar(unittest.TestCase):
         LH_SPAM="eggs"
         LH_MORE_SPAM="more eggs"
         LH_SPAM_LIST="spam eggs ham bacon"
-        LH_SPAM_BOOL="disabled"
+        LH_SPAM_BOOL="false"
     """
 
     name = 'test_key_var'
@@ -289,10 +289,10 @@ class TestBoolSave(TestKeyVar):
         self.assertSavesAs(None, '')
 
     def testSaveFalse(self):
-        self.assertSavesAs(False, 'disabled')
+        self.assertSavesAs(False, 'false')
 
     def testSaveTrue(self):
-        self.assertSavesAs(True, 'enabled')
+        self.assertSavesAs(True, 'true')
 
 class TestBoolLoad(TestKeyVar):
     def assertParsesAs(self, input, expected):
@@ -301,10 +301,10 @@ class TestBoolLoad(TestKeyVar):
         self.assertEqual(self.key_var['LH_SPAM_BOOL'], expected)
 
     def testEnabled(self):
-        self.assertParsesAs('enabled', True)
+        self.assertParsesAs('true', True)
 
     def testDisabled(self):
-        self.assertParsesAs('disabled', False)
+        self.assertParsesAs('false', False)
 
     def testYes(self):
         self.assertParsesAs('yes', True)

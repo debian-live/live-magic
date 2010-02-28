@@ -80,7 +80,7 @@ class KeyVar(dict):
                     int: lambda k, v: {'': None}.get(v, None),
                     list: lambda k, v: ListObserver(v.split(), lambda: self.stale.add(k)),
                     str: lambda k, v: v,
-                    bool: lambda k, v: {'enabled' : True, 'disabled' : False, \
+                    bool: lambda k, v: {'true' : True, 'false' : False, \
                         'yes' : True, 'no' : False}.get(v, None),
                 }[val_type](key, val)
 
@@ -121,7 +121,7 @@ class KeyVar(dict):
             # Format value depending on its type
             line_value = {
                 list : lambda v: " ".join(val),
-                bool : lambda v: {True: 'enabled', False: 'disabled'}.get(val, None),
+                bool : lambda v: {True: 'true', False: 'false'}.get(val, None),
                 str : lambda v: v,
                 type(None) : lambda v: "",
             }[type(val)](val)

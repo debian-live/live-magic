@@ -1,3 +1,11 @@
+live-magic (1.11) unstable; urgency=low
+
+  * Updating maintainer field.
+  * Updating homepage field.
+  * Also removing auto directory when cleaning up the build directory.
+
+ -- Daniel Baumann <daniel@debian.org>  Fri, 30 Apr 2010 19:56:58 +0200
+
 live-magic (1.10) unstable; urgency=low
 
   * Update live-helper booleans for version 2 (Closes: #571945).

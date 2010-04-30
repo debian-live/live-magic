@@ -234,7 +234,7 @@ class WizardView(object):
         about.set_comments(_("GUI tool to build Debian Live systems."))
         about.set_copyright("Copyright (C) 2007-2008 Chris Lamb <chris@chris-lamb.co.uk>")
 
-        about.set_website("http://debian-live.alioth.debian.org/")
+        about.set_website("http://live.debian.net/")
         about.set_website_label(_("Debian Live homepage"))
         about.set_license(file(find_resource('GPL-3')).read())
         try:

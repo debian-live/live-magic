@@ -5,7 +5,7 @@ Maintainer: Debian Live Project <debian-live@lists.debian.org>
 Uploaders: Chris Lamb <lamby@debian.org>, Daniel Baumann <daniel@debian.org>
 Build-Depends: debhelper (>= 7)
 Build-Depends-Indep: python-support, gettext
-Standards-Version: 3.9.0
+Standards-Version: 3.9.1
 Homepage: http://live.debian.net/
 Vcs-Git: git://git.debian.org/git/users/lamby-guest/live-magic.git
 Vcs-Browser: http://git.debian.org/?p=users/lamby-guest/live-magic.git

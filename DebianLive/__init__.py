@@ -38,10 +38,17 @@ class Config(object):
         if not os.path.exists(self.dir):
             os.makedirs(self.dir)
 
-        options = ["--%s='%s'" % (k.replace('_', '-'), v)
-            for k, v in kwargs.iteritems()]
+        options = []
+
+        for k, v in kwargs.iteritems():
+            if isinstance(v, (bool,)):
+                v = str(v).lower()
+            options.append("--%s='%s'" % (k.replace('_', '-'), v))
+
         cmd = 'cd "%s"; lh config --ignore-system-defaults %s' % (os.path.abspath(self.dir),
             ' '.join(options))
+
+        print "*", cmd
 
         result, out = commands.getstatusoutput(cmd)
         if result != 0:

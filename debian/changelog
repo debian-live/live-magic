@@ -5,6 +5,7 @@ live-magic (1.12) UNRELEASED; urgency=low
   * Update copyright years from 2007-2008 => 2007-2010.
   * Update my email address.
   * Bump (and rename) dependency on live-build to at least 2.0~a21.
+  * Pass {true,false} instead of {True,False} to lh config.
 
  -- Chris Lamb <lamby@debian.org>  Mon, 02 Aug 2010 00:41:11 -0400
 

@@ -1,6 +1,7 @@
 live-magic (1.12) UNRELEASED; urgency=low
 
   * Make live.debian.net the canonical Git repo for live-magic.
+  * Remove a bunch of unused imports.
 
  -- Chris Lamb <lamby@debian.org>  Mon, 02 Aug 2010 00:41:11 -0400
 

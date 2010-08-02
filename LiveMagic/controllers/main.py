@@ -19,7 +19,6 @@
 import os
 import gtk
 import pwd
-import sys
 
 from LiveMagic.utils import find_resource
 

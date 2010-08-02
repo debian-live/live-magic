@@ -18,7 +18,6 @@
 
 import os
 import pwd
-import sys
 import gobject
 import subprocess
 

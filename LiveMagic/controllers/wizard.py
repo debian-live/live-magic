@@ -19,7 +19,6 @@
 import os
 import gtk
 import time
-import popen2
 import shutil
 import gobject
 import threading

@@ -7,8 +7,8 @@ Build-Depends: debhelper (>= 7)
 Build-Depends-Indep: python-support, gettext
 Standards-Version: 3.9.1
 Homepage: http://live.debian.net/
-Vcs-Git: git://git.debian.org/git/users/lamby-guest/live-magic.git
-Vcs-Browser: http://git.debian.org/?p=users/lamby-guest/live-magic.git
+Vcs-Git: git://live.debian.net/git/live-magic.git
+Vcs-Browser: http://live.debian.net/gitweb/?p=live-magic.git
 
 Package: live-magic
 Architecture: all

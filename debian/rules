@@ -1,9 +1,5 @@
 #!/usr/bin/make -f
 
-upstream:
-	cd .. && git clone git://git.debian.org/git/users/lamby-guest/live-magic.git || true
-	rm -rf ../live-magic/.git
-
 %:
 	dh $@
 

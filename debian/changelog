@@ -2,6 +2,7 @@ live-magic (1.12) UNRELEASED; urgency=low
 
   * Make live.debian.net the canonical Git repo for live-magic.
   * Remove a bunch of unused imports.
+  * Update copyright years from 2007-2008 => 2007-2010.
 
  -- Chris Lamb <lamby@debian.org>  Mon, 02 Aug 2010 00:41:11 -0400
 
@@ -117,7 +118,7 @@ live-magic (1.1) unstable; urgency=low
     - Spanish translation by Fabio Balzano. Additional thanks to
       tomas@tuxteam.de and the Spanish language team. (Closes: #496857)
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 31 Aug 2008 19:14:41 +0100
+ -- Chris Lamb <lamby@debian.org>  Sun, 31 Aug 2008 19:14:41 +0100
 
 live-magic (1.0) unstable; urgency=low
 
@@ -135,14 +136,14 @@ live-magic (1.0) unstable; urgency=low
     - Russian translation by Yuri Kozlov (Closes: #494500)
     - Swedish translation by Martin Ågren (Closes: #494503)
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 24 Aug 2008 00:43:54 +0100
+ -- Chris Lamb <lamby@debian.org>  Sun, 24 Aug 2008 00:43:54 +0100
 
 live-magic (0.7) unstable; urgency=low
 
   * Add d-i integration step which sets LH_DEBIAN_INSTALLER="live"
     (Closes: #492082)
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Thu, 24 Jul 2008 19:42:35 +0100
+ -- Chris Lamb <lamby@debian.org>  Thu, 24 Jul 2008 19:42:35 +0100
 
 live-magic (0.6) unstable; urgency=medium
 
@@ -151,14 +152,14 @@ live-magic (0.6) unstable; urgency=medium
     we need it as we pass the environment variables we are interested in
     manually. (Closes: #491242)
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Fri, 18 Jul 2008 13:49:31 +0100
+ -- Chris Lamb <lamby@debian.org>  Fri, 18 Jul 2008 13:49:31 +0100
 
 live-magic (0.5) unstable; urgency=low
 
   * Remove python-gnome2-desktop from Recommends (Closes: #491248)
   * Update package description.
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Fri, 18 Jul 2008 00:56:49 +0100
+ -- Chris Lamb <lamby@debian.org>  Fri, 18 Jul 2008 00:56:49 +0100
 
 live-magic (0.4) unstable; urgency=low
 
@@ -184,7 +185,7 @@ live-magic (0.4) unstable; urgency=low
   * Prefer cebootstrap in some sitatuions and add to Recommends.
   * Use --ignore-system-defaults option when calling lh_config.
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Wed, 09 Jul 2008 00:20:04 +0100
+ -- Chris Lamb <lamby@debian.org>  Wed, 09 Jul 2008 00:20:04 +0100
 
 live-magic (0.3-1) unstable; urgency=low
 
@@ -196,16 +197,16 @@ live-magic (0.3-1) unstable; urgency=low
   * Merged a few packaging and typographical errors from Daniel
     Baumann <daniel@debian.org>.
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Sun, 26 Aug 2007 13:32:00 +0100
+ -- Chris Lamb <lamby@debian.org>  Sun, 26 Aug 2007 13:32:00 +0100
 
 live-magic (0.2-1) unstable; urgency=low
 
   * New upstream release.
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Thu, 16 Aug 2007 21:35:46 +0100
+ -- Chris Lamb <lamby@debian.org>  Thu, 16 Aug 2007 21:35:46 +0100
 
 live-magic (0.1-1) unstable; urgency=low
 
   * Initial release.
 
- -- Chris Lamb <chris@chris-lamb.co.uk>  Mon, 28 May 2007 12:31:20 +0100
+ -- Chris Lamb <lamby@debian.org>  Mon, 28 May 2007 12:31:20 +0100

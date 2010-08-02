@@ -1,4 +1,4 @@
 APPLICATION="live-magic"
-EMAIL="chris@chris-lamb.co.uk"
+EMAIL="lamby@debian.org"
 EXTENSIONS="glade py"
 DIRS="LiveMagic misc"

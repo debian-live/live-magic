@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 #   live-magic - GUI frontend to create Debian LiveCDs, etc.
-#   Copyright (C) 2007-2010 Chris Lamb <chris@chris-lamb.co.uk>
+#   Copyright (C) 2007-2010 Chris Lamb <lamby@debian.org>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -232,7 +232,7 @@ class WizardView(object):
         about = gtk.AboutDialog()
         about.set_name(_("Debian Live Magic"))
         about.set_comments(_("GUI tool to build Debian Live systems."))
-        about.set_copyright("Copyright (C) 2007-2010 Chris Lamb <chris@chris-lamb.co.uk>")
+        about.set_copyright("Copyright (C) 2007-2010 Chris Lamb <lamby@debian.org>")
 
         about.set_website("http://live.debian.net/")
         about.set_website_label(_("Debian Live homepage"))

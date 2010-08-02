@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-magic\n"
-"Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
+"Report-Msgid-Bugs-To: lamby@debian.org\n"
 "POT-Creation-Date: 2009-07-09 00:34+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"

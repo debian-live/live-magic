@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 #   live-magic - GUI frontend to create Debian LiveCDs, etc.
-#   Copyright (C) 2007-2010 Chris Lamb <chris@chris-lamb.co.uk>
+#   Copyright (C) 2007-2010 Chris Lamb <lamby@debian.org>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by

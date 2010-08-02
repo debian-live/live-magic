@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: live-magic-gu\n"
-"Report-Msgid-Bugs-To: chris@chris-lamb.co.uk\n"
+"Report-Msgid-Bugs-To: lamby@debian.org\n"
 "POT-Creation-Date: 2008-08-09 08:53+0100\n"
 "PO-Revision-Date: 2008-08-28 13:04+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"

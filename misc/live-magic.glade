@@ -331,7 +331,7 @@ of building your own Debian Live system.</property>
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkRadioButton" id="radio_desktop_gnome">
+                      <widget class="GtkRadioButton" id="radio_desktop_gnome-desktop">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -376,7 +376,7 @@ of building your own Debian Live system.</property>
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkRadioButton" id="radio_desktop_kde">
+                      <widget class="GtkRadioButton" id="radio_desktop_kde-desktop">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -421,7 +421,7 @@ of building your own Debian Live system.</property>
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkRadioButton" id="radio_desktop_xfce">
+                      <widget class="GtkRadioButton" id="radio_desktop_xfce-desktop">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>

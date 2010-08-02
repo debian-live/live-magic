@@ -180,7 +180,7 @@ class WizardView(object):
             'packages_lists': get_active('radio_desktop_standard'),
             'binary_images': get_active('radio_media_iso'),
             'distribution': get_active('radio_distribution_lenny'),
-            'debian_installer': get_active('radio_installer_disabled'),
+            'debian_installer': get_active('radio_installer_false'),
             'mirror_bootstrap': self['combobox_mirror'].get_active_text(),
         }
 

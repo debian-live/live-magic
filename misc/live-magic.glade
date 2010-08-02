@@ -1495,7 +1495,7 @@ If unsure, select "&lt;i&gt;no&lt;/i&gt;".</property>
                         <property name="receives_default">False</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="draw_indicator">True</property>
-                        <property name="group">radio_installer_disabled</property>
+                        <property name="group">radio_installer_false</property>
                       </widget>
                       <packing>
                         <property name="left_attach">1</property>
@@ -1518,7 +1518,7 @@ If unsure, select "&lt;i&gt;no&lt;/i&gt;".</property>
                       </packing>
                     </child>
                     <child>
-                      <widget class="GtkRadioButton" id="radio_installer_disabled">
+                      <widget class="GtkRadioButton" id="radio_installer_false">
                         <property name="label" translatable="yes">No, do not integrate the Debian Installer.</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>

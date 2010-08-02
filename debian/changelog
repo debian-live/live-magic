@@ -2,6 +2,7 @@ live-magic (1.12) UNRELEASED; urgency=low
 
   * Update to live-helper 2.x (Closes: #578071):
     - Pass {true,false} instead of {True,False} to lh config.
+    - Pass --debian-installer=false over =disabled.
   * Make live.debian.net the canonical Git repo for live-magic.
   * Remove a bunch of unused imports.
   * Update copyright years from 2007-2008 => 2007-2010.

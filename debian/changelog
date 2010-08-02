@@ -1,4 +1,4 @@
-live-magic (1.12) UNRELEASED; urgency=low
+live-magic (1.12) unstable; urgency=low
 
   * Update to live-helper 2.x (Closes: #578071):
     - Pass {true,false} instead of {True,False} to lh config.
@@ -12,7 +12,7 @@ live-magic (1.12) UNRELEASED; urgency=low
   * Bump Python requirement to 2.5 due to (at least) subprocess.check_call.
   * Use '3.0 (native)' source format.
 
- -- Chris Lamb <lamby@debian.org>  Mon, 02 Aug 2010 00:41:11 -0400
+ -- Chris Lamb <lamby@debian.org>  Mon, 02 Aug 2010 02:22:24 -0400
 
 live-magic (1.11) unstable; urgency=low
 

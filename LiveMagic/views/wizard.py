@@ -148,8 +148,8 @@ class WizardView(object):
         path = '/srv/debian-live'
         try:
             kv = KeyVar('/etc/default', 'live-helper', {}, filename='/etc/default/live-helper')
-            server = kv.get('LH_NET_ROOT_SERVER', server)
-            path = kv.get('LH_NET_ROOT_PATH', path)
+            server = kv.get('LB_NET_ROOT_SERVER', server)
+            path = kv.get('LB_NET_ROOT_PATH', path)
         except IOError:
             pass
         self['entry_net_root_server'].set_text(server)

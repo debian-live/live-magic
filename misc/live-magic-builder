@@ -36,7 +36,7 @@ Check () {
 }
 
 Clean () {
-	lh clean --purge | tee -a ${LOG}
+	lb clean --purge | tee -a ${LOG}
 }
 
 Save_config () {
@@ -53,10 +53,10 @@ Check
 Clean
 Save_config
 Set_status building
-Echo_verbose "lh build starting in $(pwd)"
+Echo_verbose "lb build starting in $(pwd)"
 Echo_line
-lh build 2>&1 | tee -a ${LOG}
+lb build 2>&1 | tee -a ${LOG}
 Echo_line
-Echo_verbose "lh build returned successfully"
+Echo_verbose "lb build returned successfully"
 Set_status ok
 exit 0

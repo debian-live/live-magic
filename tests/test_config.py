@@ -29,7 +29,7 @@ class TestConfig(unittest.TestCase):
     def setUp(self):
         import tempfile
         self.dir = tempfile.mkdtemp()
-        self.lh = Config(self.dir)
+        self.lb = Config(self.dir)
 
     def tearDown(self):
         import shutil
@@ -47,41 +47,41 @@ class TestSimple(TestConfig):
         Config(self.dir)
 
     def testStr(self):
-        self.assertEqual(type(str(self.lh)), str)
+        self.assertEqual(type(str(self.lb)), str)
 
     def testRepr(self):
-        self.assertEqual(type(repr(self.lh)), str)
+        self.assertEqual(type(repr(self.lb)), str)
 
     def testStrReprEquality(self):
-        self.assertEqual(repr(self.lh), str(self.lh))
+        self.assertEqual(repr(self.lb), str(self.lb))
 
     def testSave(self):
         def contents():
             return open(os.path.join(self.dir, 'config', 'common')).readlines()
 
         before = contents()
-        self.lh.common['LH_APT'] = 'spam'
-        self.lh.save()
+        self.lb.common['LB_APT'] = 'spam'
+        self.lb.save()
 
-        self.assert_('LH_APT="spam"\n' in contents())
+        self.assert_('LB_APT="spam"\n' in contents())
         self.assertEqual(len(before), len(contents()))
 
 class TestElements(TestConfig):
     def testBinary(self):
         from DebianLive.elements import KeyVar
-        self.assertEqual(type(self.lh.binary), KeyVar)
+        self.assertEqual(type(self.lb.binary), KeyVar)
 
 class TestSetGetOptions(TestConfig):
     def testGet(self):
-        self.assertEqual(self.lh.common['LH_DEBCONF_PRIORITY'], 'critical')
+        self.assertEqual(self.lb.common['LB_DEBCONF_PRIORITY'], 'critical')
 
     def testSet(self):
-        self.lh.common['LH_APT'] = 'spam'
-        self.assertEqual(self.lh.common['LH_APT'], 'spam')
+        self.lb.common['LB_APT'] = 'spam'
+        self.assertEqual(self.lb.common['LB_APT'], 'spam')
 
     def testSetUnknownOption(self):
-        self.lh.common['LH_UNKNOWN_OPTION'] = 'spam'
-        self.assertEqual(self.lh.common['LH_UNKNOWN_OPTION'], 'spam')
+        self.lb.common['LB_UNKNOWN_OPTION'] = 'spam'
+        self.assertEqual(self.lb.common['LB_UNKNOWN_OPTION'], 'spam')
 
 if __name__ == "__main__":
     unittest.main()

@@ -26,17 +26,17 @@ from DebianLive.elements import KeyVar
 
 class TestKeyVar(unittest.TestCase):
     spec = {
-        'LH_SPAM': str,
-        'LH_MORE_SPAM': str,
-        'LH_SPAM_LIST' : list,
-        'LH_SPAM_BOOL' : bool,
+        'LB_SPAM': str,
+        'LB_MORE_SPAM': str,
+        'LB_SPAM_LIST' : list,
+        'LB_SPAM_BOOL' : bool,
     }
 
     initial = """
-        LH_SPAM="eggs"
-        LH_MORE_SPAM="more eggs"
-        LH_SPAM_LIST="spam eggs ham bacon"
-        LH_SPAM_BOOL="false"
+        LB_SPAM="eggs"
+        LB_MORE_SPAM="more eggs"
+        LB_SPAM_LIST="spam eggs ham bacon"
+        LB_SPAM_BOOL="false"
     """
 
     name = 'test_key_var'
@@ -70,22 +70,22 @@ class TestKeyVar(unittest.TestCase):
 
 class TestSimple(TestKeyVar):
     def testSetAndGetOption(self):
-        self.key_var['LH_SPAM'] = 'eggs'
-        self.assertEqual(self.key_var['LH_SPAM'], 'eggs')
+        self.key_var['LB_SPAM'] = 'eggs'
+        self.assertEqual(self.key_var['LB_SPAM'], 'eggs')
 
     def testSetAndGetOptionSpecifyFilename(self):
         self.key_var = KeyVar('/', 'dummy', self.spec, filename=self.filename)
-        self.key_var['LH_SPAM'] = 'eggs'
-        self.assertEqual(self.key_var['LH_SPAM'], 'eggs')
+        self.key_var['LB_SPAM'] = 'eggs'
+        self.assertEqual(self.key_var['LB_SPAM'], 'eggs')
 
     def testSaveKnownOption(self):
-        self.key_var['LH_SPAM'] = 'new value'
+        self.key_var['LB_SPAM'] = 'new value'
         self.key_var.save()
-        self.assert_('LH_SPAM="new value"' in self.f_c())
+        self.assert_('LB_SPAM="new value"' in self.f_c())
 
     def testSaveKnownOptionNoChange(self):
         before = self.f_c()
-        self.key_var['LH_SPAM'] = 'eggs'
+        self.key_var['LB_SPAM'] = 'eggs'
         self.key_var.save()
         self.assertEqual(before, self.f_c())
 
@@ -93,13 +93,13 @@ class TestSimple(TestKeyVar):
         """
         Unknown configuration keys should be added to the file.
         """
-        self.key_var['LH_UNKNOWN_OPTION'] = 'spam'
+        self.key_var['LB_UNKNOWN_OPTION'] = 'spam'
         self.key_var.save()
-        self.assert_('LH_UNKNOWN_OPTION="spam"' in self.f_c())
+        self.assert_('LB_UNKNOWN_OPTION="spam"' in self.f_c())
 
     def testSaveUnknownOptionNewSize(self):
         len_before = len(self.f_c())
-        self.key_var['LH_UKNOWN_OPTION'] = 'new value'
+        self.key_var['LB_UKNOWN_OPTION'] = 'new value'
         self.key_var.save()
         self.assert_(len(self.f_c()) > len_before)
 
@@ -118,9 +118,9 @@ class TestSaveEscaped(TestKeyVar):
             r'\ '[:-1] : r'\\ '[:-1],
         }
         for input, expected in tests.iteritems():
-            self.key_var['LH_TEST'] = input
+            self.key_var['LB_TEST'] = input
             self.key_var.save()
-            self.assert_('LH_TEST="%s"' % expected in self.f_c(), \
+            self.assert_('LB_TEST="%s"' % expected in self.f_c(), \
                 "Input was '%s', expected '%s'" % (input, expected))
 
 class TestLoadEscaped(TestKeyVar):
@@ -138,12 +138,12 @@ class TestLoadEscaped(TestKeyVar):
 
         for input, expected in tests.iteritems():
             # Write escaped string
-            self.initial = 'LH_SPAM="%s"' % input
+            self.initial = 'LB_SPAM="%s"' % input
 
             # Reload configuration and check against expected value
             self.reset()
-            self.assert_(self.key_var['LH_SPAM'] == expected, \
-                "Got back '%s', expected '%s'" % (self.key_var['LH_SPAM'], expected))
+            self.assert_(self.key_var['LB_SPAM'] == expected, \
+                "Got back '%s', expected '%s'" % (self.key_var['LB_SPAM'], expected))
 
 class TestAccept(TestKeyVar):
     """
@@ -153,31 +153,31 @@ class TestAccept(TestKeyVar):
     def assertAccepts(self, input):
         self.initial = input
         self.reset()
-        self.assertEquals(self.key_var['LH_SPAM'], 'eggs')
+        self.assertEquals(self.key_var['LB_SPAM'], 'eggs')
 
     def testNormal(self):
-        self.assertAccepts(r'LH_SPAM="eggs"')
+        self.assertAccepts(r'LB_SPAM="eggs"')
 
     def testSpacing(self):
-        self.assertAccepts(r"LH_SPAM='eggs' ")
+        self.assertAccepts(r"LB_SPAM='eggs' ")
 
     def testSpacingBoth(self):
-        self.assertAccepts(r'  LH_SPAM="eggs"  ')
+        self.assertAccepts(r'  LB_SPAM="eggs"  ')
 
     def testTwoComments(self):
-        self.assertAccepts(r'LH_SPAM="eggs" # comment # comment ')
+        self.assertAccepts(r'LB_SPAM="eggs" # comment # comment ')
 
     def testCommentsWithQuotes(self):
-        self.assertAccepts(r'LH_SPAM="eggs" # comment with a " " sign')
+        self.assertAccepts(r'LB_SPAM="eggs" # comment with a " " sign')
 
     def testSpacingEnd(self):
-        self.assertAccepts(r'LH_SPAM="eggs"  ')
+        self.assertAccepts(r'LB_SPAM="eggs"  ')
 
     def testNoQuotes(self):
-        self.assertAccepts(r'LH_SPAM=eggs')
+        self.assertAccepts(r'LB_SPAM=eggs')
 
     def testNoQuotesSpacing(self):
-        self.assertAccepts(r'LH_SPAM=eggs ')
+        self.assertAccepts(r'LB_SPAM=eggs ')
 
 class TestAllignmentReject(TestKeyVar):
     def testNonStandardAlignmentRejection(self):
@@ -185,12 +185,12 @@ class TestAllignmentReject(TestKeyVar):
         Tests rejection strange alignments/configurations/spacings of KEY="value" pairs.
         """
         reject = [
-            r'#LH_SPAM="eggs"', # commented out
-            r'LH_SPAM ="eggs"',
-            r'LH_SPAM= "eggs"',
-            r'LH_SPAM="eggs',
-            r'LH_SPAM=eggs"',
-            r'LH_SPAM=spam eggs',
+            r'#LB_SPAM="eggs"', # commented out
+            r'LB_SPAM ="eggs"',
+            r'LB_SPAM= "eggs"',
+            r'LB_SPAM="eggs',
+            r'LB_SPAM=eggs"',
+            r'LB_SPAM=spam eggs',
         ]
         for r in reject:
             self.initial = r
@@ -208,67 +208,67 @@ class TestSaveLists(TestKeyVar):
         ]
 
         for k, v in expected:
-            self.key_var['LH_SPAM_LIST'] = k
+            self.key_var['LB_SPAM_LIST'] = k
             self.key_var.save()
-            assert 'LH_SPAM_LIST="%s"' % v in self.f_c()
+            assert 'LB_SPAM_LIST="%s"' % v in self.f_c()
 
 
 class TestLists(TestKeyVar):
     def testAppend(self):
-        self.key_var['LH_SPAM_LIST'].append('ketchup')
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'].append('ketchup')
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testSetItem(self):
-        self.key_var['LH_SPAM_LIST'][0] = 'ketchup'
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'][0] = 'ketchup'
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testDelItem(self):
-        del self.key_var['LH_SPAM_LIST'][0]
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        del self.key_var['LB_SPAM_LIST'][0]
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testSetSlice(self):
-        self.key_var['LH_SPAM_LIST'][:] = []
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'][:] = []
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testDelSlice(self):
-        del self.key_var['LH_SPAM_LIST'][:]
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        del self.key_var['LB_SPAM_LIST'][:]
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testPop(self):
-        self.key_var['LH_SPAM_LIST'].pop()
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'].pop()
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testExtend(self):
-        self.key_var['LH_SPAM_LIST'].extend(range(3))
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'].extend(range(3))
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testInsert(self):
-        self.key_var['LH_SPAM_LIST'].insert(0, 'spam')
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'].insert(0, 'spam')
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testRemove(self):
-        self.key_var['LH_SPAM_LIST'].remove('spam')
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'].remove('spam')
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testReverse(self):
-        self.key_var['LH_SPAM_LIST'].reverse()
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'].reverse()
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testSort(self):
-        self.key_var['LH_SPAM_LIST'].sort()
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'].sort()
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
     def testSetList(self):
-        self.key_var['LH_SPAM_LIST'] = ['spam']
+        self.key_var['LB_SPAM_LIST'] = ['spam']
         self.key_var.save()
-        self.key_var['LH_SPAM_LIST'].append('ketchup')
-        self.assert_('LH_SPAM_LIST' in self.key_var.stale)
+        self.key_var['LB_SPAM_LIST'].append('ketchup')
+        self.assert_('LB_SPAM_LIST' in self.key_var.stale)
 
 class TestLoadLists(TestKeyVar):
     def assertLoadsAs(self, input, expected):
-        self.initial = 'LH_SPAM_LIST="%s"' % input
+        self.initial = 'LB_SPAM_LIST="%s"' % input
         self.reset()
-        self.assertEqual(self.key_var['LH_SPAM_LIST'], expected)
+        self.assertEqual(self.key_var['LB_SPAM_LIST'], expected)
 
     def testEmptyString(self):
         self.assertLoadsAs("", [])
@@ -281,9 +281,9 @@ class TestLoadLists(TestKeyVar):
 
 class TestBoolSave(TestKeyVar):
     def assertSavesAs(self, input, expected):
-        self.key_var['LH_SPAMBOOL'] = input
+        self.key_var['LB_SPAMBOOL'] = input
         self.key_var.save()
-        assert 'LH_SPAMBOOL="%s"' % expected in self.f_c()
+        assert 'LB_SPAMBOOL="%s"' % expected in self.f_c()
 
     def testSaveNone(self):
         self.assertSavesAs(None, '')
@@ -296,9 +296,9 @@ class TestBoolSave(TestKeyVar):
 
 class TestBoolLoad(TestKeyVar):
     def assertParsesAs(self, input, expected):
-        self.initial = 'LH_SPAM_BOOL="%s"' % input
+        self.initial = 'LB_SPAM_BOOL="%s"' % input
         self.reset()
-        self.assertEqual(self.key_var['LH_SPAM_BOOL'], expected)
+        self.assertEqual(self.key_var['LB_SPAM_BOOL'], expected)
 
     def testEnabled(self):
         self.assertParsesAs('true', True)

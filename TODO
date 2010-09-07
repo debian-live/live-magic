@@ -5,7 +5,7 @@ live-magic TODO
 
  * Add simple package handling to wizard?
 
- * Add boolean for whether to use mirror as LH_MIRROR_BINARY mirror?
+ * Add boolean for whether to use mirror as LB_MIRROR_BINARY mirror?
 
 (General)
 
@@ -18,15 +18,15 @@ live-magic TODO
  * Tasks - task list sufficiently static? Probably needs its own page?
 
  * Dependencies between options. For example, it doesn't make sense
-   to display the LH_ISO_AUTHOR etc if the ISO binary type is not
+   to display the LB_ISO_AUTHOR etc if the ISO binary type is not
    selected.
 
    depends = [
-       'common/LH_ISO_APPLICATION': lambda: 'iso' in self.model.binary.LH_BINARY_IMAGES,
-       'common/LH_GRUB_SPLASH': lambda: self.model.binary.LH_BOOTLOADER == 'grub',
+       'common/LB_ISO_APPLICATION': lambda: 'iso' in self.model.binary.LB_BINARY_IMAGES,
+       'common/LB_GRUB_SPLASH': lambda: self.model.binary.LB_BOOTLOADER == 'grub',
    ]
 
-   "Hidden" depends - eg. LH_BOOTSTRAP_KEYRING only makes sense when using
+   "Hidden" depends - eg. LB_BOOTSTRAP_KEYRING only makes sense when using
    debootstrap (cdebootstrap does not have this option afaict).
 
 (API)
@@ -38,12 +38,12 @@ live-magic TODO
      #!/usr/bin/env python
 
      from DebianLive import Config
-     lh = Config('.')
+     lb = Config('.')
 
-     lh.binary.LH_BINARY_IMAGES = ['iso', 'usb-hdd', 'net']
+     lb.binary.LB_BINARY_IMAGES = ['iso', 'usb-hdd', 'net']
      for pkg_list in ['gnome', 'kde', 'standard', 'rescue']:
-         lh.common.LH_PACKAGES_LISTS = pkg_list
-         result = lh.build(save=True)
+         lb.common.LB_PACKAGES_LISTS = pkg_list
+         result = lb.build(save=True)
          print type(result), result
 
      # Would need some way of saving logs.

@@ -70,7 +70,7 @@ def get_mirror(fallback='http://www.us.debian.org/', sources_list='/etc/apt/sour
     if defaults:
         try:
             kv = KeyVar('/etc/default', 'live-helper', {}, filename=defaults)
-            kv_mirror = filter_mirror(kv['LH_MIRROR_BOOTSTRAP'])
+            kv_mirror = filter_mirror(kv['LB_MIRROR_BOOTSTRAP'])
             if kv_mirror:
                 return kv_mirror
         except:

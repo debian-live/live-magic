@@ -99,7 +99,7 @@ class TestDefaults(TestSourcesList):
     def testDefaults(self):
         mirror = 'http://test.com/debian'
         self.f_w("bogus", self.filename)
-        self.f_w("LH_MIRROR_BOOTSTRAP=\"%s\"" % mirror, self.defaults)
+        self.f_w("LB_MIRROR_BOOTSTRAP=\"%s\"" % mirror, self.defaults)
         ret = get_mirror(None, sources_list=self.filename, defaults=self.defaults)
         self.assertEqual(ret, mirror)
 

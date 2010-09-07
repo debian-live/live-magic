@@ -36,39 +36,39 @@ class TestConfigConstructor(unittest.TestCase):
 
 class TestSimple(TestConfigConstructor):
     def testArch386(self):
-        lh = Config(self.dir, architecture='i386')
-        self.assertEqual(lh.bootstrap['LH_ARCHITECTURE'], 'i386')
+        lb = Config(self.dir, architecture='i386')
+        self.assertEqual(lb.bootstrap['LB_ARCHITECTURE'], 'i386')
 
     def testArchAmd64(self):
-        lh = Config(self.dir, architecture='amd64')
-        self.assertEqual(lh.bootstrap['LH_ARCHITECTURE'], 'amd64')
+        lb = Config(self.dir, architecture='amd64')
+        self.assertEqual(lb.bootstrap['LB_ARCHITECTURE'], 'amd64')
 
     def testNoOptions(self):
-        lh = Config(self.dir)
+        lb = Config(self.dir)
 
     def testInvalid(self):
         self.assertRaises(TypeError, Config, self.dir, this_config_never_exists='value')
 
 class TestOther(TestConfigConstructor):
     def testArchChangesKernelFlavour(self):
-        lh_i386 = Config(self.dir, architecture='i386')
+        lb_i386 = Config(self.dir, architecture='i386')
         self.setUp()
-        lh_amd64 = Config(self.dir, architecture='amd64')
-        self.assertNotEqual(lh_i386.chroot['LH_LINUX_FLAVOURS'],
-            lh_amd64.chroot['LH_LINUX_FLAVOURS'])
+        lb_amd64 = Config(self.dir, architecture='amd64')
+        self.assertNotEqual(lb_i386.chroot['LB_LINUX_FLAVOURS'],
+            lb_amd64.chroot['LB_LINUX_FLAVOURS'])
 
     def testHyphenatedOption(self):
-        lh = Config(self.dir, packages_lists='my-package-list')
-        self.assertEqual(lh.chroot['LH_PACKAGES_LISTS'], ['my-package-list'])
+        lb = Config(self.dir, packages_lists='my-package-list')
+        self.assertEqual(lb.chroot['LB_PACKAGES_LISTS'], ['my-package-list'])
 
     def testSpaceInValue(self):
-        lh = Config(self.dir, packages_lists="hello there")
-        self.assertEqual(lh.chroot['LH_PACKAGES_LISTS'], ['hello', 'there'])
+        lb = Config(self.dir, packages_lists="hello there")
+        self.assertEqual(lb.chroot['LB_PACKAGES_LISTS'], ['hello', 'there'])
 
     def testAllowPassingOptionsSecondTime(self):
-        lh = Config(self.dir, packages_lists="one two")
-        lh = Config(self.dir, packages_lists="three four")
-        self.assertEqual(lh.chroot['LH_PACKAGES_LISTS'], ['three', 'four'])
+        lb = Config(self.dir, packages_lists="one two")
+        lb = Config(self.dir, packages_lists="three four")
+        self.assertEqual(lb.chroot['LB_PACKAGES_LISTS'], ['three', 'four'])
 
 if __name__ == "__main__":
     unittest.main()

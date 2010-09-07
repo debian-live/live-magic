@@ -45,7 +45,7 @@ class Config(object):
                 v = str(v).lower()
             options.append("--%s='%s'" % (k.replace('_', '-'), v))
 
-        cmd = 'cd "%s"; lh config --ignore-system-defaults %s' % (os.path.abspath(self.dir),
+        cmd = 'cd "%s"; lb config --ignore-system-defaults %s' % (os.path.abspath(self.dir),
             ' '.join(options))
 
         print "*", cmd

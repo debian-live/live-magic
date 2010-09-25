@@ -15,10 +15,10 @@ Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}, live-build (>= 2.0~a27), python-glade2 (>= 2.10), python-gtk2, python-vte, gksu, xdg-utils
 Recommends: cdebootstrap
 Description: GUI frontend to create Debian LiveCDs, netboot images, etc.
- Live-helper is a collection of programs that can be used to build Debian Live
- system images. The philosophy behind live-helper is to provide a collection of
+ live-build is a collection of programs that can be used to build Debian Live
+ system images. The philosophy behind live-build is to provide a collection of
  small, simple, and easily understood tools that can be used in your own program
  to automate building of a Live system.
  .
- This package contains the GUI frontend to live-helper, offering a subset of the
+ This package contains the GUI frontend to live-build, offering a subset of the
  features in an easy-to-use user interface.

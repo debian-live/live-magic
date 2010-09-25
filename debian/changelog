@@ -1,3 +1,18 @@
+live-magic (1.13) unstable; urgency=low
+
+  * Replacing all live-helper references with live-build to work with
+    live-build 2.0~a26 and newer (Closes: #595985).
+  * Correcting versioned depends on live-build, it's 2.0~a27 instead of
+    2.0~a26.
+  * Updating location of live-build conffile from /etc/default/live-
+    helper to /etc/live/build.conf.
+  * Replacing references to live-helper with live-build in live-magic
+    manpage.
+  * Replacing references to live-helper with live-build in live-magic
+    package long-description.
+
+ -- Daniel Baumann <daniel@debian.org>  Sat, 25 Sep 2010 19:11:31 +0200
+
 live-magic (1.12) unstable; urgency=low
 
   * Update to live-helper 2.x (Closes: #578071):

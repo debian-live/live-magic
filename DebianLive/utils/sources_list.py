@@ -35,7 +35,7 @@ REJECT_PATTERNS = (
     re.compile(r'volatile\.'),
 )
 
-def get_mirror(fallback='http://www.us.debian.org/', sources_list='/etc/apt/sources.list', defaults='/etc/default/live-helper'):
+def get_mirror(fallback='http://www.us.debian.org/', sources_list='/etc/apt/sources.list', defaults='/etc/live/build.conf'):
     result = fallback
 
     def filter_mirror(line):
@@ -69,7 +69,7 @@ def get_mirror(fallback='http://www.us.debian.org/', sources_list='/etc/apt/sour
 
     if defaults:
         try:
-            kv = KeyVar('/etc/default', 'live-helper', {}, filename=defaults)
+            kv = KeyVar('/etc/live', 'build.conf', {}, filename=defaults)
             kv_mirror = filter_mirror(kv['LB_MIRROR_BOOTSTRAP'])
             if kv_mirror:
                 return kv_mirror

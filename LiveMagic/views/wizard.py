@@ -147,7 +147,7 @@ class WizardView(object):
         server = '192.168.1.1'
         path = '/srv/debian-live'
         try:
-            kv = KeyVar('/etc/default', 'live-helper', {}, filename='/etc/default/live-helper')
+            kv = KeyVar('/etc/live', 'build.conf', {}, filename='/etc/live/build.conf')
             server = kv.get('LB_NET_ROOT_SERVER', server)
             path = kv.get('LB_NET_ROOT_PATH', path)
         except IOError:

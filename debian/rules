@@ -3,7 +3,8 @@
 %:
 	dh $@
 
-clean:
-	dh $@
+override_dh_auto_clean:
+	dh_auto_clean
+
 	rm -rf mo/
 	find -type f -name "*.pyc" -print0 | xargs -0 rm -f

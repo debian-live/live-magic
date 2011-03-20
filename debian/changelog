@@ -1,3 +1,13 @@
+live-magic (1.14) unstable; urgency=low
+
+  * Updating to debhelper version 8.
+  * Shortening versioned depends on live-build.
+  * Making depends on python-glade2 unversioned, not needed anymore.
+  * Updating copyright file.
+  * Removing myself from uploaders.
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 20 Mar 2011 14:11:59 +0100
+
 live-magic (1.13) unstable; urgency=low
 
   * Replacing all live-helper references with live-build to work with

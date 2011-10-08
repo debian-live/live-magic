@@ -8,3 +8,6 @@ override_dh_auto_clean:
 
 	rm -rf mo/
 	find -type f -name "*.pyc" -print0 | xargs -0 rm -f
+
+override_dh_builddeb:
+	dh_builddeb -- -Zgzip -z9

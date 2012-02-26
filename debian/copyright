@@ -1,5 +1,12 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: live-magic
+Upstream-Contact: Chris Lamb <lamby@debian.org>
+Source: http://live.debian.net/archive/packages/live-magic/
+
 Files: *
-Copyright: (C) 2007-2010 Chris Lamb <lamby@debian.org>
+Copyright: 2007-2010 Chris Lamb <lamby@debian.org>
+License: GPL-3+
+
 License: GPL-3+
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
